@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace TourDuLich_WinForm
 {
-    public partial class Form1 : Form
+    public partial class ThongKe_TinhHinh_Tour : Form
     {
-        public Form1()
+        public ThongKe_TinhHinh_Tour()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
