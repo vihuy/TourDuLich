@@ -1,0 +1,85 @@
+﻿@model Core.KhachHang
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết khách hàng</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.HoTen)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("Giới tính")
+        </dt>
+
+        <dd>
+            @if (!Model.GioiTinh)
+                {@("Nữ")}
+            else
+                {@("Nam")}
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Ngày sinh")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Số điện thoại")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("CMND")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CMND)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Passport")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Quốc tịch")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuocTich)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Địa chỉ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Trạng thái")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Về danh sách", "Index")
+</p>

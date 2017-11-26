@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Core.Tour>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tìm Kiếm Tour</h2>
+
+<form action="/Tours">
+    <input type="text" name="TimTour" placeholder="Nhập tên tour ..." class="form-control" style="float:left"/>
+    <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên Tour")
+        </th>
+        <th>
+            @Html.DisplayName("Số lượng ngày")
+        </th>
+        <th>
+            @Html.DisplayName("Trạng thái")
+        </th>
+        <th>
+            @Html.DisplayName("Ghi chú")
+        </th>
+        <th>
+            @Html.DisplayName("Tên địa điểm")
+        </th>
+        <th>
+            @Html.DisplayName("Tên địa điểm 1")
+        </th>
+        <th>
+            @Html.DisplayName("Loại hình du lịch")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLNgay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaDiem.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaDiem1.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHinhDL1.Ten)
+        </td>
+        
+            <td>
+                @Html.ActionLink("Chi tiết", "Details", new { id=item.MaTour })
+            </td>
+        
+    </tr>
+}
+
+</table>

@@ -12,14 +12,12 @@ namespace Core
     using System;
     using System.Collections.Generic;
     
-    public partial class CTDoan
+    public partial class Doan_ChiPhiKhac
     {
-        public int MaCTDoan { get; set; }
+        public int MaDCPK { get; set; }
         public int MaDoan { get; set; }
-        public int TongCPKS { get; set; }
-        public int TongCPPT { get; set; }
-        public int TongCPBA { get; set; }
-        public Nullable<int> TongCPKhac { get; set; }
+        public string TenCPKhac { get; set; }
+        public int Gia { get; set; }
         public string GhiChu { get; set; }
     
         public virtual Doan Doan { get; set; }

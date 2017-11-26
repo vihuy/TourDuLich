@@ -1,0 +1,89 @@
+﻿@model Core.Doan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết đoàn</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Ten)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("Số lượng khách")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLKhach)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Số lượng nhân viên")
+
+        <dd>
+            @Html.DisplayFor(model => model.SLNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Ghi chú")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour_Gia.GhiChu)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Đoàn trưởng")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.HoTen)
+        </dd>
+
+    </dl>
+
+</div>
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayName("Tổng chi phí bữa ăn")
+        </td>
+        <td>
+            @Html.DisplayName("Tổng chi phí khác")
+        </td>
+        <td>
+            @Html.Display("Tổng chi phí khách sạn")
+        </td>
+        <td>
+            @Html.DisplayName("Tổng chi phí phương tiện")
+        </td>
+        <td>
+            @Html.DisplayName("Ghi chú")
+        </td>
+    </tr>
+    @foreach (var item in Model.CTDoans)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongCPBA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongCPKhac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongCPKS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongCPPT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChu)
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Về danh sách", "Index")
+</p>

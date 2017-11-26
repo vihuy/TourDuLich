@@ -1,0 +1,66 @@
+﻿@model Core.Tour
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết Tour</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Ten)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("Số lượng ngày")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLNgay)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Trạng thái")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Ghi chú")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Địa điểm")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaDiem.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Địa điểm 1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaDiem1.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Loại hình du lịch")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiHinhDL1.Ten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Về danh sách", "Index")
+</p>
