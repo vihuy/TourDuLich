@@ -31,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
     <Compile Include="ChucVu.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -58,6 +59,7 @@
     <Compile Include="CTDoan.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
     <Compile Include="DangKi.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -128,11 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="packages.config" />
     <EntityDeploy Include="TourDuLich.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TourDuLich.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="packages.config" />
     <None Include="TourDuLich.edmx.diagram">
       <DependentUpon>TourDuLich.edmx</DependentUpon>
     </None>

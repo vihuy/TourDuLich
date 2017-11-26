@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="TourDuLichModel.Doan" Width="1.5" PointX="14.75" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.KhachHang" Width="1.5" PointX="17.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.KhachSan" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TourDuLichModel.LoaiHinhDL" Width="1.5" PointX="8" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TourDuLichModel.LoaiHinhDL" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.NhanVien" Width="1.5" PointX="12.5" PointY="15.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.PhanCong" Width="1.5" PointX="20" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.QuanAn" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />

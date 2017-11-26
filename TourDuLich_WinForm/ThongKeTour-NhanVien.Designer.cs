@@ -37,9 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -141,16 +141,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(721, 134);
             this.dataGridView1.TabIndex = 12;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 31);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Thống kê tình hình hoạt động";
-            // 
             // tenNhanVien
             // 
             this.tenNhanVien.HeaderText = "Tên Nhân Viên";
@@ -160,6 +150,16 @@
             // 
             this.soLan.HeaderText = "Số lần";
             this.soLan.Name = "soLan";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(267, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(482, 31);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Thống kê số lượng Tour của một nhân viên";
             // 
             // button2
             // 
