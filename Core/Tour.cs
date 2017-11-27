@@ -17,10 +17,8 @@ namespace Core
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tour()
         {
-            this.Tour_DiaDiem = new HashSet<Tour_DiaDiem>();
+            this.Gias = new HashSet<Gia>();
             this.Tour_Gia = new HashSet<Tour_Gia>();
-            this.Tour_KhachSan = new HashSet<Tour_KhachSan>();
-            this.Tour_QuanAn = new HashSet<Tour_QuanAn>();
         }
     
         public int MaTour { get; set; }
@@ -30,17 +28,14 @@ namespace Core
         public int SLNgay { get; set; }
         public int LoaiHinhDL { get; set; }
         public bool TrangThai { get; set; }
+        public string GhiChu { get; set; }
     
         public virtual DiaDiem DiaDiem { get; set; }
         public virtual DiaDiem DiaDiem1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gia> Gias { get; set; }
         public virtual LoaiHinhDL LoaiHinhDL1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tour_DiaDiem> Tour_DiaDiem { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tour_Gia> Tour_Gia { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tour_KhachSan> Tour_KhachSan { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tour_QuanAn> Tour_QuanAn { get; set; }
     }
 }

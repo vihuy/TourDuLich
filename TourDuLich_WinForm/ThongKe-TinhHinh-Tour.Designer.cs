@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayBD_TKTH = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayKT_TKTH = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboTenTour_TKTH = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTimKiem_TKTH = new System.Windows.Forms.Button();
+            this.maTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,32 +55,17 @@
             this.maTour,
             this.tenTour,
             this.giaTour});
-            this.dataGridView1.Location = new System.Drawing.Point(112, 314);
+            this.dataGridView1.Location = new System.Drawing.Point(71, 302);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(721, 134);
+            this.dataGridView1.Size = new System.Drawing.Size(838, 134);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // maTour
-            // 
-            this.maTour.HeaderText = "Mã Tour";
-            this.maTour.Name = "maTour";
-            // 
-            // tenTour
-            // 
-            this.tenTour.HeaderText = "Tên Tour";
-            this.tenTour.Name = "tenTour";
-            // 
-            // giaTour
-            // 
-            this.giaTour.HeaderText = "Giá";
-            this.giaTour.Name = "giaTour";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(298, 33);
+            this.label1.Location = new System.Drawing.Point(382, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(338, 31);
             this.label1.TabIndex = 2;
@@ -96,23 +81,23 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Ngày bắt đầu";
             // 
-            // dateTimePicker1
+            // dtNgayBD_TKTH
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtNgayBD_TKTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgayBD_TKTH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayBD_TKTH.Location = new System.Drawing.Point(215, 19);
+            this.dtNgayBD_TKTH.Name = "dtNgayBD_TKTH";
+            this.dtNgayBD_TKTH.Size = new System.Drawing.Size(200, 26);
+            this.dtNgayBD_TKTH.TabIndex = 5;
             // 
-            // dateTimePicker2
+            // dtNgayKT_TKTH
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(606, 19);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 7;
+            this.dtNgayKT_TKTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtNgayKT_TKTH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayKT_TKTH.Location = new System.Drawing.Point(606, 19);
+            this.dtNgayKT_TKTH.Name = "dtNgayKT_TKTH";
+            this.dtNgayKT_TKTH.Size = new System.Drawing.Size(200, 26);
+            this.dtNgayKT_TKTH.TabIndex = 7;
             // 
             // label3
             // 
@@ -139,52 +124,68 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Tên Tour";
             // 
-            // comboBox1
+            // cboTenTour_TKTH
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(215, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 27);
-            this.comboBox1.TabIndex = 9;
+            this.cboTenTour_TKTH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTenTour_TKTH.FormattingEnabled = true;
+            this.cboTenTour_TKTH.Location = new System.Drawing.Point(215, 72);
+            this.cboTenTour_TKTH.Name = "cboTenTour_TKTH";
+            this.cboTenTour_TKTH.Size = new System.Drawing.Size(297, 27);
+            this.cboTenTour_TKTH.TabIndex = 9;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnTimKiem_TKTH);
+            this.groupBox1.Controls.Add(this.dtNgayBD_TKTH);
+            this.groupBox1.Controls.Add(this.cboTenTour_TKTH);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Location = new System.Drawing.Point(27, 77);
+            this.groupBox1.Controls.Add(this.dtNgayKT_TKTH);
+            this.groupBox1.Location = new System.Drawing.Point(26, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(899, 197);
+            this.groupBox1.Size = new System.Drawing.Size(976, 197);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện thống kê";
             // 
-            // button1
+            // btnTimKiem_TKTH
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(391, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 51);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Tìm Kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTimKiem_TKTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem_TKTH.Location = new System.Drawing.Point(391, 128);
+            this.btnTimKiem_TKTH.Name = "btnTimKiem_TKTH";
+            this.btnTimKiem_TKTH.Size = new System.Drawing.Size(140, 51);
+            this.btnTimKiem_TKTH.TabIndex = 10;
+            this.btnTimKiem_TKTH.Text = "Tìm Kiếm";
+            this.btnTimKiem_TKTH.UseVisualStyleBackColor = true;
+            this.btnTimKiem_TKTH.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // maTour
+            // 
+            this.maTour.HeaderText = "Thời gian";
+            this.maTour.Name = "maTour";
+            // 
+            // tenTour
+            // 
+            this.tenTour.HeaderText = "Số đoàn khách đi Tour";
+            this.tenTour.Name = "tenTour";
+            // 
+            // giaTour
+            // 
+            this.giaTour.HeaderText = "Tiền lời";
+            this.giaTour.Name = "giaTour";
             // 
             // ThongKe_TinhHinh_Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 558);
+            this.ClientSize = new System.Drawing.Size(1045, 558);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "ThongKe_TinhHinh_Tour";
             this.Text = "ThongKe_TinhHinh_Tour";
+            this.Load += new System.EventHandler(this.ThongKe_TinhHinh_Tour_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -196,18 +197,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maTour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenTour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giaTour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtNgayBD_TKTH;
+        private System.Windows.Forms.DateTimePicker dtNgayKT_TKTH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTenTour_TKTH;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTimKiem_TKTH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maTour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenTour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaTour;
     }
 }

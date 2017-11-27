@@ -17,11 +17,11 @@ namespace Core
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DiaDiem()
         {
-            this.KhachSans = new HashSet<KhachSan>();
-            this.QuanAns = new HashSet<QuanAn>();
+            this.Doan_DiaDiem = new HashSet<Doan_DiaDiem>();
+            this.Doan_KhachSan = new HashSet<Doan_KhachSan>();
+            this.Doan_QuanAn = new HashSet<Doan_QuanAn>();
             this.Tours = new HashSet<Tour>();
             this.Tours1 = new HashSet<Tour>();
-            this.Tour_DiaDiem = new HashSet<Tour_DiaDiem>();
         }
     
         public int MaDD { get; set; }
@@ -30,14 +30,14 @@ namespace Core
     
         public virtual TinhThanh TinhThanh1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhachSan> KhachSans { get; set; }
+        public virtual ICollection<Doan_DiaDiem> Doan_DiaDiem { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QuanAn> QuanAns { get; set; }
+        public virtual ICollection<Doan_KhachSan> Doan_KhachSan { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Doan_QuanAn> Doan_QuanAn { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tour> Tours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tour> Tours1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tour_DiaDiem> Tour_DiaDiem { get; set; }
     }
 }

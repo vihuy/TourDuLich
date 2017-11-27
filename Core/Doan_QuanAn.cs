@@ -12,13 +12,16 @@ namespace Core
     using System;
     using System.Collections.Generic;
     
-    public partial class Tour_DiaDiem
+    public partial class Doan_QuanAn
     {
-        public int MaTDD { get; set; }
-        public int MaTour { get; set; }
+        public int MaDQA { get; set; }
+        public int MaDoan { get; set; }
         public int MaDD { get; set; }
+        public string TenQA { get; set; }
+        public int Gia { get; set; }
+        public string GhiChu { get; set; }
     
         public virtual DiaDiem DiaDiem { get; set; }
-        public virtual Tour Tour { get; set; }
+        public virtual Doan Doan { get; set; }
     }
 }

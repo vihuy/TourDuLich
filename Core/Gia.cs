@@ -12,14 +12,14 @@ namespace Core
     using System;
     using System.Collections.Generic;
     
-    public partial class Tour_KhachSan
+    public partial class Gia
     {
-        public int MaTKS { get; set; }
+        public int MaGia { get; set; }
         public int MaTour { get; set; }
-        public int MaKS { get; set; }
-        public int Gia { get; set; }
+        public int Gia1 { get; set; }
+        public System.DateTime khoangTGBD { get; set; }
+        public System.DateTime khoangTGKT { get; set; }
     
-        public virtual KhachSan KhachSan { get; set; }
         public virtual Tour Tour { get; set; }
     }
 }

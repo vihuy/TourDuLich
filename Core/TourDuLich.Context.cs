@@ -30,19 +30,18 @@ namespace Core
         public virtual DbSet<DangKi> DangKis { get; set; }
         public virtual DbSet<DiaDiem> DiaDiems { get; set; }
         public virtual DbSet<Doan> Doans { get; set; }
+        public virtual DbSet<Doan_ChiPhiKhac> Doan_ChiPhiKhac { get; set; }
+        public virtual DbSet<Doan_DiaDiem> Doan_DiaDiem { get; set; }
+        public virtual DbSet<Doan_KhachSan> Doan_KhachSan { get; set; }
+        public virtual DbSet<Doan_PhuongTien> Doan_PhuongTien { get; set; }
+        public virtual DbSet<Doan_QuanAn> Doan_QuanAn { get; set; }
+        public virtual DbSet<Gia> Gias { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
-        public virtual DbSet<KhachSan> KhachSans { get; set; }
         public virtual DbSet<LoaiHinhDL> LoaiHinhDLs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhanCong> PhanCongs { get; set; }
-        public virtual DbSet<QuanAn> QuanAns { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TinhThanh> TinhThanhs { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
-        public virtual DbSet<Tour_DiaDiem> Tour_DiaDiem { get; set; }
         public virtual DbSet<Tour_Gia> Tour_Gia { get; set; }
-        public virtual DbSet<Tour_KhachSan> Tour_KhachSan { get; set; }
-        public virtual DbSet<Tour_QuanAn> Tour_QuanAn { get; set; }
-        public virtual DbSet<Xe> Xes { get; set; }
     }
 }

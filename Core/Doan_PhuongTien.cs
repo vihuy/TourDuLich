@@ -12,14 +12,14 @@ namespace Core
     using System;
     using System.Collections.Generic;
     
-    public partial class Tour_QuanAn
+    public partial class Doan_PhuongTien
     {
-        public int MaTQA { get; set; }
-        public int MaTour { get; set; }
-        public int MaQA { get; set; }
+        public int MaDPT { get; set; }
+        public int MaDoan { get; set; }
+        public string TenPT { get; set; }
         public int Gia { get; set; }
+        public string GhiChu { get; set; }
     
-        public virtual QuanAn QuanAn { get; set; }
-        public virtual Tour Tour { get; set; }
+        public virtual Doan Doan { get; set; }
     }
 }
