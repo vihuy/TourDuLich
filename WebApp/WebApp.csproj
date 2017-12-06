@@ -199,7 +199,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ThongKe\Index.cshtml" />
     <Content Include="Views\KhachHangs\Index.cshtml" />
     <Content Include="Views\Doans\Index.cshtml" />
     <Content Include="Views\Tours\Index.cshtml" />
@@ -210,6 +209,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ThongKe\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
