@@ -1,0 +1,81 @@
+﻿@model Core.CTDoan
+
+@{
+    ViewBag.Title = "Details_CTDoan";
+}
+
+<h2>Chi Tiết Đoàn @Html.DisplayFor(model => model.Doan.Ten)</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Tổng Chi Phí Khách Sạn")
+        </dt>
+
+        <dd>
+            @if (Model.TongCPKS == 0)
+            {
+                @Html.DisplayFor(model => model.TongCPKS)
+            }
+            else
+            {
+                @Html.ActionLink(Model.TongCPKS.ToString(), "Details_Doan_CPKS", new { MaDoan = Model.MaDoan })
+
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tổng Chi Phí Phương Tiện")
+        </dt>
+
+        <dd>
+            @if (Model.TongCPPT == 0)
+            {
+                @Html.DisplayFor(model => model.TongCPPT)
+            }
+            else
+            {
+                @Html.ActionLink(Model.TongCPPT.ToString(), "Details_Doan_CPPT", new { MaDoan = Model.MaDoan })
+
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tổng Chi Phí Bữa Ăn")
+        </dt>
+
+        <dd>
+            @if (Model.TongCPBA == 0)
+            {
+                @Html.DisplayFor(model => model.TongCPBA)
+            }
+            else
+            {
+                @Html.ActionLink(Model.TongCPBA.ToString(), "Details_Doan_CPBA", new { MaDoan = Model.MaDoan })
+
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tổng Chi Phí Khác")
+        </dt>
+        <dd>
+            @if (Model.TongCPKhac == 0)
+            {
+                @Html.DisplayFor(model => model.TongCPKhac)
+            }
+            else
+            {
+                @Html.ActionLink(Model.TongCPKhac.ToString(), "Details_Doan_CPKhac", new { MaDoan = Model.MaDoan })
+
+            }
+        </dd>
+        <dt>
+            @Html.DisplayName("Ghi Chú")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GhiChu)
+        </dd>
+    </dl>
+</div>

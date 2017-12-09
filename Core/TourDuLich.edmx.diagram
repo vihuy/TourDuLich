@@ -45,6 +45,8 @@
         <AssociationConnector Association="TourDuLich.FK__Tour__LoaiHinhDL__1ED998B2" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__PhanCong__MaNV__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__Tour_Gia__MaTour__24927208" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TourDuLich.ThoiGianDoan" Width="1.5" PointX="5.25" PointY="13" />
+        <AssociationConnector Association="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

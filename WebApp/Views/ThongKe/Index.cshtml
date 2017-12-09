@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Core.ThoiGianDoan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Thống Kê Chi Phí</h2>
+
+<form action="/ThongKe">
+    <p>Ngày bắt đầu</p>
+    <input type="date" name="NgayDi" class="form-control" value="@ViewBag.NgayDi"/>
+    <p>Ngày kết thúc</p>
+    <input type="date" name="NgayVe" class="form-control" value="@ViewBag.NgayVe"/>
+    <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên Đoàn")
+        </th>
+        <th>
+            @Html.DisplayName("Tên Tour")
+        </th>
+        <th>
+            @Html.DisplayName("Ngày đi")
+        </th>
+        <th>
+            @Html.DisplayName("Ngày về")
+        </th>
+        <th>
+            @Html.DisplayName("Trạng thái")
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doan.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doan.Tour_Gia.Tour.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayVe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrangThai)
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Details_CTDoan", new { MaDoan = item.MaDoan })
+                </td>
+            </tr>
+        }
+    }
+</table>

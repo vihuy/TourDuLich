@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TourDuLich.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TourDuLich.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChucVu">
           <Key>
             <PropertyRef Name="MaCV" />
@@ -156,6 +156,16 @@
           <Property Name="MaDoan" Type="int" Nullable="false" />
           <Property Name="MaNV" Type="int" Nullable="false" />
           <Property Name="MaCV" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThoiGianDoan">
+          <Key>
+            <PropertyRef Name="MaThoiGianDoan" />
+          </Key>
+          <Property Name="MaThoiGianDoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaDoan" Type="int" Nullable="false" />
+          <Property Name="NgayDi" Type="date" />
+          <Property Name="NgayVe" Type="date" />
+          <Property Name="TrangThai" Type="bit" />
         </EntityType>
         <EntityType Name="TinhThanh">
           <Key>
@@ -405,6 +415,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ThoiGianD__MaDoa__5DCAEF64">
+          <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
+          <End Role="ThoiGianDoan" Type="Self.ThoiGianDoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doan">
+              <PropertyRef Name="MaDoan" />
+            </Principal>
+            <Dependent Role="ThoiGianDoan">
+              <PropertyRef Name="MaDoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Tour__DiemKetThu__1DE57479">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
@@ -469,6 +491,7 @@
           <EntitySet Name="LoaiHinhDL" EntityType="Self.LoaiHinhDL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhanCong" EntityType="Self.PhanCong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThoiGianDoan" EntityType="Self.ThoiGianDoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinhThanh" EntityType="Self.TinhThanh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour_Gia" EntityType="Self.Tour_Gia" Schema="dbo" store:Type="Tables" />
@@ -544,6 +567,10 @@
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="PhanCong" EntitySet="PhanCong" />
           </AssociationSet>
+          <AssociationSet Name="FK__ThoiGianD__MaDoa__5DCAEF64" Association="Self.FK__ThoiGianD__MaDoa__5DCAEF64">
+            <End Role="Doan" EntitySet="Doan" />
+            <End Role="ThoiGianDoan" EntitySet="ThoiGianDoan" />
+          </AssociationSet>
           <AssociationSet Name="FK__Tour__DiemKetThu__1DE57479" Association="Self.FK__Tour__DiemKetThu__1DE57479">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Tour" EntitySet="Tour" />
@@ -561,8 +588,7 @@
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TourDuLich" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -632,6 +658,7 @@
           <NavigationProperty Name="Doan_PhuongTien" Relationship="Self.FK__Doan_Phuo__MaDoa__4222D4EF" FromRole="Doan" ToRole="Doan_PhuongTien" />
           <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_Quan__MaDoa__3E52440B" FromRole="Doan" ToRole="Doan_QuanAn" />
           <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="Doan" ToRole="PhanCong" />
+          <NavigationProperty Name="ThoiGianDoans" Relationship="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64" FromRole="Doan" ToRole="ThoiGianDoan" />
         </EntityType>
         <EntityType Name="Doan_ChiPhiKhac">
           <Key>
@@ -1165,7 +1192,35 @@
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
           </AssociationSet>
+          <EntitySet Name="ThoiGianDoans" EntityType="TourDuLich.ThoiGianDoan" />
+          <AssociationSet Name="FK__ThoiGianD__MaDoa__5DCAEF64" Association="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64">
+            <End Role="Doan" EntitySet="Doans" />
+            <End Role="ThoiGianDoan" EntitySet="ThoiGianDoans" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ThoiGianDoan">
+          <Key>
+            <PropertyRef Name="MaThoiGianDoan" />
+          </Key>
+          <Property Name="MaThoiGianDoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaDoan" Type="Int32" Nullable="false" />
+          <Property Name="NgayDi" Type="DateTime" Precision="0" />
+          <Property Name="NgayVe" Type="DateTime" Precision="0" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <NavigationProperty Name="Doan" Relationship="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64" FromRole="ThoiGianDoan" ToRole="Doan" />
+        </EntityType>
+        <Association Name="FK__ThoiGianD__MaDoa__5DCAEF64">
+          <End Type="TourDuLich.Doan" Role="Doan" Multiplicity="1" />
+          <End Type="TourDuLich.ThoiGianDoan" Role="ThoiGianDoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doan">
+              <PropertyRef Name="MaDoan" />
+            </Principal>
+            <Dependent Role="ThoiGianDoan">
+              <PropertyRef Name="MaDoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1371,6 +1426,17 @@
                 <ScalarProperty Name="Gia" ColumnName="Gia" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThoiGianDoans">
+            <EntityTypeMapping TypeName="TourDuLich.ThoiGianDoan">
+              <MappingFragment StoreEntitySet="ThoiGianDoan">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="NgayVe" ColumnName="NgayVe" />
+                <ScalarProperty Name="NgayDi" ColumnName="NgayDi" />
+                <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
+                <ScalarProperty Name="MaThoiGianDoan" ColumnName="MaThoiGianDoan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
