@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Core;
 using WebApp.Models;
+using System.Globalization;
 
 namespace WebApp.Controllers
 {
@@ -23,6 +24,10 @@ namespace WebApp.Controllers
             ViewBag.NgayVe = _NgayVe.ToString("yyyy-MM-dd");
             return View(db.ThoiGianDoans.Where(x => (x.NgayDi >= _NgayDi && x.NgayVe <= _NgayVe)).ToList());
         }
+        private string Chuanhoa (int gia)
+        {
+            return gia.ToString("C", CultureInfo.GetCultureInfo("vi-VN"));
+        }
         public ActionResult Details_CTDoan(int? MaDoan)
         {
             if (MaDoan == null)
@@ -36,6 +41,10 @@ namespace WebApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CPKS = Chuanhoa(ctdoan.TongCPKS);
+            ViewBag.CPBA = Chuanhoa(ctdoan.TongCPBA);
+            ViewBag.CPPT = Chuanhoa(ctdoan.TongCPPT);
+            ViewBag.CPKhac = Chuanhoa((int)ctdoan.TongCPKhac);
             return View(ctdoan);
         }
         //GET: ThongKe/Details_Doan_CPKS/5

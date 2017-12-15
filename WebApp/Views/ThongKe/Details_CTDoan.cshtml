@@ -19,8 +19,7 @@
             }
             else
             {
-                @Html.ActionLink(Model.TongCPKS.ToString(), "Details_Doan_CPKS", new { MaDoan = Model.MaDoan })
-
+                @Html.ActionLink((string)ViewBag.CPKS, "Details_Doan_CPKS", new { MaDoan = Model.MaDoan })
             }
         </dd>
 
@@ -35,7 +34,7 @@
             }
             else
             {
-                @Html.ActionLink(Model.TongCPPT.ToString(), "Details_Doan_CPPT", new { MaDoan = Model.MaDoan })
+                @Html.ActionLink((string)ViewBag.CPPT, "Details_Doan_CPPT", new { MaDoan = Model.MaDoan })
 
             }
         </dd>
@@ -51,7 +50,7 @@
             }
             else
             {
-                @Html.ActionLink(Model.TongCPBA.ToString(), "Details_Doan_CPBA", new { MaDoan = Model.MaDoan })
+                @Html.ActionLink((string)ViewBag.CPBA, "Details_Doan_CPBA", new { MaDoan = Model.MaDoan })
 
             }
         </dd>
@@ -66,7 +65,7 @@
             }
             else
             {
-                @Html.ActionLink(Model.TongCPKhac.ToString(), "Details_Doan_CPKhac", new { MaDoan = Model.MaDoan })
+                @Html.ActionLink((string)ViewBag.CPKhac, "Details_Doan_CPKhac", new { MaDoan = Model.MaDoan })
 
             }
         </dd>
