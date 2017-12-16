@@ -1,4 +1,5 @@
 ﻿@model WebApp.Models.ThongKeChiPhiViewModel
+@using System.Globalization;
 @{
     ViewBag.Title = "Details_Doan_CPKS";
 }
@@ -36,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.DiaDiem.Ten)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Gia)
+                @item.Gia.ToString("C", CultureInfo.GetCultureInfo("vi-VN"));
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.GhiChu)
@@ -46,4 +47,4 @@
 }
 </table>
 <hr />
-<p>Tổng Chi Phí Khách Sạn: @Html.DisplayFor(model => model.CTDoan.TongCPKS)</p>
+<p>Tổng Chi Phí Khách Sạn: @Model.CTDoan.TongCPKS.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>
