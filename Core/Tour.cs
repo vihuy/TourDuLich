@@ -18,7 +18,9 @@ namespace Core
         public Tour()
         {
             this.Gias = new HashSet<Gia>();
+            this.ThoiGianTours = new HashSet<ThoiGianTour>();
             this.Tour_Gia = new HashSet<Tour_Gia>();
+            this.Doans = new HashSet<Doan>();
         }
     
         public int MaTour { get; set; }
@@ -36,6 +38,10 @@ namespace Core
         public virtual ICollection<Gia> Gias { get; set; }
         public virtual LoaiHinhDL LoaiHinhDL1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThoiGianTour> ThoiGianTours { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tour_Gia> Tour_Gia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Doan> Doans { get; set; }
     }
 }

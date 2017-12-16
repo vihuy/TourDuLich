@@ -19,18 +19,21 @@ namespace TourDuLich_WinForm
         public ThongKeTour()
         {
             InitializeComponent();
-            LayDSGia_Tour();
+            layDSNhanVien();
 
 
         }
 
-        public void LayDSGia_Tour()
+        public void layDSNhanVien()
         {
-            List<Tour_Gia> list = new List<Tour_Gia>();
-            list = bus_gia_tour.dsGia_Tour();
-            dgvGia_Tour.DataSource = list;
+            NhanVien_BIZ nhanvien_biz = new NhanVien_BIZ();
+            cboTenNhanVien.DataSource = nhanvien_biz.GetList();
+            cboTenNhanVien.DisplayMember = "HoTen";
+            cboTenNhanVien.ValueMember = "MaNV";
+
 
         }
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -45,6 +48,43 @@ namespace TourDuLich_WinForm
         private void ThongKeTour_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXemBangGia_Tour_Click(object sender, EventArgs e)
+        {
+            TourGia_BIZ tour_gia = new TourGia_BIZ();
+            DateTime thoigian = dtThoiGian_Tour.Value;
+            dgvGia_Tour.DataSource = tour_gia.getList(thoigian);
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_TKTH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThongKe_NV_Tour_Click(object sender, EventArgs e)
+        {
+            DateTime dtNgaybd = dtNgayBD_NV.Value;
+            DateTime dtNgaykt = dtNgayKT_NV.Value;
+            int manv = int.Parse(cboTenNhanVien.SelectedValue.ToString());
+            MessageBox.Show("" + manv);
         }
     }
 }

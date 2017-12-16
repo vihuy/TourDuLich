@@ -40,6 +40,7 @@ namespace Core
         public virtual DbSet<LoaiHinhDL> LoaiHinhDLs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhanCong> PhanCongs { get; set; }
+        public virtual DbSet<ThoiGianTour> ThoiGianTours { get; set; }
         public virtual DbSet<TinhThanh> TinhThanhs { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
         public virtual DbSet<Tour_Gia> Tour_Gia { get; set; }

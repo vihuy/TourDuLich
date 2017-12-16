@@ -25,6 +25,7 @@ namespace Core
             this.Doan_PhuongTien = new HashSet<Doan_PhuongTien>();
             this.Doan_QuanAn = new HashSet<Doan_QuanAn>();
             this.PhanCongs = new HashSet<PhanCong>();
+            this.Tours = new HashSet<Tour>();
         }
     
         public int MaDoan { get; set; }
@@ -52,5 +53,7 @@ namespace Core
         public virtual ICollection<Doan_QuanAn> Doan_QuanAn { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhanCong> PhanCongs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tour> Tours { get; set; }
     }
 }

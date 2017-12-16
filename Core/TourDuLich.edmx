@@ -103,6 +103,14 @@
           <Property Name="Gia" Type="int" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Doan_Tour">
+          <Key>
+            <PropertyRef Name="MaTour" />
+            <PropertyRef Name="MaDoan" />
+          </Key>
+          <Property Name="MaTour" Type="int" Nullable="false" />
+          <Property Name="MaDoan" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Gia">
           <Key>
             <PropertyRef Name="MaGia" />
@@ -156,6 +164,16 @@
           <Property Name="MaDoan" Type="int" Nullable="false" />
           <Property Name="MaNV" Type="int" Nullable="false" />
           <Property Name="MaCV" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThoiGianTour">
+          <Key>
+            <PropertyRef Name="MaThoiGianTour" />
+          </Key>
+          <Property Name="MaThoiGianTour" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaTour" Type="int" Nullable="false" />
+          <Property Name="NgayDi" Type="date" />
+          <Property Name="NgayVe" Type="date" />
+          <Property Name="TrangThai" Type="bit" />
         </EntityType>
         <EntityType Name="TinhThanh">
           <Key>
@@ -357,6 +375,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Doan_Tour__MaDoa__48CFD27E">
+          <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
+          <End Role="Doan_Tour" Type="Self.Doan_Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doan">
+              <PropertyRef Name="MaDoan" />
+            </Principal>
+            <Dependent Role="Doan_Tour">
+              <PropertyRef Name="MaDoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doan_Tour__MaTou__47DBAE45">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="Doan_Tour" Type="Self.Doan_Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="Doan_Tour">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Gia__MaTour__21B6055D">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Gia" Type="Self.Gia" Multiplicity="*" />
@@ -402,6 +444,18 @@
             </Principal>
             <Dependent Role="PhanCong">
               <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ThoiGianT__MaTou__5CD6CB2B">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="ThoiGianTour" Type="Self.ThoiGianTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="ThoiGianTour">
+              <PropertyRef Name="MaTour" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -464,11 +518,13 @@
           <EntitySet Name="Doan_KhachSan" EntityType="Self.Doan_KhachSan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Doan_PhuongTien" EntityType="Self.Doan_PhuongTien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Doan_QuanAn" EntityType="Self.Doan_QuanAn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doan_Tour" EntityType="Self.Doan_Tour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gia" EntityType="Self.Gia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiHinhDL" EntityType="Self.LoaiHinhDL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhanCong" EntityType="Self.PhanCong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThoiGianTour" EntityType="Self.ThoiGianTour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinhThanh" EntityType="Self.TinhThanh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour_Gia" EntityType="Self.Tour_Gia" Schema="dbo" store:Type="Tables" />
@@ -528,6 +584,14 @@
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Doan_QuanAn" EntitySet="Doan_QuanAn" />
           </AssociationSet>
+          <AssociationSet Name="FK__Doan_Tour__MaDoa__48CFD27E" Association="Self.FK__Doan_Tour__MaDoa__48CFD27E">
+            <End Role="Doan" EntitySet="Doan" />
+            <End Role="Doan_Tour" EntitySet="Doan_Tour" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doan_Tour__MaTou__47DBAE45" Association="Self.FK__Doan_Tour__MaTou__47DBAE45">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="Doan_Tour" EntitySet="Doan_Tour" />
+          </AssociationSet>
           <AssociationSet Name="FK__Gia__MaTour__21B6055D" Association="Self.FK__Gia__MaTour__21B6055D">
             <End Role="Tour" EntitySet="Tour" />
             <End Role="Gia" EntitySet="Gia" />
@@ -543,6 +607,10 @@
           <AssociationSet Name="FK__PhanCong__MaNV__32E0915F" Association="Self.FK__PhanCong__MaNV__32E0915F">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="PhanCong" EntitySet="PhanCong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ThoiGianT__MaTou__5CD6CB2B" Association="Self.FK__ThoiGianT__MaTou__5CD6CB2B">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="ThoiGianTour" EntitySet="ThoiGianTour" />
           </AssociationSet>
           <AssociationSet Name="FK__Tour__DiemKetThu__1DE57479" Association="Self.FK__Tour__DiemKetThu__1DE57479">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
@@ -632,6 +700,7 @@
           <NavigationProperty Name="Doan_PhuongTien" Relationship="Self.FK__Doan_Phuo__MaDoa__4222D4EF" FromRole="Doan" ToRole="Doan_PhuongTien" />
           <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_Quan__MaDoa__3E52440B" FromRole="Doan" ToRole="Doan_QuanAn" />
           <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="Doan" ToRole="PhanCong" />
+          <NavigationProperty Name="Tours" Relationship="Self.Doan_Tour" FromRole="Doan" ToRole="Tour" />
         </EntityType>
         <EntityType Name="Doan_ChiPhiKhac">
           <Key>
@@ -754,6 +823,17 @@
           <NavigationProperty Name="Doan" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="PhanCong" ToRole="Doan" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK__PhanCong__MaNV__32E0915F" FromRole="PhanCong" ToRole="NhanVien" />
         </EntityType>
+        <EntityType Name="ThoiGianTour">
+          <Key>
+            <PropertyRef Name="MaThoiGianTour" />
+          </Key>
+          <Property Name="MaThoiGianTour" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaTour" Type="Int32" Nullable="false" />
+          <Property Name="NgayDi" Type="DateTime" Precision="0" />
+          <Property Name="NgayVe" Type="DateTime" Precision="0" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__ThoiGianT__MaTou__5CD6CB2B" FromRole="ThoiGianTour" ToRole="Tour" />
+        </EntityType>
         <EntityType Name="TinhThanh">
           <Key>
             <PropertyRef Name="MaTT" />
@@ -778,7 +858,9 @@
           <NavigationProperty Name="DiaDiem1" Relationship="Self.FK__Tour__DiemKhoiHa__1CF15040" FromRole="Tour" ToRole="DiaDiem" />
           <NavigationProperty Name="Gias" Relationship="Self.FK__Gia__MaTour__21B6055D" FromRole="Tour" ToRole="Gia" />
           <NavigationProperty Name="LoaiHinhDL1" Relationship="Self.FK__Tour__LoaiHinhDL__1ED998B2" FromRole="Tour" ToRole="LoaiHinhDL" />
+          <NavigationProperty Name="ThoiGianTours" Relationship="Self.FK__ThoiGianT__MaTou__5CD6CB2B" FromRole="Tour" ToRole="ThoiGianTour" />
           <NavigationProperty Name="Tour_Gia" Relationship="Self.FK__Tour_Gia__MaTour__24927208" FromRole="Tour" ToRole="Tour_Gia" />
+          <NavigationProperty Name="Doans" Relationship="Self.Doan_Tour" FromRole="Tour" ToRole="Doan" />
         </EntityType>
         <EntityType Name="Tour_Gia">
           <Key>
@@ -1046,6 +1128,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ThoiGianT__MaTou__5CD6CB2B">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="ThoiGianTour" Type="Self.ThoiGianTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="ThoiGianTour">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Tour_Gia__MaTour__24927208">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Tour_Gia" Type="Self.Tour_Gia" Multiplicity="*" />
@@ -1057,6 +1151,10 @@
               <PropertyRef Name="MaTour" />
             </Dependent>
           </ReferentialConstraint>
+        </Association>
+        <Association Name="Doan_Tour">
+          <End Role="Doan" Type="Self.Doan" Multiplicity="*" />
+          <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
         </Association>
         <EntityContainer Name="TourDuLichEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
@@ -1074,6 +1172,7 @@
           <EntitySet Name="LoaiHinhDLs" EntityType="Self.LoaiHinhDL" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="PhanCongs" EntityType="Self.PhanCong" />
+          <EntitySet Name="ThoiGianTours" EntityType="Self.ThoiGianTour" />
           <EntitySet Name="TinhThanhs" EntityType="Self.TinhThanh" />
           <EntitySet Name="Tours" EntityType="Self.Tour" />
           <EntitySet Name="Tour_Gia" EntityType="Self.Tour_Gia" />
@@ -1161,9 +1260,17 @@
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
           </AssociationSet>
+          <AssociationSet Name="FK__ThoiGianT__MaTou__5CD6CB2B" Association="Self.FK__ThoiGianT__MaTou__5CD6CB2B">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="ThoiGianTour" EntitySet="ThoiGianTours" />
+          </AssociationSet>
           <AssociationSet Name="FK__Tour_Gia__MaTour__24927208" Association="Self.FK__Tour_Gia__MaTour__24927208">
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
+          </AssociationSet>
+          <AssociationSet Name="Doan_Tour" Association="Self.Doan_Tour">
+            <End Role="Doan" EntitySet="Doans" />
+            <End Role="Tour" EntitySet="Tours" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1339,6 +1446,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ThoiGianTours">
+            <EntityTypeMapping TypeName="TourDuLichModel.ThoiGianTour">
+              <MappingFragment StoreEntitySet="ThoiGianTour">
+                <ScalarProperty Name="MaThoiGianTour" ColumnName="MaThoiGianTour" />
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="NgayDi" ColumnName="NgayDi" />
+                <ScalarProperty Name="NgayVe" ColumnName="NgayVe" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TinhThanhs">
             <EntityTypeMapping TypeName="TourDuLichModel.TinhThanh">
               <MappingFragment StoreEntitySet="TinhThanh">
@@ -1374,6 +1492,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="Doan_Tour" TypeName="TourDuLichModel.Doan_Tour" StoreEntitySet="Doan_Tour">
+            <EndProperty Name="Doan">
+              <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
+            </EndProperty>
+            <EndProperty Name="Tour">
+              <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
