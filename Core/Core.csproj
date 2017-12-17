@@ -52,7 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIZ\NhanVien_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
+    <Compile Include="BIZ\ThongKe_DoanhSoTour_BIZ.cs" />
+    <Compile Include="BIZ\TourGia_BIZ.cs" />
     <Compile Include="ChucVu.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -60,7 +63,12 @@
     <Compile Include="CTDoan.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\NhanVien_DAL.cs" />
     <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
+    <Compile Include="DAL\ThongKe_DAL.cs" />
+    <Compile Include="DAL\ThongKe_DoanhSoTour_DAL.cs" />
+    <Compile Include="DAL\TourGia_DAL.cs" />
     <Compile Include="DangKi.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -130,7 +138,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="TourDuLich.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

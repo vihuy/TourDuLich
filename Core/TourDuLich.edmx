@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TourDuLich.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TourDuLichModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChucVu">
           <Key>
             <PropertyRef Name="MaCV" />
@@ -475,7 +475,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="TourDuLichStoreContainer">
+        <EntityContainer Name="TourDuLichModelStoreContainer">
           <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTDoan" EntityType="Self.CTDoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DangKi" EntityType="Self.DangKi" Schema="dbo" store:Type="Tables" />
@@ -588,10 +588,11 @@
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TourDuLich" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TourDuLichModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ChucVu">
           <Key>
             <PropertyRef Name="MaCV" />
@@ -658,7 +659,7 @@
           <NavigationProperty Name="Doan_PhuongTien" Relationship="Self.FK__Doan_Phuo__MaDoa__4222D4EF" FromRole="Doan" ToRole="Doan_PhuongTien" />
           <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_Quan__MaDoa__3E52440B" FromRole="Doan" ToRole="Doan_QuanAn" />
           <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="Doan" ToRole="PhanCong" />
-          <NavigationProperty Name="ThoiGianDoans" Relationship="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64" FromRole="Doan" ToRole="ThoiGianDoan" />
+          <NavigationProperty Name="ThoiGianDoans" Relationship="Self.FK__ThoiGianD__MaDoa__5DCAEF64" FromRole="Doan" ToRole="ThoiGianDoan" />
         </EntityType>
         <EntityType Name="Doan_ChiPhiKhac">
           <Key>
@@ -780,6 +781,17 @@
           <NavigationProperty Name="ChucVu" Relationship="Self.FK__PhanCong__MaCV__33D4B598" FromRole="PhanCong" ToRole="ChucVu" />
           <NavigationProperty Name="Doan" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="PhanCong" ToRole="Doan" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK__PhanCong__MaNV__32E0915F" FromRole="PhanCong" ToRole="NhanVien" />
+        </EntityType>
+        <EntityType Name="ThoiGianDoan">
+          <Key>
+            <PropertyRef Name="MaThoiGianDoan" />
+          </Key>
+          <Property Name="MaThoiGianDoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaDoan" Type="Int32" Nullable="false" />
+          <Property Name="NgayDi" Type="DateTime" Precision="0" />
+          <Property Name="NgayVe" Type="DateTime" Precision="0" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__ThoiGianD__MaDoa__5DCAEF64" FromRole="ThoiGianDoan" ToRole="Doan" />
         </EntityType>
         <EntityType Name="TinhThanh">
           <Key>
@@ -1037,6 +1049,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ThoiGianD__MaDoa__5DCAEF64">
+          <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
+          <End Role="ThoiGianDoan" Type="Self.ThoiGianDoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doan">
+              <PropertyRef Name="MaDoan" />
+            </Principal>
+            <Dependent Role="ThoiGianDoan">
+              <PropertyRef Name="MaDoan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Gia__MaTour__21B6055D">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Gia" Type="Self.Gia" Multiplicity="*" />
@@ -1101,6 +1125,7 @@
           <EntitySet Name="LoaiHinhDLs" EntityType="Self.LoaiHinhDL" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="PhanCongs" EntityType="Self.PhanCong" />
+          <EntitySet Name="ThoiGianDoans" EntityType="Self.ThoiGianDoan" />
           <EntitySet Name="TinhThanhs" EntityType="Self.TinhThanh" />
           <EntitySet Name="Tours" EntityType="Self.Tour" />
           <EntitySet Name="Tour_Gia" EntityType="Self.Tour_Gia" />
@@ -1176,6 +1201,10 @@
             <End Role="Doan" EntitySet="Doans" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
           </AssociationSet>
+          <AssociationSet Name="FK__ThoiGianD__MaDoa__5DCAEF64" Association="Self.FK__ThoiGianD__MaDoa__5DCAEF64">
+            <End Role="Doan" EntitySet="Doans" />
+            <End Role="ThoiGianDoan" EntitySet="ThoiGianDoans" />
+          </AssociationSet>
           <AssociationSet Name="FK__Gia__MaTour__21B6055D" Association="Self.FK__Gia__MaTour__21B6055D">
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Gia" EntitySet="Gias" />
@@ -1192,43 +1221,15 @@
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
           </AssociationSet>
-          <EntitySet Name="ThoiGianDoans" EntityType="TourDuLich.ThoiGianDoan" />
-          <AssociationSet Name="FK__ThoiGianD__MaDoa__5DCAEF64" Association="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64">
-            <End Role="Doan" EntitySet="Doans" />
-            <End Role="ThoiGianDoan" EntitySet="ThoiGianDoans" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="ThoiGianDoan">
-          <Key>
-            <PropertyRef Name="MaThoiGianDoan" />
-          </Key>
-          <Property Name="MaThoiGianDoan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaDoan" Type="Int32" Nullable="false" />
-          <Property Name="NgayDi" Type="DateTime" Precision="0" />
-          <Property Name="NgayVe" Type="DateTime" Precision="0" />
-          <Property Name="TrangThai" Type="Boolean" />
-          <NavigationProperty Name="Doan" Relationship="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64" FromRole="ThoiGianDoan" ToRole="Doan" />
-        </EntityType>
-        <Association Name="FK__ThoiGianD__MaDoa__5DCAEF64">
-          <End Type="TourDuLich.Doan" Role="Doan" Multiplicity="1" />
-          <End Type="TourDuLich.ThoiGianDoan" Role="ThoiGianDoan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Doan">
-              <PropertyRef Name="MaDoan" />
-            </Principal>
-            <Dependent Role="ThoiGianDoan">
-              <PropertyRef Name="MaDoan" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TourDuLichStoreContainer" CdmEntityContainer="TourDuLichEntities">
+        <EntityContainerMapping StorageEntityContainer="TourDuLichModelStoreContainer" CdmEntityContainer="TourDuLichEntities">
           <EntitySetMapping Name="ChucVus">
-            <EntityTypeMapping TypeName="TourDuLich.ChucVu">
+            <EntityTypeMapping TypeName="TourDuLichModel.ChucVu">
               <MappingFragment StoreEntitySet="ChucVu">
                 <ScalarProperty Name="MaCV" ColumnName="MaCV" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1236,7 +1237,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CTDoans">
-            <EntityTypeMapping TypeName="TourDuLich.CTDoan">
+            <EntityTypeMapping TypeName="TourDuLichModel.CTDoan">
               <MappingFragment StoreEntitySet="CTDoan">
                 <ScalarProperty Name="MaCTDoan" ColumnName="MaCTDoan" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1249,7 +1250,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DangKis">
-            <EntityTypeMapping TypeName="TourDuLich.DangKi">
+            <EntityTypeMapping TypeName="TourDuLichModel.DangKi">
               <MappingFragment StoreEntitySet="DangKi">
                 <ScalarProperty Name="MaDK" ColumnName="MaDK" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1259,7 +1260,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DiaDiems">
-            <EntityTypeMapping TypeName="TourDuLich.DiaDiem">
+            <EntityTypeMapping TypeName="TourDuLichModel.DiaDiem">
               <MappingFragment StoreEntitySet="DiaDiem">
                 <ScalarProperty Name="MaDD" ColumnName="MaDD" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1268,7 +1269,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Doans">
-            <EntityTypeMapping TypeName="TourDuLich.Doan">
+            <EntityTypeMapping TypeName="TourDuLichModel.Doan">
               <MappingFragment StoreEntitySet="Doan">
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1280,7 +1281,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Doan_ChiPhiKhac">
-            <EntityTypeMapping TypeName="TourDuLich.Doan_ChiPhiKhac">
+            <EntityTypeMapping TypeName="TourDuLichModel.Doan_ChiPhiKhac">
               <MappingFragment StoreEntitySet="Doan_ChiPhiKhac">
                 <ScalarProperty Name="MaDCPK" ColumnName="MaDCPK" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1291,7 +1292,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Doan_DiaDiem">
-            <EntityTypeMapping TypeName="TourDuLich.Doan_DiaDiem">
+            <EntityTypeMapping TypeName="TourDuLichModel.Doan_DiaDiem">
               <MappingFragment StoreEntitySet="Doan_DiaDiem">
                 <ScalarProperty Name="MaDDD" ColumnName="MaDDD" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1301,7 +1302,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Doan_KhachSan">
-            <EntityTypeMapping TypeName="TourDuLich.Doan_KhachSan">
+            <EntityTypeMapping TypeName="TourDuLichModel.Doan_KhachSan">
               <MappingFragment StoreEntitySet="Doan_KhachSan">
                 <ScalarProperty Name="MaDKS" ColumnName="MaDKS" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1313,7 +1314,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Doan_PhuongTien">
-            <EntityTypeMapping TypeName="TourDuLich.Doan_PhuongTien">
+            <EntityTypeMapping TypeName="TourDuLichModel.Doan_PhuongTien">
               <MappingFragment StoreEntitySet="Doan_PhuongTien">
                 <ScalarProperty Name="MaDPT" ColumnName="MaDPT" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1324,7 +1325,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Doan_QuanAn">
-            <EntityTypeMapping TypeName="TourDuLich.Doan_QuanAn">
+            <EntityTypeMapping TypeName="TourDuLichModel.Doan_QuanAn">
               <MappingFragment StoreEntitySet="Doan_QuanAn">
                 <ScalarProperty Name="MaDQA" ColumnName="MaDQA" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1336,7 +1337,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Gias">
-            <EntityTypeMapping TypeName="TourDuLich.Gia">
+            <EntityTypeMapping TypeName="TourDuLichModel.Gia">
               <MappingFragment StoreEntitySet="Gia">
                 <ScalarProperty Name="MaGia" ColumnName="MaGia" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
@@ -1347,7 +1348,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KhachHangs">
-            <EntityTypeMapping TypeName="TourDuLich.KhachHang">
+            <EntityTypeMapping TypeName="TourDuLichModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -1363,7 +1364,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiHinhDLs">
-            <EntityTypeMapping TypeName="TourDuLich.LoaiHinhDL">
+            <EntityTypeMapping TypeName="TourDuLichModel.LoaiHinhDL">
               <MappingFragment StoreEntitySet="LoaiHinhDL">
                 <ScalarProperty Name="MaLHDL" ColumnName="MaLHDL" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1371,7 +1372,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
-            <EntityTypeMapping TypeName="TourDuLich.NhanVien">
+            <EntityTypeMapping TypeName="TourDuLichModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -1385,7 +1386,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhanCongs">
-            <EntityTypeMapping TypeName="TourDuLich.PhanCong">
+            <EntityTypeMapping TypeName="TourDuLichModel.PhanCong">
               <MappingFragment StoreEntitySet="PhanCong">
                 <ScalarProperty Name="MaPC" ColumnName="MaPC" />
                 <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
@@ -1394,8 +1395,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ThoiGianDoans">
+            <EntityTypeMapping TypeName="TourDuLichModel.ThoiGianDoan">
+              <MappingFragment StoreEntitySet="ThoiGianDoan">
+                <ScalarProperty Name="MaThoiGianDoan" ColumnName="MaThoiGianDoan" />
+                <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
+                <ScalarProperty Name="NgayDi" ColumnName="NgayDi" />
+                <ScalarProperty Name="NgayVe" ColumnName="NgayVe" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TinhThanhs">
-            <EntityTypeMapping TypeName="TourDuLich.TinhThanh">
+            <EntityTypeMapping TypeName="TourDuLichModel.TinhThanh">
               <MappingFragment StoreEntitySet="TinhThanh">
                 <ScalarProperty Name="MaTT" ColumnName="MaTT" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1403,7 +1415,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tours">
-            <EntityTypeMapping TypeName="TourDuLich.Tour">
+            <EntityTypeMapping TypeName="TourDuLichModel.Tour">
               <MappingFragment StoreEntitySet="Tour">
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="Ten" ColumnName="Ten" />
@@ -1417,7 +1429,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tour_Gia">
-            <EntityTypeMapping TypeName="TourDuLich.Tour_Gia">
+            <EntityTypeMapping TypeName="TourDuLichModel.Tour_Gia">
               <MappingFragment StoreEntitySet="Tour_Gia">
                 <ScalarProperty Name="MaTourGia" ColumnName="MaTourGia" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
@@ -1426,17 +1438,6 @@
                 <ScalarProperty Name="Gia" ColumnName="Gia" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ThoiGianDoans">
-            <EntityTypeMapping TypeName="TourDuLich.ThoiGianDoan">
-              <MappingFragment StoreEntitySet="ThoiGianDoan">
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-                <ScalarProperty Name="NgayVe" ColumnName="NgayVe" />
-                <ScalarProperty Name="NgayDi" ColumnName="NgayDi" />
-                <ScalarProperty Name="MaDoan" ColumnName="MaDoan" />
-                <ScalarProperty Name="MaThoiGianDoan" ColumnName="MaThoiGianDoan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

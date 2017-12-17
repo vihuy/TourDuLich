@@ -1,6 +1,8 @@
 ﻿using Core.DAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +16,27 @@ namespace Core.BIZ
         {
             return ql_gia.dsGia_Tour();
         }
-        public List<Tour> dsTour()
+        public IEnumerable dsTour()
         {
-            return ql_gia.dsTour();
+            return ql_gia.ds_Tour();
+
         }
+        public IEnumerable layTenTour()
+        {
+            return ql_gia.layTenTour();
+        }
+
+        public IEnumerable dsDoan()
+        {
+            return ql_gia.dsDoan();
+        }
+
+
+        public IEnumerable laySoLuongDoan_TheoTour()
+        {
+            return ql_gia.laySoLuongDoan_theoTour123();
+        }
+
+
     }
 }

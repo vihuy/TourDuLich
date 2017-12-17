@@ -207,7 +207,6 @@
     <Content Include="Views\Tours\Details.cshtml" />
     <Content Include="Views\KhachHangs\Details.cshtml" />
     <Content Include="Views\ThongKe\Index.cshtml" />
-    <Content Include="Views\ThongKe\Details.cshtml" />
     <Content Include="Views\ThongKe\Details_CTDoan.cshtml" />
     <Content Include="Views\ThongKe\Details_Doan_CPBA.cshtml" />
     <Content Include="Views\ThongKe\Details_Doan_CPKhac.cshtml" />
