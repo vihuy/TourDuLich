@@ -54,11 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectSql_Tour.cs" />
+    <Compile Include="DiaDiemTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiaDiemTour.Designer.cs">
+      <DependentUpon>DiaDiemTour.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLi_Tour.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLi_Tour.Designer.cs">
       <DependentUpon>QuanLi_Tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKe-TinhHinh-Tour.cs">
       <SubType>Form</SubType>
@@ -80,8 +93,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DiaDiemTour.resx">
+      <DependentUpon>DiaDiemTour.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLi_Tour.resx">
       <DependentUpon>QuanLi_Tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKe-TinhHinh-Tour.resx">
       <DependentUpon>ThongKe-TinhHinh-Tour.cs</DependentUpon>

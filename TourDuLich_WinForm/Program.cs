@@ -16,7 +16,7 @@ namespace TourDuLich_WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThongKe_TinhHinh_Tour());
+            Application.Run(new DiaDiemTour());
         }
     }
 }

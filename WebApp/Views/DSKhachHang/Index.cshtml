@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH KHÁCH HÀNG CỦA MỘT ĐOÀN</h2>
+
+<form class="form-horizontal">
+    <div class="form-group row">
+        <label>Tên đoàn</label>
+        <select class="form-control" name="dropdown">
+            <option value="ABCD" selected>ABCD</option>
+            <option value="ngon">ngon</option>
+        </select>
+       
+        @*@Html.DropDownList("MaDoan", ViewBag.DS_Doan as SelectList, new { @class = "form-control" })*@
+
+        
+
+        @*<button class="btn btn-success" type="button" onclick="alert('Chưa chọn tên đoàn')">Chọn</button>*@
+    </div>    
+    <div> 
+        @*<table>
+            <tr>
+                <td>
+                    <label>Tên khách hàng</label>
+                </td>
+               <td>
+                   <input type="text" name="TenKH" id="TenKH">
+               </td>
+            </tr>
+           <tr>
+               <td>
+                   <label>Mã khách hàng</label>
+               </td>
+               <td>
+                   <input type="text" name="MaKH" id="MaKH">
+               </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Giới tính</label>
+                </td>
+                <td>
+                   <span>Nam</span><input type="radio" name="customer_gender" value="nam">
+                   <span>Nữ</span><input type="radio" name="customer_gender" value="nu">
+               </td>
+           </tr>
+            <tr>
+                <td>
+                    <label>Ngày sinh</label>
+                </td>
+                <td>
+                    <input type="text" name="NgaySinh" id="NgaySinh">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Số điện thoại</label>
+                </td>
+                <td>
+                    <input type="text" name="Sodt" id="Sodt">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>CMND</label>
+                </td>
+                <td>
+                    <input type="text" name="CMND" id="CMND">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Passport</label>
+                </td>
+                <td>
+                    <input type="text" name="PP" id="PP">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Quốc tịch</label>
+                </td>
+                <td>
+                    <input type="text" name="QuocTich" id="QuocTich">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Địa chỉ</label>
+                </td>
+                <td>
+                    <input type="text" name="DiaChi" id="DiaChi">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Trạng thái</label>
+                </td>
+                <td>
+                    <input type="text" name="TrangThai" id="TranhThai">
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-success" type="button" onclick="alert('Chưa chọn tên đoàn')">Thêm</button>*@
+        
+        <form action="">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Tên khách hàng</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Tenkhachhang">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Mã khách hàng</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Makhachhang">
+                </div>
+            </div>
+            <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Giới tính</label>
+                        @*<div class="col-sm-10">*@
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                       id="exampleRadios1" value="option1" checked>
+                                Nam
+                            </label>
+                        @*</div>*@
+                        @*<div class="form-check">*@
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                       id="exampleRadios3" value="option2">
+                                Nữ
+                            </label>
+                    @*</div>*@
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Ngày sinh</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Ngaysinh">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Số điện thoại</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Sodienthoai">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">CMND</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="CMND">
+                </div>
+            </div>
+        </form>
+    
+    </div>
+
+    <button class="btn btn-success" type="button" onclick="alert('Chưa chọn tên đoàn')">Thêm</button>
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <tr>
+                <th>Tên khách hàng</th>
+                <th>Mã khách hàng</th>
+                <th>Mã đoàn</th>
+                <th>CMND</th>
+                <th>Số điện thoại</th>
+            </tr>                     
+        </table>
+    </div>
+    <div>
+        <button class="btn btn-success" type="button" onclick="alert('Chưa chọn tên đoàn')">Xác nhận</button>
+    </div>
+</form>

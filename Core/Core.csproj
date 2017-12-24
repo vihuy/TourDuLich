@@ -51,15 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIZ\QuanLi_DiaDiem_Tour_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
+    <Compile Include="BIZ\Quanli_TinhThanh_BIZ.cs" />
+    <Compile Include="BIZ\QuanLi_Tour_BIZ.cs" />
     <Compile Include="ChucVu.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConnectSql.cs" />
     <Compile Include="CTDoan.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DiaDiemDal.cs" />
+    <Compile Include="DAL\QuanLi_DiaDiem_Tour_DAL.cs" />
+    <Compile Include="DAL\QuanLi_Doan.cs" />
     <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
+    <Compile Include="DAL\QuanLi_TinhThanh_Dal.cs" />
+    <Compile Include="DAL\ThongKeKhachHang_CuaMotDoan.cs" />
     <Compile Include="DangKi.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -69,10 +78,25 @@
     <Compile Include="Doan.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
-    <Compile Include="KhachHang.cs">
+    <Compile Include="Doan_ChiPhiKhac.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
-    <Compile Include="KhachSan.cs">
+    <Compile Include="Doan_DiaDiem.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doan_KhachSan.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doan_PhuongTien.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doan_QuanAn.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gia.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
     <Compile Include="LoaiHinhDL.cs">
@@ -85,12 +109,6 @@
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanAn.cs">
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
     <Compile Include="TinhThanh.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -112,29 +130,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TourDuLich.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Tour_DiaDiem.cs">
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
     <Compile Include="Tour_Gia.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tour_KhachSan.cs">
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Tour_QuanAn.cs">
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Xe.cs">
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\DiaDiemModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
     <EntityDeploy Include="TourDuLich.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TourDuLich.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="TourDuLich.edmx.diagram">
       <DependentUpon>TourDuLich.edmx</DependentUpon>
     </None>
@@ -154,6 +163,7 @@
       <LastGenOutput>TourDuLich.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

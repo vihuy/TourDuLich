@@ -189,7 +189,7 @@
           <Property Name="TrangThai" Type="bit" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__CTDoan__MaDoan__2B3F6F97">
+        <Association Name="FK__CTDoan__MaDoan__3E52440B">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="CTDoan" Type="Self.CTDoan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DangKi__MaDoan__2E1BDC42">
+        <Association Name="FK__DangKi__MaDoan__412EB0B6">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="DangKi" Type="Self.DangKi" Multiplicity="*" />
           <ReferentialConstraint>
@@ -213,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DangKi__MaKH__2F10007B">
+        <Association Name="FK__DangKi__MaKH__4222D4EF">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="DangKi" Type="Self.DangKi" Multiplicity="*" />
           <ReferentialConstraint>
@@ -225,7 +225,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DiaDiem__TinhTha__1A14E395">
+        <Association Name="FK__DiaDiem__TinhTha__2D27B809">
           <End Role="TinhThanh" Type="Self.TinhThanh" Multiplicity="1" />
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -237,7 +237,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan__MaTourGia__276EDEB3">
+        <Association Name="FK__Doan__MaTourGia__3A81B327">
           <End Role="Tour_Gia" Type="Self.Tour_Gia" Multiplicity="1" />
           <End Role="Doan" Type="Self.Doan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -249,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan__TruongDoan__286302EC">
+        <Association Name="FK__Doan__TruongDoan__3B75D760">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="Doan" Type="Self.Doan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,7 +261,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_ChiP__MaDoa__44FF419A">
+        <Association Name="FK__Doan_ChiP__MaDoa__5812160E">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_ChiPhiKhac" Type="Self.Doan_ChiPhiKhac" Multiplicity="*" />
           <ReferentialConstraint>
@@ -273,7 +273,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_DiaD__MaDoa__36B12243">
+        <Association Name="FK__Doan_DiaD__MaDoa__49C3F6B7">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_DiaDiem" Type="Self.Doan_DiaDiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -285,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_DiaDi__MaDD__37A5467C">
+        <Association Name="FK__Doan_DiaDi__MaDD__4AB81AF0">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Doan_DiaDiem" Type="Self.Doan_DiaDiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -297,7 +297,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Khac__MaDoa__3A81B327">
+        <Association Name="FK__Doan_Khac__MaDoa__4D94879B">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_KhachSan" Type="Self.Doan_KhachSan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -309,7 +309,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Khach__MaDD__3B75D760">
+        <Association Name="FK__Doan_Khach__MaDD__4E88ABD4">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Doan_KhachSan" Type="Self.Doan_KhachSan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -321,7 +321,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Phuo__MaDoa__4222D4EF">
+        <Association Name="FK__Doan_Phuo__MaDoa__5535A963">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_PhuongTien" Type="Self.Doan_PhuongTien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -333,7 +333,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Quan__MaDoa__3E52440B">
+        <Association Name="FK__Doan_Quan__MaDoa__5165187F">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_QuanAn" Type="Self.Doan_QuanAn" Multiplicity="*" />
           <ReferentialConstraint>
@@ -345,7 +345,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_QuanA__MaDD__3F466844">
+        <Association Name="FK__Doan_QuanA__MaDD__52593CB8">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Doan_QuanAn" Type="Self.Doan_QuanAn" Multiplicity="*" />
           <ReferentialConstraint>
@@ -357,7 +357,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gia__MaTour__21B6055D">
+        <Association Name="FK__Gia__MaTour__34C8D9D1">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Gia" Type="Self.Gia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -369,7 +369,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhanCong__MaCV__33D4B598">
+        <Association Name="FK__PhanCong__MaCV__46E78A0C">
           <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -381,7 +381,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhanCong__MaDoan__31EC6D26">
+        <Association Name="FK__PhanCong__MaDoan__44FF419A">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -393,7 +393,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhanCong__MaNV__32E0915F">
+        <Association Name="FK__PhanCong__MaNV__45F365D3">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -405,7 +405,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour__DiemKetThu__1DE57479">
+        <Association Name="FK__Tour__DiemKetThu__30F848ED">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -417,7 +417,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour__DiemKhoiHa__1CF15040">
+        <Association Name="FK__Tour__DiemKhoiHa__300424B4">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -429,7 +429,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour__LoaiHinhDL__1ED998B2">
+        <Association Name="FK__Tour__LoaiHinhDL__31EC6D26">
           <End Role="LoaiHinhDL" Type="Self.LoaiHinhDL" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -441,7 +441,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour_Gia__MaTour__24927208">
+        <Association Name="FK__Tour_Gia__MaTour__37A5467C">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Tour_Gia" Type="Self.Tour_Gia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -472,91 +472,91 @@
           <EntitySet Name="TinhThanh" EntityType="Self.TinhThanh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour_Gia" EntityType="Self.Tour_Gia" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CTDoan__MaDoan__2B3F6F97" Association="Self.FK__CTDoan__MaDoan__2B3F6F97">
+          <AssociationSet Name="FK__CTDoan__MaDoan__3E52440B" Association="Self.FK__CTDoan__MaDoan__3E52440B">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="CTDoan" EntitySet="CTDoan" />
           </AssociationSet>
-          <AssociationSet Name="FK__DangKi__MaDoan__2E1BDC42" Association="Self.FK__DangKi__MaDoan__2E1BDC42">
+          <AssociationSet Name="FK__DangKi__MaDoan__412EB0B6" Association="Self.FK__DangKi__MaDoan__412EB0B6">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="DangKi" EntitySet="DangKi" />
           </AssociationSet>
-          <AssociationSet Name="FK__DangKi__MaKH__2F10007B" Association="Self.FK__DangKi__MaKH__2F10007B">
+          <AssociationSet Name="FK__DangKi__MaKH__4222D4EF" Association="Self.FK__DangKi__MaKH__4222D4EF">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="DangKi" EntitySet="DangKi" />
           </AssociationSet>
-          <AssociationSet Name="FK__DiaDiem__TinhTha__1A14E395" Association="Self.FK__DiaDiem__TinhTha__1A14E395">
+          <AssociationSet Name="FK__DiaDiem__TinhTha__2D27B809" Association="Self.FK__DiaDiem__TinhTha__2D27B809">
             <End Role="TinhThanh" EntitySet="TinhThanh" />
             <End Role="DiaDiem" EntitySet="DiaDiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan__MaTourGia__276EDEB3" Association="Self.FK__Doan__MaTourGia__276EDEB3">
+          <AssociationSet Name="FK__Doan__MaTourGia__3A81B327" Association="Self.FK__Doan__MaTourGia__3A81B327">
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
             <End Role="Doan" EntitySet="Doan" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan__TruongDoan__286302EC" Association="Self.FK__Doan__TruongDoan__286302EC">
+          <AssociationSet Name="FK__Doan__TruongDoan__3B75D760" Association="Self.FK__Doan__TruongDoan__3B75D760">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="Doan" EntitySet="Doan" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_ChiP__MaDoa__44FF419A" Association="Self.FK__Doan_ChiP__MaDoa__44FF419A">
+          <AssociationSet Name="FK__Doan_ChiP__MaDoa__5812160E" Association="Self.FK__Doan_ChiP__MaDoa__5812160E">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="Doan_ChiPhiKhac" EntitySet="Doan_ChiPhiKhac" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_DiaD__MaDoa__36B12243" Association="Self.FK__Doan_DiaD__MaDoa__36B12243">
+          <AssociationSet Name="FK__Doan_DiaD__MaDoa__49C3F6B7" Association="Self.FK__Doan_DiaD__MaDoa__49C3F6B7">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="Doan_DiaDiem" EntitySet="Doan_DiaDiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_DiaDi__MaDD__37A5467C" Association="Self.FK__Doan_DiaDi__MaDD__37A5467C">
+          <AssociationSet Name="FK__Doan_DiaDi__MaDD__4AB81AF0" Association="Self.FK__Doan_DiaDi__MaDD__4AB81AF0">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Doan_DiaDiem" EntitySet="Doan_DiaDiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Khac__MaDoa__3A81B327" Association="Self.FK__Doan_Khac__MaDoa__3A81B327">
+          <AssociationSet Name="FK__Doan_Khac__MaDoa__4D94879B" Association="Self.FK__Doan_Khac__MaDoa__4D94879B">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="Doan_KhachSan" EntitySet="Doan_KhachSan" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Khach__MaDD__3B75D760" Association="Self.FK__Doan_Khach__MaDD__3B75D760">
+          <AssociationSet Name="FK__Doan_Khach__MaDD__4E88ABD4" Association="Self.FK__Doan_Khach__MaDD__4E88ABD4">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Doan_KhachSan" EntitySet="Doan_KhachSan" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Phuo__MaDoa__4222D4EF" Association="Self.FK__Doan_Phuo__MaDoa__4222D4EF">
+          <AssociationSet Name="FK__Doan_Phuo__MaDoa__5535A963" Association="Self.FK__Doan_Phuo__MaDoa__5535A963">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="Doan_PhuongTien" EntitySet="Doan_PhuongTien" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Quan__MaDoa__3E52440B" Association="Self.FK__Doan_Quan__MaDoa__3E52440B">
+          <AssociationSet Name="FK__Doan_Quan__MaDoa__5165187F" Association="Self.FK__Doan_Quan__MaDoa__5165187F">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="Doan_QuanAn" EntitySet="Doan_QuanAn" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_QuanA__MaDD__3F466844" Association="Self.FK__Doan_QuanA__MaDD__3F466844">
+          <AssociationSet Name="FK__Doan_QuanA__MaDD__52593CB8" Association="Self.FK__Doan_QuanA__MaDD__52593CB8">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Doan_QuanAn" EntitySet="Doan_QuanAn" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gia__MaTour__21B6055D" Association="Self.FK__Gia__MaTour__21B6055D">
+          <AssociationSet Name="FK__Gia__MaTour__34C8D9D1" Association="Self.FK__Gia__MaTour__34C8D9D1">
             <End Role="Tour" EntitySet="Tour" />
             <End Role="Gia" EntitySet="Gia" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhanCong__MaCV__33D4B598" Association="Self.FK__PhanCong__MaCV__33D4B598">
+          <AssociationSet Name="FK__PhanCong__MaCV__46E78A0C" Association="Self.FK__PhanCong__MaCV__46E78A0C">
             <End Role="ChucVu" EntitySet="ChucVu" />
             <End Role="PhanCong" EntitySet="PhanCong" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhanCong__MaDoan__31EC6D26" Association="Self.FK__PhanCong__MaDoan__31EC6D26">
+          <AssociationSet Name="FK__PhanCong__MaDoan__44FF419A" Association="Self.FK__PhanCong__MaDoan__44FF419A">
             <End Role="Doan" EntitySet="Doan" />
             <End Role="PhanCong" EntitySet="PhanCong" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhanCong__MaNV__32E0915F" Association="Self.FK__PhanCong__MaNV__32E0915F">
+          <AssociationSet Name="FK__PhanCong__MaNV__45F365D3" Association="Self.FK__PhanCong__MaNV__45F365D3">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="PhanCong" EntitySet="PhanCong" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour__DiemKetThu__1DE57479" Association="Self.FK__Tour__DiemKetThu__1DE57479">
+          <AssociationSet Name="FK__Tour__DiemKetThu__30F848ED" Association="Self.FK__Tour__DiemKetThu__30F848ED">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Tour" EntitySet="Tour" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour__DiemKhoiHa__1CF15040" Association="Self.FK__Tour__DiemKhoiHa__1CF15040">
+          <AssociationSet Name="FK__Tour__DiemKhoiHa__300424B4" Association="Self.FK__Tour__DiemKhoiHa__300424B4">
             <End Role="DiaDiem" EntitySet="DiaDiem" />
             <End Role="Tour" EntitySet="Tour" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour__LoaiHinhDL__1ED998B2" Association="Self.FK__Tour__LoaiHinhDL__1ED998B2">
+          <AssociationSet Name="FK__Tour__LoaiHinhDL__31EC6D26" Association="Self.FK__Tour__LoaiHinhDL__31EC6D26">
             <End Role="LoaiHinhDL" EntitySet="LoaiHinhDL" />
             <End Role="Tour" EntitySet="Tour" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour_Gia__MaTour__24927208" Association="Self.FK__Tour_Gia__MaTour__24927208">
+          <AssociationSet Name="FK__Tour_Gia__MaTour__37A5467C" Association="Self.FK__Tour_Gia__MaTour__37A5467C">
             <End Role="Tour" EntitySet="Tour" />
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
           </AssociationSet>
@@ -572,7 +572,7 @@
           </Key>
           <Property Name="MaCV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaCV__33D4B598" FromRole="ChucVu" ToRole="PhanCong" />
+          <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaCV__46E78A0C" FromRole="ChucVu" ToRole="PhanCong" />
         </EntityType>
         <EntityType Name="CTDoan">
           <Key>
@@ -585,7 +585,7 @@
           <Property Name="TongCPBA" Type="Int32" Nullable="false" />
           <Property Name="TongCPKhac" Type="Int32" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__CTDoan__MaDoan__2B3F6F97" FromRole="CTDoan" ToRole="Doan" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__CTDoan__MaDoan__3E52440B" FromRole="CTDoan" ToRole="Doan" />
         </EntityType>
         <EntityType Name="DangKi">
           <Key>
@@ -595,8 +595,8 @@
           <Property Name="MaDoan" Type="Int32" Nullable="false" />
           <Property Name="MaKH" Type="Int32" Nullable="false" />
           <Property Name="NgayDK" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__DangKi__MaDoan__2E1BDC42" FromRole="DangKi" ToRole="Doan" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__DangKi__MaKH__2F10007B" FromRole="DangKi" ToRole="KhachHang" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__DangKi__MaDoan__412EB0B6" FromRole="DangKi" ToRole="Doan" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__DangKi__MaKH__4222D4EF" FromRole="DangKi" ToRole="KhachHang" />
         </EntityType>
         <EntityType Name="DiaDiem">
           <Key>
@@ -605,12 +605,12 @@
           <Property Name="MaDD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TinhThanh" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="TinhThanh1" Relationship="Self.FK__DiaDiem__TinhTha__1A14E395" FromRole="DiaDiem" ToRole="TinhThanh" />
-          <NavigationProperty Name="Doan_DiaDiem" Relationship="Self.FK__Doan_DiaDi__MaDD__37A5467C" FromRole="DiaDiem" ToRole="Doan_DiaDiem" />
-          <NavigationProperty Name="Doan_KhachSan" Relationship="Self.FK__Doan_Khach__MaDD__3B75D760" FromRole="DiaDiem" ToRole="Doan_KhachSan" />
-          <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_QuanA__MaDD__3F466844" FromRole="DiaDiem" ToRole="Doan_QuanAn" />
-          <NavigationProperty Name="Tours" Relationship="Self.FK__Tour__DiemKetThu__1DE57479" FromRole="DiaDiem" ToRole="Tour" />
-          <NavigationProperty Name="Tours1" Relationship="Self.FK__Tour__DiemKhoiHa__1CF15040" FromRole="DiaDiem" ToRole="Tour" />
+          <NavigationProperty Name="TinhThanh1" Relationship="Self.FK__DiaDiem__TinhTha__2D27B809" FromRole="DiaDiem" ToRole="TinhThanh" />
+          <NavigationProperty Name="Doan_DiaDiem" Relationship="Self.FK__Doan_DiaDi__MaDD__4AB81AF0" FromRole="DiaDiem" ToRole="Doan_DiaDiem" />
+          <NavigationProperty Name="Doan_KhachSan" Relationship="Self.FK__Doan_Khach__MaDD__4E88ABD4" FromRole="DiaDiem" ToRole="Doan_KhachSan" />
+          <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_QuanA__MaDD__52593CB8" FromRole="DiaDiem" ToRole="Doan_QuanAn" />
+          <NavigationProperty Name="Tours" Relationship="Self.FK__Tour__DiemKetThu__30F848ED" FromRole="DiaDiem" ToRole="Tour" />
+          <NavigationProperty Name="Tours1" Relationship="Self.FK__Tour__DiemKhoiHa__300424B4" FromRole="DiaDiem" ToRole="Tour" />
         </EntityType>
         <EntityType Name="Doan">
           <Key>
@@ -622,16 +622,16 @@
           <Property Name="SLNV" Type="Int32" Nullable="false" />
           <Property Name="MaTourGia" Type="Int32" Nullable="false" />
           <Property Name="TruongDoan" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CTDoans" Relationship="Self.FK__CTDoan__MaDoan__2B3F6F97" FromRole="Doan" ToRole="CTDoan" />
-          <NavigationProperty Name="DangKis" Relationship="Self.FK__DangKi__MaDoan__2E1BDC42" FromRole="Doan" ToRole="DangKi" />
-          <NavigationProperty Name="Tour_Gia" Relationship="Self.FK__Doan__MaTourGia__276EDEB3" FromRole="Doan" ToRole="Tour_Gia" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK__Doan__TruongDoan__286302EC" FromRole="Doan" ToRole="NhanVien" />
-          <NavigationProperty Name="Doan_ChiPhiKhac" Relationship="Self.FK__Doan_ChiP__MaDoa__44FF419A" FromRole="Doan" ToRole="Doan_ChiPhiKhac" />
-          <NavigationProperty Name="Doan_DiaDiem" Relationship="Self.FK__Doan_DiaD__MaDoa__36B12243" FromRole="Doan" ToRole="Doan_DiaDiem" />
-          <NavigationProperty Name="Doan_KhachSan" Relationship="Self.FK__Doan_Khac__MaDoa__3A81B327" FromRole="Doan" ToRole="Doan_KhachSan" />
-          <NavigationProperty Name="Doan_PhuongTien" Relationship="Self.FK__Doan_Phuo__MaDoa__4222D4EF" FromRole="Doan" ToRole="Doan_PhuongTien" />
-          <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_Quan__MaDoa__3E52440B" FromRole="Doan" ToRole="Doan_QuanAn" />
-          <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="Doan" ToRole="PhanCong" />
+          <NavigationProperty Name="CTDoans" Relationship="Self.FK__CTDoan__MaDoan__3E52440B" FromRole="Doan" ToRole="CTDoan" />
+          <NavigationProperty Name="DangKis" Relationship="Self.FK__DangKi__MaDoan__412EB0B6" FromRole="Doan" ToRole="DangKi" />
+          <NavigationProperty Name="Tour_Gia" Relationship="Self.FK__Doan__MaTourGia__3A81B327" FromRole="Doan" ToRole="Tour_Gia" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__Doan__TruongDoan__3B75D760" FromRole="Doan" ToRole="NhanVien" />
+          <NavigationProperty Name="Doan_ChiPhiKhac" Relationship="Self.FK__Doan_ChiP__MaDoa__5812160E" FromRole="Doan" ToRole="Doan_ChiPhiKhac" />
+          <NavigationProperty Name="Doan_DiaDiem" Relationship="Self.FK__Doan_DiaD__MaDoa__49C3F6B7" FromRole="Doan" ToRole="Doan_DiaDiem" />
+          <NavigationProperty Name="Doan_KhachSan" Relationship="Self.FK__Doan_Khac__MaDoa__4D94879B" FromRole="Doan" ToRole="Doan_KhachSan" />
+          <NavigationProperty Name="Doan_PhuongTien" Relationship="Self.FK__Doan_Phuo__MaDoa__5535A963" FromRole="Doan" ToRole="Doan_PhuongTien" />
+          <NavigationProperty Name="Doan_QuanAn" Relationship="Self.FK__Doan_Quan__MaDoa__5165187F" FromRole="Doan" ToRole="Doan_QuanAn" />
+          <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaDoan__44FF419A" FromRole="Doan" ToRole="PhanCong" />
         </EntityType>
         <EntityType Name="Doan_ChiPhiKhac">
           <Key>
@@ -642,7 +642,7 @@
           <Property Name="TenCPKhac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Gia" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_ChiP__MaDoa__44FF419A" FromRole="Doan_ChiPhiKhac" ToRole="Doan" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_ChiP__MaDoa__5812160E" FromRole="Doan_ChiPhiKhac" ToRole="Doan" />
         </EntityType>
         <EntityType Name="Doan_DiaDiem">
           <Key>
@@ -652,8 +652,8 @@
           <Property Name="MaDoan" Type="Int32" Nullable="false" />
           <Property Name="MaDD" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Doan_DiaDi__MaDD__37A5467C" FromRole="Doan_DiaDiem" ToRole="DiaDiem" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_DiaD__MaDoa__36B12243" FromRole="Doan_DiaDiem" ToRole="Doan" />
+          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Doan_DiaDi__MaDD__4AB81AF0" FromRole="Doan_DiaDiem" ToRole="DiaDiem" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_DiaD__MaDoa__49C3F6B7" FromRole="Doan_DiaDiem" ToRole="Doan" />
         </EntityType>
         <EntityType Name="Doan_KhachSan">
           <Key>
@@ -665,8 +665,8 @@
           <Property Name="TenKS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gia" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Doan_Khach__MaDD__3B75D760" FromRole="Doan_KhachSan" ToRole="DiaDiem" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_Khac__MaDoa__3A81B327" FromRole="Doan_KhachSan" ToRole="Doan" />
+          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Doan_Khach__MaDD__4E88ABD4" FromRole="Doan_KhachSan" ToRole="DiaDiem" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_Khac__MaDoa__4D94879B" FromRole="Doan_KhachSan" ToRole="Doan" />
         </EntityType>
         <EntityType Name="Doan_PhuongTien">
           <Key>
@@ -677,7 +677,7 @@
           <Property Name="TenPT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gia" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_Phuo__MaDoa__4222D4EF" FromRole="Doan_PhuongTien" ToRole="Doan" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_Phuo__MaDoa__5535A963" FromRole="Doan_PhuongTien" ToRole="Doan" />
         </EntityType>
         <EntityType Name="Doan_QuanAn">
           <Key>
@@ -689,8 +689,8 @@
           <Property Name="TenQA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gia" Type="Int32" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Doan_QuanA__MaDD__3F466844" FromRole="Doan_QuanAn" ToRole="DiaDiem" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_Quan__MaDoa__3E52440B" FromRole="Doan_QuanAn" ToRole="Doan" />
+          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Doan_QuanA__MaDD__52593CB8" FromRole="Doan_QuanAn" ToRole="DiaDiem" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__Doan_Quan__MaDoa__5165187F" FromRole="Doan_QuanAn" ToRole="Doan" />
         </EntityType>
         <EntityType Name="Gia">
           <Key>
@@ -701,7 +701,7 @@
           <Property Name="Gia1" Type="Int32" Nullable="false" />
           <Property Name="khoangTGBD" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="khoangTGKT" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Tour" Relationship="Self.FK__Gia__MaTour__21B6055D" FromRole="Gia" ToRole="Tour" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__Gia__MaTour__34C8D9D1" FromRole="Gia" ToRole="Tour" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
@@ -717,7 +717,7 @@
           <Property Name="QuocTich" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DiaChi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="DangKis" Relationship="Self.FK__DangKi__MaKH__2F10007B" FromRole="KhachHang" ToRole="DangKi" />
+          <NavigationProperty Name="DangKis" Relationship="Self.FK__DangKi__MaKH__4222D4EF" FromRole="KhachHang" ToRole="DangKi" />
         </EntityType>
         <EntityType Name="LoaiHinhDL">
           <Key>
@@ -725,7 +725,7 @@
           </Key>
           <Property Name="MaLHDL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Tours" Relationship="Self.FK__Tour__LoaiHinhDL__1ED998B2" FromRole="LoaiHinhDL" ToRole="Tour" />
+          <NavigationProperty Name="Tours" Relationship="Self.FK__Tour__LoaiHinhDL__31EC6D26" FromRole="LoaiHinhDL" ToRole="Tour" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -739,8 +739,8 @@
           <Property Name="CMND" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DiaChi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Doans" Relationship="Self.FK__Doan__TruongDoan__286302EC" FromRole="NhanVien" ToRole="Doan" />
-          <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaNV__32E0915F" FromRole="NhanVien" ToRole="PhanCong" />
+          <NavigationProperty Name="Doans" Relationship="Self.FK__Doan__TruongDoan__3B75D760" FromRole="NhanVien" ToRole="Doan" />
+          <NavigationProperty Name="PhanCongs" Relationship="Self.FK__PhanCong__MaNV__45F365D3" FromRole="NhanVien" ToRole="PhanCong" />
         </EntityType>
         <EntityType Name="PhanCong">
           <Key>
@@ -750,9 +750,9 @@
           <Property Name="MaDoan" Type="Int32" Nullable="false" />
           <Property Name="MaNV" Type="Int32" Nullable="false" />
           <Property Name="MaCV" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChucVu" Relationship="Self.FK__PhanCong__MaCV__33D4B598" FromRole="PhanCong" ToRole="ChucVu" />
-          <NavigationProperty Name="Doan" Relationship="Self.FK__PhanCong__MaDoan__31EC6D26" FromRole="PhanCong" ToRole="Doan" />
-          <NavigationProperty Name="NhanVien" Relationship="Self.FK__PhanCong__MaNV__32E0915F" FromRole="PhanCong" ToRole="NhanVien" />
+          <NavigationProperty Name="ChucVu" Relationship="Self.FK__PhanCong__MaCV__46E78A0C" FromRole="PhanCong" ToRole="ChucVu" />
+          <NavigationProperty Name="Doan" Relationship="Self.FK__PhanCong__MaDoan__44FF419A" FromRole="PhanCong" ToRole="Doan" />
+          <NavigationProperty Name="NhanVien" Relationship="Self.FK__PhanCong__MaNV__45F365D3" FromRole="PhanCong" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="TinhThanh">
           <Key>
@@ -760,7 +760,7 @@
           </Key>
           <Property Name="MaTT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="DiaDiems" Relationship="Self.FK__DiaDiem__TinhTha__1A14E395" FromRole="TinhThanh" ToRole="DiaDiem" />
+          <NavigationProperty Name="DiaDiems" Relationship="Self.FK__DiaDiem__TinhTha__2D27B809" FromRole="TinhThanh" ToRole="DiaDiem" />
         </EntityType>
         <EntityType Name="Tour">
           <Key>
@@ -774,11 +774,11 @@
           <Property Name="LoaiHinhDL" Type="Int32" Nullable="false" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Tour__DiemKetThu__1DE57479" FromRole="Tour" ToRole="DiaDiem" />
-          <NavigationProperty Name="DiaDiem1" Relationship="Self.FK__Tour__DiemKhoiHa__1CF15040" FromRole="Tour" ToRole="DiaDiem" />
-          <NavigationProperty Name="Gias" Relationship="Self.FK__Gia__MaTour__21B6055D" FromRole="Tour" ToRole="Gia" />
-          <NavigationProperty Name="LoaiHinhDL1" Relationship="Self.FK__Tour__LoaiHinhDL__1ED998B2" FromRole="Tour" ToRole="LoaiHinhDL" />
-          <NavigationProperty Name="Tour_Gia" Relationship="Self.FK__Tour_Gia__MaTour__24927208" FromRole="Tour" ToRole="Tour_Gia" />
+          <NavigationProperty Name="DiaDiem" Relationship="Self.FK__Tour__DiemKetThu__30F848ED" FromRole="Tour" ToRole="DiaDiem" />
+          <NavigationProperty Name="DiaDiem1" Relationship="Self.FK__Tour__DiemKhoiHa__300424B4" FromRole="Tour" ToRole="DiaDiem" />
+          <NavigationProperty Name="Gias" Relationship="Self.FK__Gia__MaTour__34C8D9D1" FromRole="Tour" ToRole="Gia" />
+          <NavigationProperty Name="LoaiHinhDL1" Relationship="Self.FK__Tour__LoaiHinhDL__31EC6D26" FromRole="Tour" ToRole="LoaiHinhDL" />
+          <NavigationProperty Name="Tour_Gia" Relationship="Self.FK__Tour_Gia__MaTour__37A5467C" FromRole="Tour" ToRole="Tour_Gia" />
         </EntityType>
         <EntityType Name="Tour_Gia">
           <Key>
@@ -791,10 +791,10 @@
           <Property Name="Gia" Type="Int32" Nullable="false" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Doans" Relationship="Self.FK__Doan__MaTourGia__276EDEB3" FromRole="Tour_Gia" ToRole="Doan" />
-          <NavigationProperty Name="Tour" Relationship="Self.FK__Tour_Gia__MaTour__24927208" FromRole="Tour_Gia" ToRole="Tour" />
+          <NavigationProperty Name="Doans" Relationship="Self.FK__Doan__MaTourGia__3A81B327" FromRole="Tour_Gia" ToRole="Doan" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__Tour_Gia__MaTour__37A5467C" FromRole="Tour_Gia" ToRole="Tour" />
         </EntityType>
-        <Association Name="FK__PhanCong__MaCV__33D4B598">
+        <Association Name="FK__PhanCong__MaCV__46E78A0C">
           <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -806,7 +806,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CTDoan__MaDoan__2B3F6F97">
+        <Association Name="FK__CTDoan__MaDoan__3E52440B">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="CTDoan" Type="Self.CTDoan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -818,7 +818,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DangKi__MaDoan__2E1BDC42">
+        <Association Name="FK__DangKi__MaDoan__412EB0B6">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="DangKi" Type="Self.DangKi" Multiplicity="*" />
           <ReferentialConstraint>
@@ -830,7 +830,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DangKi__MaKH__2F10007B">
+        <Association Name="FK__DangKi__MaKH__4222D4EF">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="DangKi" Type="Self.DangKi" Multiplicity="*" />
           <ReferentialConstraint>
@@ -842,7 +842,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DiaDiem__TinhTha__1A14E395">
+        <Association Name="FK__DiaDiem__TinhTha__2D27B809">
           <End Role="TinhThanh" Type="Self.TinhThanh" Multiplicity="1" />
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -854,7 +854,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_DiaDi__MaDD__37A5467C">
+        <Association Name="FK__Doan_DiaDi__MaDD__4AB81AF0">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Doan_DiaDiem" Type="Self.Doan_DiaDiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -866,7 +866,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Khach__MaDD__3B75D760">
+        <Association Name="FK__Doan_Khach__MaDD__4E88ABD4">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Doan_KhachSan" Type="Self.Doan_KhachSan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -878,7 +878,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_QuanA__MaDD__3F466844">
+        <Association Name="FK__Doan_QuanA__MaDD__52593CB8">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Doan_QuanAn" Type="Self.Doan_QuanAn" Multiplicity="*" />
           <ReferentialConstraint>
@@ -890,7 +890,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour__DiemKetThu__1DE57479">
+        <Association Name="FK__Tour__DiemKetThu__30F848ED">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -902,7 +902,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour__DiemKhoiHa__1CF15040">
+        <Association Name="FK__Tour__DiemKhoiHa__300424B4">
           <End Role="DiaDiem" Type="Self.DiaDiem" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -914,7 +914,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan__MaTourGia__276EDEB3">
+        <Association Name="FK__Doan__MaTourGia__3A81B327">
           <End Role="Tour_Gia" Type="Self.Tour_Gia" Multiplicity="1" />
           <End Role="Doan" Type="Self.Doan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -926,7 +926,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan__TruongDoan__286302EC">
+        <Association Name="FK__Doan__TruongDoan__3B75D760">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="Doan" Type="Self.Doan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -938,7 +938,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_ChiP__MaDoa__44FF419A">
+        <Association Name="FK__Doan_ChiP__MaDoa__5812160E">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_ChiPhiKhac" Type="Self.Doan_ChiPhiKhac" Multiplicity="*" />
           <ReferentialConstraint>
@@ -950,7 +950,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_DiaD__MaDoa__36B12243">
+        <Association Name="FK__Doan_DiaD__MaDoa__49C3F6B7">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_DiaDiem" Type="Self.Doan_DiaDiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -962,7 +962,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Khac__MaDoa__3A81B327">
+        <Association Name="FK__Doan_Khac__MaDoa__4D94879B">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_KhachSan" Type="Self.Doan_KhachSan" Multiplicity="*" />
           <ReferentialConstraint>
@@ -974,7 +974,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Phuo__MaDoa__4222D4EF">
+        <Association Name="FK__Doan_Phuo__MaDoa__5535A963">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_PhuongTien" Type="Self.Doan_PhuongTien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -986,7 +986,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Doan_Quan__MaDoa__3E52440B">
+        <Association Name="FK__Doan_Quan__MaDoa__5165187F">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="Doan_QuanAn" Type="Self.Doan_QuanAn" Multiplicity="*" />
           <ReferentialConstraint>
@@ -998,7 +998,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhanCong__MaDoan__31EC6D26">
+        <Association Name="FK__PhanCong__MaDoan__44FF419A">
           <End Role="Doan" Type="Self.Doan" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1010,7 +1010,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Gia__MaTour__21B6055D">
+        <Association Name="FK__Gia__MaTour__34C8D9D1">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Gia" Type="Self.Gia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1022,7 +1022,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour__LoaiHinhDL__1ED998B2">
+        <Association Name="FK__Tour__LoaiHinhDL__31EC6D26">
           <End Role="LoaiHinhDL" Type="Self.LoaiHinhDL" Multiplicity="1" />
           <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1034,7 +1034,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhanCong__MaNV__32E0915F">
+        <Association Name="FK__PhanCong__MaNV__45F365D3">
           <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
           <End Role="PhanCong" Type="Self.PhanCong" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1046,7 +1046,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tour_Gia__MaTour__24927208">
+        <Association Name="FK__Tour_Gia__MaTour__37A5467C">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="Tour_Gia" Type="Self.Tour_Gia" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1077,91 +1077,91 @@
           <EntitySet Name="TinhThanhs" EntityType="Self.TinhThanh" />
           <EntitySet Name="Tours" EntityType="Self.Tour" />
           <EntitySet Name="Tour_Gia" EntityType="Self.Tour_Gia" />
-          <AssociationSet Name="FK__PhanCong__MaCV__33D4B598" Association="Self.FK__PhanCong__MaCV__33D4B598">
+          <AssociationSet Name="FK__PhanCong__MaCV__46E78A0C" Association="Self.FK__PhanCong__MaCV__46E78A0C">
             <End Role="ChucVu" EntitySet="ChucVus" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CTDoan__MaDoan__2B3F6F97" Association="Self.FK__CTDoan__MaDoan__2B3F6F97">
+          <AssociationSet Name="FK__CTDoan__MaDoan__3E52440B" Association="Self.FK__CTDoan__MaDoan__3E52440B">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="CTDoan" EntitySet="CTDoans" />
           </AssociationSet>
-          <AssociationSet Name="FK__DangKi__MaDoan__2E1BDC42" Association="Self.FK__DangKi__MaDoan__2E1BDC42">
+          <AssociationSet Name="FK__DangKi__MaDoan__412EB0B6" Association="Self.FK__DangKi__MaDoan__412EB0B6">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="DangKi" EntitySet="DangKis" />
           </AssociationSet>
-          <AssociationSet Name="FK__DangKi__MaKH__2F10007B" Association="Self.FK__DangKi__MaKH__2F10007B">
+          <AssociationSet Name="FK__DangKi__MaKH__4222D4EF" Association="Self.FK__DangKi__MaKH__4222D4EF">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="DangKi" EntitySet="DangKis" />
           </AssociationSet>
-          <AssociationSet Name="FK__DiaDiem__TinhTha__1A14E395" Association="Self.FK__DiaDiem__TinhTha__1A14E395">
+          <AssociationSet Name="FK__DiaDiem__TinhTha__2D27B809" Association="Self.FK__DiaDiem__TinhTha__2D27B809">
             <End Role="TinhThanh" EntitySet="TinhThanhs" />
             <End Role="DiaDiem" EntitySet="DiaDiems" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_DiaDi__MaDD__37A5467C" Association="Self.FK__Doan_DiaDi__MaDD__37A5467C">
+          <AssociationSet Name="FK__Doan_DiaDi__MaDD__4AB81AF0" Association="Self.FK__Doan_DiaDi__MaDD__4AB81AF0">
             <End Role="DiaDiem" EntitySet="DiaDiems" />
             <End Role="Doan_DiaDiem" EntitySet="Doan_DiaDiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Khach__MaDD__3B75D760" Association="Self.FK__Doan_Khach__MaDD__3B75D760">
+          <AssociationSet Name="FK__Doan_Khach__MaDD__4E88ABD4" Association="Self.FK__Doan_Khach__MaDD__4E88ABD4">
             <End Role="DiaDiem" EntitySet="DiaDiems" />
             <End Role="Doan_KhachSan" EntitySet="Doan_KhachSan" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_QuanA__MaDD__3F466844" Association="Self.FK__Doan_QuanA__MaDD__3F466844">
+          <AssociationSet Name="FK__Doan_QuanA__MaDD__52593CB8" Association="Self.FK__Doan_QuanA__MaDD__52593CB8">
             <End Role="DiaDiem" EntitySet="DiaDiems" />
             <End Role="Doan_QuanAn" EntitySet="Doan_QuanAn" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour__DiemKetThu__1DE57479" Association="Self.FK__Tour__DiemKetThu__1DE57479">
+          <AssociationSet Name="FK__Tour__DiemKetThu__30F848ED" Association="Self.FK__Tour__DiemKetThu__30F848ED">
             <End Role="DiaDiem" EntitySet="DiaDiems" />
             <End Role="Tour" EntitySet="Tours" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour__DiemKhoiHa__1CF15040" Association="Self.FK__Tour__DiemKhoiHa__1CF15040">
+          <AssociationSet Name="FK__Tour__DiemKhoiHa__300424B4" Association="Self.FK__Tour__DiemKhoiHa__300424B4">
             <End Role="DiaDiem" EntitySet="DiaDiems" />
             <End Role="Tour" EntitySet="Tours" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan__MaTourGia__276EDEB3" Association="Self.FK__Doan__MaTourGia__276EDEB3">
+          <AssociationSet Name="FK__Doan__MaTourGia__3A81B327" Association="Self.FK__Doan__MaTourGia__3A81B327">
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
             <End Role="Doan" EntitySet="Doans" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan__TruongDoan__286302EC" Association="Self.FK__Doan__TruongDoan__286302EC">
+          <AssociationSet Name="FK__Doan__TruongDoan__3B75D760" Association="Self.FK__Doan__TruongDoan__3B75D760">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="Doan" EntitySet="Doans" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_ChiP__MaDoa__44FF419A" Association="Self.FK__Doan_ChiP__MaDoa__44FF419A">
+          <AssociationSet Name="FK__Doan_ChiP__MaDoa__5812160E" Association="Self.FK__Doan_ChiP__MaDoa__5812160E">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="Doan_ChiPhiKhac" EntitySet="Doan_ChiPhiKhac" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_DiaD__MaDoa__36B12243" Association="Self.FK__Doan_DiaD__MaDoa__36B12243">
+          <AssociationSet Name="FK__Doan_DiaD__MaDoa__49C3F6B7" Association="Self.FK__Doan_DiaD__MaDoa__49C3F6B7">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="Doan_DiaDiem" EntitySet="Doan_DiaDiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Khac__MaDoa__3A81B327" Association="Self.FK__Doan_Khac__MaDoa__3A81B327">
+          <AssociationSet Name="FK__Doan_Khac__MaDoa__4D94879B" Association="Self.FK__Doan_Khac__MaDoa__4D94879B">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="Doan_KhachSan" EntitySet="Doan_KhachSan" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Phuo__MaDoa__4222D4EF" Association="Self.FK__Doan_Phuo__MaDoa__4222D4EF">
+          <AssociationSet Name="FK__Doan_Phuo__MaDoa__5535A963" Association="Self.FK__Doan_Phuo__MaDoa__5535A963">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="Doan_PhuongTien" EntitySet="Doan_PhuongTien" />
           </AssociationSet>
-          <AssociationSet Name="FK__Doan_Quan__MaDoa__3E52440B" Association="Self.FK__Doan_Quan__MaDoa__3E52440B">
+          <AssociationSet Name="FK__Doan_Quan__MaDoa__5165187F" Association="Self.FK__Doan_Quan__MaDoa__5165187F">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="Doan_QuanAn" EntitySet="Doan_QuanAn" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhanCong__MaDoan__31EC6D26" Association="Self.FK__PhanCong__MaDoan__31EC6D26">
+          <AssociationSet Name="FK__PhanCong__MaDoan__44FF419A" Association="Self.FK__PhanCong__MaDoan__44FF419A">
             <End Role="Doan" EntitySet="Doans" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
           </AssociationSet>
-          <AssociationSet Name="FK__Gia__MaTour__21B6055D" Association="Self.FK__Gia__MaTour__21B6055D">
+          <AssociationSet Name="FK__Gia__MaTour__34C8D9D1" Association="Self.FK__Gia__MaTour__34C8D9D1">
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Gia" EntitySet="Gias" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour__LoaiHinhDL__1ED998B2" Association="Self.FK__Tour__LoaiHinhDL__1ED998B2">
+          <AssociationSet Name="FK__Tour__LoaiHinhDL__31EC6D26" Association="Self.FK__Tour__LoaiHinhDL__31EC6D26">
             <End Role="LoaiHinhDL" EntitySet="LoaiHinhDLs" />
             <End Role="Tour" EntitySet="Tours" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhanCong__MaNV__32E0915F" Association="Self.FK__PhanCong__MaNV__32E0915F">
+          <AssociationSet Name="FK__PhanCong__MaNV__45F365D3" Association="Self.FK__PhanCong__MaNV__45F365D3">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="PhanCong" EntitySet="PhanCongs" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tour_Gia__MaTour__24927208" Association="Self.FK__Tour_Gia__MaTour__24927208">
+          <AssociationSet Name="FK__Tour_Gia__MaTour__37A5467C" Association="Self.FK__Tour_Gia__MaTour__37A5467C">
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Tour_Gia" EntitySet="Tour_Gia" />
           </AssociationSet>
