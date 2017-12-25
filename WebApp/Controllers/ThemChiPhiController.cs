@@ -64,9 +64,42 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ThemChiPhi_Doan_CPKS(int MaDoan, [Bind(Prefix = "cpks")] Doan_KhachSan[] doan_ks)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 themcp_biz.ThemChiPhi_Doan_CPKS(MaDoan, doan_ks);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ThemChiPhi_Doan_CPPT(int MaDoan, [Bind(Prefix = "cppt")] Doan_PhuongTien[] doan_pt)
+        {
+            if (ModelState.IsValid)
+            {
+                themcp_biz.ThemChiPhi_Doan_CPPT(MaDoan, doan_pt);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ThemChiPhi_Doan_CPQA(int MaDoan, [Bind(Prefix = "cpqa")] Doan_QuanAn[] doan_qa)
+        {
+            if (ModelState.IsValid)
+            {
+                themcp_biz.ThemChiPhi_Doan_CPQA(MaDoan, doan_qa);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ThemChiPhi_Doan_CPKhac(int MaDoan, [Bind(Prefix = "cpks")] Doan_ChiPhiKhac[] doan_cpkhac)
+        {
+            if (ModelState.IsValid)
+            {
+                themcp_biz.ThemChiPhi_Doan_CPKhac(MaDoan, doan_cpkhac);
                 return RedirectToAction("Index");
             }
             return View();

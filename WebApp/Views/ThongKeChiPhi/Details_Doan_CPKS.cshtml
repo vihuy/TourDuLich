@@ -8,6 +8,7 @@
 <h4>Số Lượng Khách: @Html.DisplayFor(model => model.CTDoan.Doan.SLKhach)</h4>
 <h4>Số Lượng Nhân Viên: @Html.DisplayFor(model => model.CTDoan.Doan.SLNV)</h4>
 <h4>Trưởng Đoàn: @Html.DisplayFor(model => model.CTDoan.Doan.NhanVien.HoTen)</h4>
+<hr/>
 
 <table class="table">
     <tr>
@@ -48,3 +49,5 @@
 </table>
 <hr />
 <p>Tổng Chi Phí Khách Sạn: @Model.CTDoan.TongCPKS.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>
+
+<p>@Html.ActionLink("Về chi tiết", "Details_CTDoan", new { MaDoan = Model.CTDoan.MaDoan })</p>

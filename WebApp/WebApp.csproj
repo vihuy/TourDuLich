@@ -157,7 +157,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangsController.cs" />
     <Compile Include="Controllers\ThemChiPhiController.cs" />
-    <Compile Include="Controllers\ThongKeController.cs" />
+    <Compile Include="Controllers\ThongKeChiPhiController.cs" />
     <Compile Include="Controllers\ToursController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,16 +207,19 @@
     <Content Include="Views\Doans\Details.cshtml" />
     <Content Include="Views\Tours\Details.cshtml" />
     <Content Include="Views\KhachHangs\Details.cshtml" />
-    <Content Include="Views\ThongKe\Index.cshtml" />
-    <Content Include="Views\ThongKe\Details_CTDoan.cshtml" />
-    <Content Include="Views\ThongKe\Details_Doan_CPBA.cshtml" />
-    <Content Include="Views\ThongKe\Details_Doan_CPKhac.cshtml" />
-    <Content Include="Views\ThongKe\Details_Doan_CPKS.cshtml" />
-    <Content Include="Views\ThongKe\Details_Doan_CPPT.cshtml" />
+    <Content Include="Views\ThongKeChiPhi\Index.cshtml" />
+    <Content Include="Views\ThongKeChiPhi\Details_CTDoan.cshtml" />
+    <Content Include="Views\ThongKeChiPhi\Details_Doan_CPQA.cshtml" />
+    <Content Include="Views\ThongKeChiPhi\Details_Doan_CPKhac.cshtml" />
+    <Content Include="Views\ThongKeChiPhi\Details_Doan_CPKS.cshtml" />
+    <Content Include="Views\ThongKeChiPhi\Details_Doan_CPPT.cshtml" />
     <Content Include="Views\ThemChiPhi\Index.cshtml" />
     <Content Include="Views\ThemChiPhi\Doan_Tour.cshtml" />
     <Content Include="Views\ThemChiPhi\ThemChiPhi_Doan.cshtml" />
     <Content Include="Views\ThemChiPhi\ThemChiPhi_Doan_CPKS.cshtml" />
+    <Content Include="Views\ThemChiPhi\ThemChiPhi_Doan_CPPT.cshtml" />
+    <Content Include="Views\ThemChiPhi\ThemChiPhi_Doan_CPQA.cshtml" />
+    <Content Include="Views\ThemChiPhi\ThemChiPhi_Doan_CPKhac.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

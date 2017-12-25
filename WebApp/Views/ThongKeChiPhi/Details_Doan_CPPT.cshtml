@@ -43,3 +43,5 @@
 </table>
 <hr />
 <p>Tổng Chi Phí Phương Tiện: @Model.CTDoan.TongCPPT.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>
+
+<p>@Html.ActionLink("Về chi tiết", "Details_CTDoan", new { MaDoan = Model.CTDoan.MaDoan })</p>

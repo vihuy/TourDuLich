@@ -1,10 +1,10 @@
-﻿@model Core.Doan_KhachSan
+﻿@model Core.Doan_QuanAn
 
 @{
-    ViewBag.Title = "ThemChiPhi_Doan_CPKS";
+    ViewBag.Title = "ThemChiPhi_Doan_CPQA";
 }
 
-<h2>Thêm Chi Phí Khách Sạn</h2>
+<h2>Thêm Chi Phí Quán Ăn</h2>
 
 <script type="text/javascript">
 
@@ -14,17 +14,17 @@
             dynamicId += 1
             $('#chitiet').append(
                 "<tr>" +
-                "<td>" + $('#TenKS').val() + "</td>" +
+                "<td>" + $('#TenQA').val() + "</td>" +
                 "<td>" + $('#MaDD').text() + "</td>" +
                 "<td>" + $('#Gia').val() + "</td>" +
                 "<td>" + $('#Ghichu').val() + "</td>" +
-                '<td><input type="hidden" class="form-control" id = "TenKS" value="' + $('#TenKS').val() + '" name="cpks[' + (dynamicId - 1) + '].TenKS"/></td>' +
-                '<td><input type="hidden" class="form-control" id = "MaDD" value="' + $('#MaDD').val() + '"name="cpks[' + (dynamicId - 1) + '].MaDD"/></td>' +
-                '<td><input type="hidden" class="form-control" id = "Gia" value="' + $('#Gia').val() + '"name="cpks[' + (dynamicId - 1) + '].Gia"/></td>' +
-                '<td><input type="hidden" class="form-control" id = "GhiChu" value="' + $('#GhiChu').val() + '"name="cpks[' + (dynamicId - 1) + '].GhiChu"/></td>' +
+                '<td><input type="hidden" class="form-control" id = "TenQA" value="' + $('#TenQA').val() + '" name="cpqa[' + (dynamicId - 1) + '].TenQA"/></td>' +
+                '<td><input type="hidden" class="form-control" id = "MaDD" value="' + $('#MaDD').val() + '"name="cpqa[' + (dynamicId - 1) + '].MaDD"/></td>' +
+                '<td><input type="hidden" class="form-control" id = "Gia" value="' + $('#Gia').val() + '"name="cpqa[' + (dynamicId - 1) + '].Gia"/></td>' +
+                '<td><input type="hidden" class="form-control" id = "GhiChu" value="' + $('#GhiChu').val() + '"name="cpqa[' + (dynamicId - 1) + '].GhiChu"/></td>' +
                 '<td><button class="btn btn-danger btnXoa">Xóa</button></td>' +
-                '<input type="hidden" name="cpks.Index" value="' + (dynamicId - 1) + '" />' +
-                '<input type="hidden" name="cpks[' + (dynamicId - 1) + '].MaDoan" value="' + $('#MaDoan').val() + '" />' +
+                '<input type="hidden" name="cpqa.Index" value="' + (dynamicId - 1) + '" />' +
+                '<input type="hidden" name="cpqa[' + (dynamicId - 1) + '].MaDoan" value="' + $('#MaDoan').val() + '" />' +
                 "</tr>"
             )
         });
@@ -43,9 +43,9 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.TenKS, "Tên khách sạn", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TenQA, "Tên quán ăn", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="text" class="form-control" id="TenKS"/>
+                <input type="text" class="form-control" id="TenKS" />
             </div>
         </div>
         <div class="form-group">
@@ -66,14 +66,14 @@
                 <input type="text" class="form-control" id="GhiChu" />
             </div>
         </div>
-        <input type="hidden" value="@ViewBag.MaDoan" name="cpks.MaDoan" id="MaDoan" />
+        <input type="hidden" value="@ViewBag.MaDoan" name="cpqa.MaDoan" id="MaDoan" />
         <input type="hidden" value="@ViewBag.MaDoan" name="MaDoan" />
         <input type="button" class="btn btn-default" value="Thêm" id="btnThem" />
     </div>
 
     <table class="table" id="chitiet">
         <tr>
-            <th>Tên khách sạn</th>
+            <th>Tên quán ăn</th>
             <th>Địa điểm</th>
             <th>Giá</th>
             <th>Ghi chú</th>

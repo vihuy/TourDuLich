@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
     <Compile Include="BIZ\ThemChiPhi_BIZ.cs" />
+    <Compile Include="BIZ\ThongKeChiPhi_BIZ.cs" />
     <Compile Include="ChucVu.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -61,8 +62,10 @@
     <Compile Include="CTDoan.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
     <Compile Include="DAL\ThemChiPhi_DAL.cs" />
+    <Compile Include="DAL\ThongKeChiPhi_DAL.cs" />
     <Compile Include="DangKi.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>

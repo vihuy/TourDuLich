@@ -42,3 +42,5 @@
 </table>
 <hr />
 <p>Tổng Chi Phí Khác: @Model.CTDoan.TongCPKhac.Value.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>
+
+<p>@Html.ActionLink("Về chi tiết", "Details_CTDoan", new { MaDoan = Model.CTDoan.MaDoan })</p>

@@ -41,7 +41,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Tổng Chi Phí Bữa Ăn")
+            @Html.DisplayName("Tổng Chi Phí Quán Ăn")
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
             }
             else
             {
-                @Html.ActionLink(Model.TongCPBA.ToString("C", CultureInfo.GetCultureInfo("vi-VN")), "Details_Doan_CPBA", new { MaDoan = Model.MaDoan })
+                @Html.ActionLink(Model.TongCPBA.ToString("C", CultureInfo.GetCultureInfo("vi-VN")), "Details_Doan_CPQA", new { MaDoan = Model.MaDoan })
 
             }
         </dd>
@@ -80,3 +80,7 @@
         </dd>
     </dl>
 </div>
+
+<p>
+    @Html.ActionLink("Về danh sách", "Index")
+</p>

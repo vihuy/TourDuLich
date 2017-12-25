@@ -1,0 +1,53 @@
+﻿@model WebApp.Models.ThongKeChiPhiViewModel
+@using System.Globalization;
+
+@{
+    ViewBag.Title = "Details_Doan_CPBA";
+}
+
+<h2>Chi Tiết CPKS Đoàn @Html.DisplayFor(model => model.CTDoan.Doan.Ten)</h2>
+<h4>Số Lượng Khách: @Html.DisplayFor(model => model.CTDoan.Doan.SLKhach)</h4>
+<h4>Số Lượng Nhân Viên: @Html.DisplayFor(model => model.CTDoan.Doan.SLNV)</h4>
+<h4>Trưởng Đoàn: @Html.DisplayFor(model => model.CTDoan.Doan.NhanVien.HoTen)</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên Quán Ăn")
+        </th>
+        <th>
+            @Html.DisplayName("Địa Điểm")
+        </th>
+        <th>
+            @Html.DisplayName("Giá")
+        </th>
+        <th>
+            @Html.DisplayName("Ghi Chú")
+        </th>
+    </tr>
+
+    @if (Model.Doan_QuanAn != null)
+    {
+        foreach (var item in Model.Doan_QuanAn)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenQA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem.Ten)
+                </td>
+                <td>
+                    @item.Gia.ToString("C", CultureInfo.GetCultureInfo("vi-VN"));
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GhiChu)
+                </td>
+            </tr>
+        }
+    }
+</table>
+<hr />
+<p>Tổng Chi Phí Bữa Ăn: @Model.CTDoan.TongCPBA.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>
+
+<p>@Html.ActionLink("Về chi tiết", "Details_CTDoan", new { MaDoan = Model.CTDoan.MaDoan })</p>

@@ -9,12 +9,14 @@ using System.Web.Mvc;
 using Core;
 using WebApp.Models;
 using System.Globalization;
+using Core.BIZ;
 
 namespace WebApp.Controllers
 {
-    public class ThongKeController : Controller
+    public class ThongKeChiPhiController : Controller
     {
         private TourDuLichEntities db = new TourDuLichEntities();
+        ThongKeChiPhi_BIZ tkcp_biz = new ThongKeChiPhi_BIZ();
         // GET: ThongKe
         public ActionResult Index(DateTime? NgayDi, DateTime? NgayVe)
         {
@@ -22,11 +24,7 @@ namespace WebApp.Controllers
             var _NgayVe = NgayVe.GetValueOrDefault(DateTime.MaxValue);
             ViewBag.NgayDi = _NgayDi.ToString("yyyy-MM-dd");
             ViewBag.NgayVe = _NgayVe.ToString("yyyy-MM-dd");
-            return View(db.ThoiGianDoans.Where(x => (x.NgayDi >= _NgayDi && x.NgayVe <= _NgayVe)).ToList());
-        }
-        private string Chuanhoa (int gia)
-        {
-            return gia.ToString("C", CultureInfo.GetCultureInfo("vi-VN"));
+            return View(tkcp_biz.Lay_DS_Doan(_NgayDi, _NgayVe));
         }
         public ActionResult Details_CTDoan(int? MaDoan)
         {
@@ -34,17 +32,13 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            CTDoan ctdoan = db.CTDoans.FirstOrDefault(x => x.MaDoan == MaDoan);
+            
+            CTDoan ctdoan = tkcp_biz.Lay_CTDoan(int.Parse(MaDoan.ToString()));
 
             if (ctdoan == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CPKS = Chuanhoa(ctdoan.TongCPKS);
-            ViewBag.CPBA = Chuanhoa(ctdoan.TongCPBA);
-            ViewBag.CPPT = Chuanhoa(ctdoan.TongCPPT);
-            ViewBag.CPKhac = Chuanhoa((int)ctdoan.TongCPKhac);
             return View(ctdoan);
         }
         //GET: ThongKe/Details_Doan_CPKS/5
@@ -54,30 +48,12 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            List<Doan_KhachSan> doan_ks = db.Doan_KhachSan.Where(x => x.MaDoan == MaDoan).ToList();
-            CTDoan ctdoan = db.CTDoans.FirstOrDefault(x => x.MaDoan == MaDoan);
+            List<Doan_KhachSan> doan_ks = tkcp_biz.Lay_Doan_KS(int.Parse(MaDoan.ToString()));
+            CTDoan ctdoan = tkcp_biz.Lay_CTDoan(int.Parse(MaDoan.ToString()));
             ThongKeChiPhiViewModel tkcpvm = new ThongKeChiPhiViewModel();
             tkcpvm.CTDoan = ctdoan;
             tkcpvm.Doan_KhachSan = doan_ks;
             if (tkcpvm.Doan_KhachSan == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tkcpvm);
-        }
-        //GET: ThongKe/Details_Doan_CPBA/5
-        public ActionResult Details_Doan_CPBA(int? MaDoan)
-        {
-            if (MaDoan == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            List<Doan_QuanAn> doan_qa = db.Doan_QuanAn.Where(x => x.MaDoan == MaDoan).ToList();
-            CTDoan ctdoan = db.CTDoans.FirstOrDefault(x => x.MaDoan == MaDoan);
-            ThongKeChiPhiViewModel tkcpvm = new ThongKeChiPhiViewModel();
-            tkcpvm.CTDoan = ctdoan;
-            tkcpvm.Doan_QuanAn = doan_qa;
-            if (tkcpvm.Doan_QuanAn == null)
             {
                 return HttpNotFound();
             }
@@ -90,12 +66,30 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            List<Doan_PhuongTien> doan_pt = db.Doan_PhuongTien.Where(x => x.MaDoan == MaDoan).ToList();
-            CTDoan ctdoan = db.CTDoans.FirstOrDefault(x => x.MaDoan == MaDoan);
+            List<Doan_PhuongTien> doan_pt = tkcp_biz.Lay_Doan_PT(int.Parse(MaDoan.ToString()));
+            CTDoan ctdoan = tkcp_biz.Lay_CTDoan(int.Parse(MaDoan.ToString()));
             ThongKeChiPhiViewModel tkcpvm = new ThongKeChiPhiViewModel();
             tkcpvm.CTDoan = ctdoan;
             tkcpvm.Doan_PhuongTien = doan_pt;
             if (tkcpvm.Doan_PhuongTien == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tkcpvm);
+        }
+        //GET: ThongKe/Details_Doan_CPBA/5
+        public ActionResult Details_Doan_CPQA(int? MaDoan)
+        {
+            if (MaDoan == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            List<Doan_QuanAn> doan_qa = tkcp_biz.Lay_Doan_QA(int.Parse(MaDoan.ToString()));
+            CTDoan ctdoan = tkcp_biz.Lay_CTDoan(int.Parse(MaDoan.ToString()));
+            ThongKeChiPhiViewModel tkcpvm = new ThongKeChiPhiViewModel();
+            tkcpvm.CTDoan = ctdoan;
+            tkcpvm.Doan_QuanAn = doan_qa;
+            if (tkcpvm.Doan_QuanAn == null)
             {
                 return HttpNotFound();
             }
@@ -108,8 +102,8 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            List<Doan_ChiPhiKhac> doan_cpkhac = db.Doan_ChiPhiKhac.Where(x => x.MaDoan == MaDoan).ToList();
-            CTDoan ctdoan = db.CTDoans.FirstOrDefault(x => x.MaDoan == MaDoan);
+            List<Doan_ChiPhiKhac> doan_cpkhac = tkcp_biz.Lay_Doan_CPKhac(int.Parse(MaDoan.ToString()));
+            CTDoan ctdoan = tkcp_biz.Lay_CTDoan(int.Parse(MaDoan.ToString()));
             ThongKeChiPhiViewModel tkcpvm = new ThongKeChiPhiViewModel();
             tkcpvm.CTDoan = ctdoan;
             tkcpvm.Doan_ChiPhiKhac = doan_cpkhac;
