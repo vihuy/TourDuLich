@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Core.Doan>
+
+@{
+    ViewBag.Title = "Doan_Tour";
+}
+
+<h2>Thêm Chi Phí</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên")
+        </th>
+        <th>
+            @Html.DisplayName("Số lượng khách")
+        </th>
+        <th>
+            @Html.DisplayName("Số lượng nhân viên")
+        </th>
+        <th>
+            @Html.DisplayName("Giá")
+        </th>
+        <th>
+            @Html.DisplayName("Trưởng đoàn")
+        </th>
+        <th>
+            @Html.DisplayName("Thêm chi phí")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLKhach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tour_Gia.Gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhanVien.HoTen)
+        </td>
+        <td>
+            @Html.ActionLink("KS", "ThemChiPhi_Doan_CPKS", new { MaDoan = item.MaDoan }) |
+            @Html.ActionLink("QA", "ThemChiPhi_Doan_CPQA", new { MaDoan = item.MaDoan }) |
+            @Html.ActionLink("PT", "ThemChiPhi_Doan_CPPT", new { MaDoan = item.MaDoan }) |
+            @Html.ActionLink("Khac", "ThemChiPhi_Doan_CPKhac", new { MaDoan = item.MaDoan })
+        </td>
+    </tr>
+}
+
+</table>

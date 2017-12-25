@@ -1,0 +1,76 @@
+﻿@model Core.Doan_KhachSan
+
+@{
+    ViewBag.Title = "ThemChiPhi_Doan_CPKS";
+}
+
+<h2>Thêm Chi Phí Khách Sạn</h2>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        var dynamicId = 0;
+        $('#btnThem').click(function () {
+            dynamicId += 1
+            $('#chitiet').append(
+                "<tr>" +
+                "<td>" + $('#TenKS').val() + "</td>" +
+                "<td>" + $('#MaDD').val() + "</td>" +
+                "<td>" + $('#Gia').val() + "</td>" +
+                '<td><input type="hidden" class="form-control" id = "TenKS" value="' + $('#TenKS').val() + '" name="cpks[' + (dynamicId - 1) + '].TenKS"/></td>' +
+                '<td><input type="hidden" class="form-control" id = "MaDD" value="' + $('#MaDD').val() + '"name="cpks[' + (dynamicId - 1) + '].MaDD"/></td>' +
+                '<td><input type="hidden" class="form-control" id = "Gia" value="' + $('#Gia').val() + '"name="cpks[' + (dynamicId - 1) + '].Gia"/></td>' +
+                '<td><button class="btn btn-danger btnXoa">Xóa</button></td>' +
+                '<input type="hidden" name="cpks.Index" value="' + (dynamicId - 1) + '" />' +
+                '<input type="hidden" name="cpks[' + (dynamicId - 1) + '].MaDoan" value="' + $('#MaDoan').val() + '" />' +
+                "</tr>"
+            )
+        });
+
+        $("#chitiet").on('click', '.btn.btn-danger.btnXoa', function () {
+            $(this).closest('tr').find("input[type='hidden']").remove();
+            $(this).closest('tr').remove();
+        });
+
+    }
+</script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenKS, "Tên khách sạn", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="TenKS"/>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaDiem, "Địa điểm", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("MaDD", null, htmlAttributes: new { @class = "form-control", @id = "MaDD" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gia, "Giá", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="number" class="form-control" id="Gia" />
+            </div>
+        </div>
+        <input type="hidden" value="@ViewBag.MaDoan" name="cpks.madoan" id="MaDoan" />
+        <input type="button" class="btn btn-default" value="Thêm" id="btnThem" />
+    </div>
+
+    <table class="table" id="chitiet">
+        <tr>
+            <th>Tên khách sạn</th>
+            <th>Địa điểm</th>
+            <th>Giá</th>
+            <th></th>
+        </tr>
+    </table>
+    <div class="form-group" style="text-align: center">
+        <input type="submit" value="Lưu" class="btn btn-primary" id="test" />
+    </div>
+}

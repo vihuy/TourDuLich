@@ -15,7 +15,6 @@
         <EntityTypeShape EntityType="TourDuLich.Doan_KhachSan" Width="1.5" PointX="8.25" PointY="16.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLich.Doan_PhuongTien" Width="1.5" PointX="5.25" PointY="25.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLich.Doan_QuanAn" Width="1.5" PointX="11.25" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TourDuLich.Gia" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLich.KhachHang" Width="1.5" PointX="6" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLich.LoaiHinhDL" Width="1.5" PointX="1.5" PointY="24" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLich.NhanVien" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
@@ -41,12 +40,15 @@
         <AssociationConnector Association="TourDuLich.FK__Doan_Phuo__MaDoa__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__Doan_Quan__MaDoa__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__PhanCong__MaDoan__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="TourDuLich.FK__Gia__MaTour__21B6055D" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__Tour__LoaiHinhDL__1ED998B2" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__PhanCong__MaNV__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLich.FK__Tour_Gia__MaTour__24927208" ManuallyRouted="false" />
         <EntityTypeShape EntityType="TourDuLich.ThoiGianDoan" Width="1.5" PointX="5.25" PointY="13" />
         <AssociationConnector Association="TourDuLich.FK__ThoiGianD__MaDoa__5DCAEF64" />
+        <EntityTypeShape EntityType="TourDuLich.ThoiGianTour" Width="1.5" PointX="3.75" PointY="5.875" />
+        <AssociationConnector Association="TourDuLich.FK__DangKi__MaThoiGi__30F848ED" />
+        <AssociationConnector Association="TourDuLich.FK__Doan__MaThoiGian__29572725" />
+        <AssociationConnector Association="TourDuLich.FK__ThoiGianT__MaTou__24927208" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

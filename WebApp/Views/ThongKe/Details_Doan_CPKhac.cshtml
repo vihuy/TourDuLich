@@ -1,6 +1,5 @@
 ﻿@model WebApp.Models.ThongKeChiPhiViewModel
 @using System.Globalization;
-
 @{
     ViewBag.Title = "Details_Doan_CPKhac";
 }
@@ -42,4 +41,4 @@
     }
 </table>
 <hr />
-<p>Tổng Chi Phí Khác: @Model.CTDoan.TongCPKhac.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>
+<p>Tổng Chi Phí Khác: @Model.CTDoan.TongCPKhac.Value.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</p>

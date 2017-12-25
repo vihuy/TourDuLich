@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ThemChiPhi_Doan";
+}
+
+<h2>Thêm Chi Phí</h2>
+
+<form action="/ThemChiPhi">
+    <select class="form-control" id="LoaiChiPhi" name="LoaiChiPhi">
+        <option value="CPKS" selected="selected">Chi Phí Khách Sạn</option>
+        <option value="CPQA">Chi Phí Quán Ăn</option>
+        <option value="CPPT">Chi Phí Phương Tiện</option>
+        <option value="CPKhac">Chi Phí Khác</option>
+    </select>
+    <input type="hidden" value="@ViewBag.MaDoan" name="MaDoan" />
+    <input type="submit" value="Thêm" class="btn btn-default"/>
+</form>

@@ -15,51 +15,41 @@ namespace Core
 using System;
     using System.Collections.Generic;
     
-public partial class Tour
+public partial class ThoiGianTour
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public Tour()
+    public ThoiGianTour()
     {
 
-        this.Tour_Gia = new HashSet<Tour_Gia>();
+        this.DangKis = new HashSet<DangKi>();
 
-        this.ThoiGianTours = new HashSet<ThoiGianTour>();
+        this.Doans = new HashSet<Doan>();
 
     }
 
 
+    public int MaThoiGianTour { get; set; }
+
     public int MaTour { get; set; }
 
-    public string Ten { get; set; }
+    public Nullable<System.DateTime> NgayDi { get; set; }
 
-    public int DiemKhoiHanh { get; set; }
+    public Nullable<System.DateTime> NgayVe { get; set; }
 
-    public int DiemKetThuc { get; set; }
-
-    public int SLNgay { get; set; }
-
-    public int LoaiHinhDL { get; set; }
-
-    public bool TrangThai { get; set; }
-
-    public string GhiChu { get; set; }
+    public Nullable<bool> TrangThai { get; set; }
 
 
-
-    public virtual DiaDiem DiaDiem { get; set; }
-
-    public virtual DiaDiem DiaDiem1 { get; set; }
-
-    public virtual LoaiHinhDL LoaiHinhDL1 { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Tour_Gia> Tour_Gia { get; set; }
+    public virtual ICollection<DangKi> DangKis { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<ThoiGianTour> ThoiGianTours { get; set; }
+    public virtual ICollection<Doan> Doans { get; set; }
+
+    public virtual Tour Tour { get; set; }
 
 }
 

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Core.Tour>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Thêm Chi Phí</h2>
+
+<form action="/ThemChiPhi">
+    <input type="text" name="TimTour" placeholder="Nhập tên tour ..." class="form-control" style="float:left" />
+    <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên Tour")
+        </th>
+        <th>
+            @Html.DisplayName("Điểm khởi hành")
+        </th>
+        <th>
+            @Html.DisplayName("Điểm kết thúc")
+        </th>
+        <th>
+            @Html.DisplayName("Số lượng ngày")
+        </th>
+        <th>
+            @Html.DisplayName("Loại hình du lịch")
+        </th>
+        <th>
+            @Html.DisplayName("Trạng thái")
+        </th>
+        <th></th>
+    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaDiem1.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SLNgay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiHinhDL1.Ten)
+                </td>
+                <td>
+                    @if (!item.TrangThai)
+                        {@("Chưa hoàn thành")}
+                    else
+                        {@("Đã hoàn thành")}
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Doan_Tour", new { id = item.MaTour })
+                </td>
+            </tr>
+        }
+</table>
