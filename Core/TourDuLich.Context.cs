@@ -35,11 +35,11 @@ namespace Core
         public virtual DbSet<Doan_KhachSan> Doan_KhachSan { get; set; }
         public virtual DbSet<Doan_PhuongTien> Doan_PhuongTien { get; set; }
         public virtual DbSet<Doan_QuanAn> Doan_QuanAn { get; set; }
-        public virtual DbSet<Gia> Gias { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<LoaiHinhDL> LoaiHinhDLs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhanCong> PhanCongs { get; set; }
+        public virtual DbSet<ThoiGianDoan> ThoiGianDoans { get; set; }
         public virtual DbSet<ThoiGianTour> ThoiGianTours { get; set; }
         public virtual DbSet<TinhThanh> TinhThanhs { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }

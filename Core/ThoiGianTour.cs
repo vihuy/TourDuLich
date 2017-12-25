@@ -14,12 +14,23 @@ namespace Core
     
     public partial class ThoiGianTour
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ThoiGianTour()
+        {
+            this.DangKis = new HashSet<DangKi>();
+            this.Doans = new HashSet<Doan>();
+        }
+    
         public int MaThoiGianTour { get; set; }
         public int MaTour { get; set; }
         public Nullable<System.DateTime> NgayDi { get; set; }
         public Nullable<System.DateTime> NgayVe { get; set; }
         public Nullable<bool> TrangThai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DangKi> DangKis { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Doan> Doans { get; set; }
         public virtual Tour Tour { get; set; }
     }
 }

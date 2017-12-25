@@ -25,7 +25,7 @@ namespace Core
             this.Doan_PhuongTien = new HashSet<Doan_PhuongTien>();
             this.Doan_QuanAn = new HashSet<Doan_QuanAn>();
             this.PhanCongs = new HashSet<PhanCong>();
-            this.Tours = new HashSet<Tour>();
+            this.ThoiGianDoans = new HashSet<ThoiGianDoan>();
         }
     
         public int MaDoan { get; set; }
@@ -34,11 +34,14 @@ namespace Core
         public int SLNV { get; set; }
         public int MaTourGia { get; set; }
         public int TruongDoan { get; set; }
+        public int MaThoiGianTour { get; set; }
+        public int TinhTrang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDoan> CTDoans { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DangKi> DangKis { get; set; }
+        public virtual ThoiGianTour ThoiGianTour { get; set; }
         public virtual Tour_Gia Tour_Gia { get; set; }
         public virtual NhanVien NhanVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -54,6 +57,6 @@ namespace Core
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhanCong> PhanCongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tour> Tours { get; set; }
+        public virtual ICollection<ThoiGianDoan> ThoiGianDoans { get; set; }
     }
 }

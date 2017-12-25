@@ -81,9 +81,34 @@ namespace Core.DAL
         {
             return db.Set<T>().FirstOrDefault(where);
         }
+
+        public T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null)
+        {
+            if (includes != null && includes.Count() > 0)
+            {
+                var query = db.Set<T>().Include(includes.First());
+                foreach (var include in includes.Skip(1))
+                    query = query.Include(include);
+                return query.FirstOrDefault(expression);
+            }
+            // express: x => x.id == id
+            return db.Set<T>().FirstOrDefault(expression);
+        }
         public bool Exists(Expression<Func<T, bool>> where)
         {
             return db.Set<T>().Any(where);
+        }
+
+        public virtual IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null)
+        {
+            if (includes != null && includes.Count() > 0)
+            {
+                var query = db.Set<T>().Include(includes.First());
+                foreach (var include in includes.Skip(1))
+                    query = query.Include(include);
+                return query.Where<T>(predicate).AsQueryable<T>();
+            }
+            return db.Set<T>().Where<T>(predicate).AsEnumerable<T>();
         }
 
     }

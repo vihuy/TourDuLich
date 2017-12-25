@@ -22,6 +22,7 @@ namespace Core
     
         public int MaTT { get; set; }
         public string Ten { get; set; }
+        public bool TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DiaDiem> DiaDiems { get; set; }
