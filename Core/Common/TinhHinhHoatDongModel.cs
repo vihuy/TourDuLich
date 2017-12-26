@@ -10,8 +10,8 @@ namespace Core.Common
     {
         public List<string> ThoiGianTours { get; set; }
         public List<string> DoanThamQuans { get; set; }
-        public List<double> DoanhThuTours { get; set; }
-        public List<double> LoiNhuans { get; set; }
+        public List<int> DoanhThuTours { get; set; }
+        public List<int> LoiNhuans { get; set; }
 
     }
 }

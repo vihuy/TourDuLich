@@ -67,37 +67,43 @@ namespace Core.DAL
         public TinhHinhHoatDongModel ThongKeTinhHinhHoatDong(DateTime bd, DateTime kt, int maTour)
         {
             TinhHinhHoatDongModel dsThongKe = new TinhHinhHoatDongModel();
-            dsThongKe.DoanhThuTours = new List<double>();
+            dsThongKe.DoanhThuTours = new List<int>();
             dsThongKe.DoanThamQuans = new List<string>();
-            dsThongKe.LoiNhuans = new List<double>();
+            dsThongKe.LoiNhuans = new List<int>();
             dsThongKe.ThoiGianTours = new List<string>();
-            var tourThongKe = tour.GetMulti(x => x.TrangThai == true, new string[] { "ThoiGianTours" }).ToArray()[maTour];
+            var tourThongKe = tour.GetSingleByCondition(x => x.TrangThai == true && x.MaTour == maTour, new string[] { "ThoiGianTours" });
 
-
-            foreach (var tg in tourThongKe.ThoiGianTours.Where(x => x.NgayDi.Value >= bd && x.NgayDi.Value <= kt))
+            var tgTours = tourThongKe.ThoiGianTours.Where(x => x.NgayDi >= bd && x.NgayDi <= kt);
+            foreach (var tg in tgTours)
             {
                 int soDoanThamQuan = 0;
-                double doanhThu = 0;
+                int doanhThu = 0;
                 // Tinh tong doanh thu cua 1 tour trong lich khoi hanh tuong ung
-                double giaTour = tour_gia.GetMulti(x => x.MaTour == tourThongKe.MaTour && x.TGBD.Date <= bd  && x.TGKT.Date >= kt).OrderByDescending(x => x.MaTour).FirstOrDefault().Gia;
+                int giaTour = tour_gia.GetMulti(x => x.MaTour == tourThongKe.MaTour && x.TGBD <= bd  && x.TGKT >= kt).OrderByDescending(x => x.MaTour).FirstOrDefault().Gia;
                 int slKhachDangKy = dangki.GetMulti(x => x.MaThoiGian == tg.MaThoiGianTour).Count();
                 doanhThu = giaTour * slKhachDangKy;
 
                 // Lay so doan tham quan co tinh trang la da hoan thanh chuyen di
                 var dsDoanThamQuan = doan.GetMulti(x => x.TinhTrang == 1);
-                var dsctdoan = ct_doan.GetMulti(x => x.MaDoan == 1);
-                soDoanThamQuan = dsDoanThamQuan.Count();
+              
+                //var dsctdoan = ct_doan.GetMulti(x => x.MaDoan ==  );
+                //soDoanThamQuan = dsDoanThamQuan.Count();
                
                 // Tinh tong tien da chi trong chuyen di
                 // Suy ra duoc loi nhuan bang doanhthu - tongtienALL
-                double tongTatCa = 0;
-                foreach (var ct_doan in dsctdoan)
+                int tongTatCa = 0;
+                foreach (var doan in dsDoanThamQuan)
                 {
-                    int tienAnUong = ct_doan.TongCPBA;
-                    int tienKhachSan = ct_doan.TongCPKS;
-                    int tienPhuongTien = ct_doan.TongCPPT;
-                    //int tienPhatSinh = ct_doan.TongCPKhac;
-                    tongTatCa = tienAnUong + tienKhachSan + tienPhuongTien;
+                    doan.CTDoans.ToList().ForEach(ct => {
+                        int tienAnUong = ct.TongCPBA;
+                        int tienKhachSan = ct.TongCPKS;
+                        int tienPhuongTien = ct.TongCPPT;
+                        int tienPhatSinh = Convert.ToInt32(ct.TongCPKhac);
+                        tongTatCa = tienAnUong + tienKhachSan + tienPhuongTien + tienPhatSinh;
+
+                    });
+                   
+
                 }
 
                 string thoiGian = tg.NgayDi.Value.ToString("dd/MM/yyyy") + "-" + tg.NgayVe.Value.ToString("dd/MM/yyyy");

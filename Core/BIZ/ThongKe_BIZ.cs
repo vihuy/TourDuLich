@@ -15,5 +15,9 @@ namespace Core.BIZ
         {
             return thongke_dal.ThongKeSoLan_DiTour(bd,kt);
         }
+        public TinhHinhHoatDongModel ThongKeTinhHinhHoatDong(DateTime bd, DateTime kt, int matour)
+        {
+            return thongke_dal.ThongKeTinhHinhHoatDong(bd,kt,matour);
+        }
     }
 }

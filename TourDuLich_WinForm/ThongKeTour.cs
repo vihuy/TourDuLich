@@ -22,20 +22,20 @@ namespace TourDuLich_WinForm
         public ThongKeTour()
         {
             InitializeComponent();
-            layDSNhanVien();
+            layDSTour();
 
 
         }
 
-        public void layDSNhanVien()
+        public void layDSTour()
         {
-            NhanVien_BIZ nhanvien_biz = new NhanVien_BIZ();
-           
-            //dgvNhanVien.DataSource = nhanvien_biz.GetList();
+            Tour_BIZ tour_biz = new Tour_BIZ();
+
+            dgvTour_TKTH.DataSource = tour_biz.GetList();
 
 
         }
-        
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -77,8 +77,60 @@ namespace TourDuLich_WinForm
 
         private void btnTimKiem_TKTH_Click(object sender, EventArgs e)
         {
+            DateTime dtngaybd = dtNgayBD_TKTH.Value;
+            DateTime dtngaykt = dtNgayKT_TKTH.Value;
+            int selectedrow = dgvTour_TKTH.CurrentCell.RowIndex;
+            int matour = Convert.ToInt32(dgvTour_TKTH.Rows[selectedrow].Cells[0].Value.ToString());
+            MessageBox.Show(""+matour);
+            TinhHinhHoatDongModel dsThongKe = thongke_biz.ThongKeTinhHinhHoatDong(dtngaybd, dtngaykt, matour);
+            string DoanThamGia = dsThongKe.DoanThamQuans + " VND";
+            txtDoan_TKTH.Text = DoanThamGia;
+            string DoanhThu = dsThongKe.DoanhThuTours + " VND";
+            txtDoanhThu_TKTH.Text = DoanhThu;
+            string LoiNhuan = dsThongKe.LoiNhuans + "";
+            txtTienLoi_TKTH.Text = LoiNhuan;
 
         }
+        //private void UpdateDataForChart(TinhHinhHoatDongModel dsThongKe)
+        //{
+        //    chartTinhHinh.Series.Clear();
+
+        //    chartTinhHinh.Series.Add("DoanhThu");
+        //    chartTinhHinh.Series["DoanhThu"].ChartType = SeriesChartType.Column;
+        //    chartTinhHinh.Series["DoanhThu"].LegendText = "Doanh thu";
+        //    chartTinhHinh.Series["DoanhThu"].IsVisibleInLegend = true;
+
+        //    chartTinhHinh.Series.Add("LoiNhuan");
+        //    chartTinhHinh.Series["LoiNhuan"].ChartType = SeriesChartType.Column;
+        //    chartTinhHinh.Series["LoiNhuan"].LegendText = "Lợi nhuận";
+        //    chartTinhHinh.Series["LoiNhuan"].IsVisibleInLegend = true;
+        //    if (dsThongKe.ThoiGianTours.Count >= 0)
+        //    {
+        //        for (int i = 0; i < dsThongKe.ThoiGianTours.Count; i++)
+        //        {
+        //            string thoiGian = dsThongKe.ThoiGianTours[i];
+        //            double doanhThu = dsThongKe.DoanhThuTours[i];
+        //            double loiNhuan = dsThongKe.LoiNhuans[i];
+        //            string doanThamQuan = dsThongKe.DoanThamQuans[i];
+
+        //            DataPoint pointDoanhThu = new DataPoint();
+        //            pointDoanhThu.YValues[0] = doanhThu;
+        //            pointDoanhThu.IsValueShownAsLabel = true;
+        //            pointDoanhThu.AxisLabel = string.Format("Thời gian\n{0}\n{1}", thoiGian, doanThamQuan);
+        //            chartTinhHinh.Series["DoanhThu"].Points.Add(pointDoanhThu);
+        //            chartTinhHinh.Series["DoanhThu"].IsXValueIndexed = false;
+
+        //            DataPoint pointLoiNhuan = new DataPoint();
+        //            pointLoiNhuan.YValues[0] = loiNhuan;
+        //            pointLoiNhuan.IsValueShownAsLabel = true;
+        //            chartTinhHinh.Series["LoiNhuan"].Points.Add(pointLoiNhuan);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Tour du lịch chưa có trạng thái hoạt động nào !!!", "Thông báo");
+        //    }
+        //}
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
@@ -136,5 +188,13 @@ namespace TourDuLich_WinForm
         {
 
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
     }
 }
