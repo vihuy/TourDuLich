@@ -26,7 +26,7 @@ namespace Core.BIZ
             ThemChiPhi_DAL themcp_dal = new ThemChiPhi_DAL();
             return themcp_dal.Lay_DD_Doan(MaDoan);
         }
-        public CTDoan ThemChiPhi_Doan_CPKS(int MaDoan, Doan_KhachSan[] doan_ks)
+        public void ThemChiPhi_Doan_CPKS(int MaDoan, Doan_KhachSan[] doan_ks)
         {
             ThemChiPhi_DAL themcp_dal = new ThemChiPhi_DAL();
             CTDoan ctdoan = themcp_dal.Lay_CTDoan(doan_ks[0].MaDoan);
@@ -41,8 +41,7 @@ namespace Core.BIZ
             }
             ctdoan.TongCPKS = tong;
             themcp_dal.ThemChiPhi_Doan_CPKS(doan_ks);
-            return ctdoan;
-            //themcp_dal.CapNhat_CTDoan(ctdoan);
+            themcp_dal.CapNhat_CTDoan(ctdoan);
         }
         public void CapNhat_CTDoan(CTDoan ctdoan)
         {

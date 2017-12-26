@@ -36,7 +36,7 @@ namespace WebApp.Controllers
             ThemChiPhi_BIZ themcp_biz = new ThemChiPhi_BIZ();
             if (ModelState.IsValid)
             {
-                themcp_biz.CapNhat_CTDoan(themcp_biz.ThemChiPhi_Doan_CPKS(MaDoan, doan_ks));
+                themcp_biz.ThemChiPhi_Doan_CPKS(MaDoan, doan_ks);
                 ViewBag.MaDD = new SelectList(themcp_biz.Lay_DD_Doan(MaDoan), "MaDD", "Ten");
                 ViewBag.MaDoan = MaDoan;
                 return RedirectToAction("Index");

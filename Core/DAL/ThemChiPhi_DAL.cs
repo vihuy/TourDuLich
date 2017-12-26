@@ -65,6 +65,7 @@ namespace Core.DAL
             foreach (Doan_KhachSan d_ks in doan_ks)
             {
                 ThemChiPhi_Doan_CPKS(d_ks);
+                dbdoan_ks.Detach(d_ks);
             }
         }
         public void ThemChiPhi_Doan_CPPT(Doan_PhuongTien doan_pt)

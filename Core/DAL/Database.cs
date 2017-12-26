@@ -11,7 +11,6 @@ namespace Core.DAL
     public class Database<T> where T : class
     {
         public TourDuLichEntities db = new TourDuLichEntities();
-        private DbSet<T> dbSet;
         public static string error_message = "";
         public List<T> GetList()
         {
@@ -53,9 +52,9 @@ namespace Core.DAL
         public bool Update(T dto)
         {
             bool ok = false;
-            db.Entry(dto).State = EntityState.Modified;
             try
             {
+                db.Entry(dto).State = EntityState.Modified;
                 db.SaveChanges();
                 ok = true;
             }
