@@ -4,7 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< HEAD
       <Diagram DiagramId="94f66d26f5354bb7a1d590502c241a94" Name="Diagram1">
+=======
+      <Diagram DiagramId="e3b41b0335284ee0aceb30a86f568c6b" Name="Diagram1">
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
         <EntityTypeShape EntityType="TourDuLichModel.ChucVu" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.CTDoan" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.DangKi" Width="1.5" PointX="8.25" PointY="15.875" IsExpanded="true" />
@@ -24,6 +28,7 @@
         <EntityTypeShape EntityType="TourDuLichModel.TinhThanh" Width="1.5" PointX="1.5" PointY="20.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.Tour" Width="1.5" PointX="1.5" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TourDuLichModel.Tour_Gia" Width="1.5" PointX="0.75" PointY="25.75" IsExpanded="true" />
+<<<<<<< HEAD
         <AssociationConnector Association="TourDuLichModel.FK__PhanCong__MaCV__48CFD27E" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLichModel.FK__CTDoan__MaDoan__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLichModel.FK__DangKi__MaDoan__4222D4EF" ManuallyRouted="false" />
@@ -49,6 +54,33 @@
         <AssociationConnector Association="TourDuLichModel.FK__PhanCong__MaNV__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLichModel.FK__ThoiGianT__MaTou__37A5467C" ManuallyRouted="false" />
         <AssociationConnector Association="TourDuLichModel.FK__Tour_Gia__MaTour__34C8D9D1" ManuallyRouted="false" />
+=======
+        <AssociationConnector Association="TourDuLichModel.FK__PhanCong__MaCV__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__CTDoan__MaDoan__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__DangKi__MaDoan__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__DangKi__MaKH__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__DangKi__MaThoiGi__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__DiaDiem__TinhTha__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_DiaDi__MaDD__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_Khach__MaDD__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_QuanA__MaDD__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Tour__DiemKetThu__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Tour__DiemKhoiHa__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan__MaThoiGian__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan__MaTourGia__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan__TruongDoan__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_ChiP__MaDoa__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_DiaD__MaDoa__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_Khac__MaDoa__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_Phuo__MaDoa__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Doan_Quan__MaDoa__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__PhanCong__MaDoan__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__ThoiGianD__MaDoa__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Tour__LoaiHinhDL__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__PhanCong__MaNV__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__ThoiGianT__MaTou__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="TourDuLichModel.FK__Tour_Gia__MaTour__21B6055D" ManuallyRouted="false" />
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

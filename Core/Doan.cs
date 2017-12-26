@@ -31,11 +31,19 @@ namespace Core
         public int MaDoan { get; set; }
         public string Ten { get; set; }
         public int SLKhach { get; set; }
+<<<<<<< HEAD
         public Nullable<int> SLNV { get; set; }
         public Nullable<int> MaTourGia { get; set; }
         public Nullable<int> TruongDoan { get; set; }
         public int MaThoiGianTour { get; set; }
         public int TnhTrang { get; set; }
+=======
+        public int SLNV { get; set; }
+        public int MaTourGia { get; set; }
+        public int TruongDoan { get; set; }
+        public int MaThoiGianTour { get; set; }
+        public int TinhTrang { get; set; }
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDoan> CTDoans { get; set; }

@@ -38,11 +38,19 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MoreLinq, Version=2.8.21218.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.2.8.0\lib\net40\MoreLinq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="BIZ\QuanLi_DiaDiem_Tour_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_Doan_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_Doan_DiaDiem_BIZ.cs" />
@@ -78,6 +87,31 @@
     <Compile Include="DAL\QuanLi_TinhThanh_Dal.cs" />
     <Compile Include="DAL\QuanLi_Tour_DAL.cs" />
     <Compile Include="DAL\ThongKeKhachHang_CuaMotDoan.cs" />
+=======
+    <Compile Include="BIZ\DiaDiem_BIZ.cs" />
+    <Compile Include="BIZ\LoaiHinhDuLich_BIZ.cs" />
+    <Compile Include="BIZ\NhanVien_BIZ.cs" />
+    <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
+    <Compile Include="BIZ\ThongKe_BIZ.cs" />
+    <Compile Include="BIZ\TourGia_BIZ.cs" />
+    <Compile Include="BIZ\Tour_BIZ.cs" />
+    <Compile Include="ChucVu.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SoLanDiTourModel.cs" />
+    <Compile Include="Common\TinhHinhHoatDongModel.cs" />
+    <Compile Include="CTDoan.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\DiaDiem_DAL.cs" />
+    <Compile Include="DAL\LoaiHinhDuLich_DAL.cs" />
+    <Compile Include="DAL\NhanVien_DAL.cs" />
+    <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
+    <Compile Include="DAL\ThongKe_DAL.cs" />
+    <Compile Include="DAL\TourGia_DAL.cs" />
+    <Compile Include="DAL\Tour_DAL.cs" />
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
     <Compile Include="DangKi.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -132,20 +166,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TourDuLich.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TourDuLich.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TourDuLich.tt</DependentUpon>
-    </Compile>
     <Compile Include="TourDuLich.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TourDuLich.edmx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Tour_Gia.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\DiaDiemModel.cs" />
+=======
+    <Compile Include="TourDuLich1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tour_Gia.cs">
+      <DependentUpon>TourDuLich.tt</DependentUpon>
+    </Compile>
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
@@ -172,7 +212,7 @@
     <Content Include="TourDuLich.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TourDuLich.edmx</DependentUpon>
-      <LastGenOutput>TourDuLich.cs</LastGenOutput>
+      <LastGenOutput>TourDuLich1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

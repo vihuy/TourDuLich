@@ -25,5 +25,18 @@ namespace Core.BIZ
         {
             return ql_gia.layTenTour();
         }
+
+        public IEnumerable dsDoan()
+        {
+            return ql_gia.dsDoan();
+        }
+
+
+        public IEnumerable laySoLuongDoan_TheoTour()
+        {
+            return ql_gia.laySoLuongDoan_theoTour123();
+        }
+
+
     }
 }

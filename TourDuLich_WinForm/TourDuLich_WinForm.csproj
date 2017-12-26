@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\TourDuLich\TourDuLich-master\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -40,9 +43,18 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MoreLinq, Version=2.8.21218.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.2.8.0\lib\net40\MoreLinq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="ConnectSql_Tour.cs" />
     <Compile Include="DiaDiemTour.cs">
       <SubType>Form</SubType>
@@ -75,15 +88,19 @@
     </Compile>
     <Compile Include="ThongKe-TinhHinh-Tour.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe-TinhHinh-Tour.Designer.cs">
-      <DependentUpon>ThongKe-TinhHinh-Tour.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongKeTour-NhanVien.cs">
+=======
+    <Compile Include="Quanli_Doan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKeTour-NhanVien.Designer.cs">
-      <DependentUpon>ThongKeTour-NhanVien.cs</DependentUpon>
+    <Compile Include="Quanli_Doan.Designer.cs">
+      <DependentUpon>Quanli_Doan.cs</DependentUpon>
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
+    </Compile>
+    <Compile Include="QuanLi_Tour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLi_Tour.Designer.cs">
+      <DependentUpon>QuanLi_Tour.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeTour.cs">
       <SubType>Form</SubType>
@@ -93,12 +110,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="DiaDiemTour.resx">
       <DependentUpon>DiaDiemTour.cs</DependentUpon>
+=======
+    <Compile Include="TourDuLichDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourDuLichDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TourDuLichDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourDuLichDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TourDuLichDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourDuLichDataSet2.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quanli_Doan.resx">
+      <DependentUpon>Quanli_Doan.cs</DependentUpon>
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLi_Tour.resx">
       <DependentUpon>QuanLi_Tour.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +146,8 @@
     <EmbeddedResource Include="ThongKeTour-NhanVien.resx">
       <DependentUpon>ThongKeTour-NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
     <EmbeddedResource Include="ThongKeTour.resx">
       <DependentUpon>ThongKeTour.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,7 +160,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,6 +172,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TourDuLichDataSet.xsc">
+      <DependentUpon>TourDuLichDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TourDuLichDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TourDuLichDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TourDuLichDataSet.xss">
+      <DependentUpon>TourDuLichDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TourDuLichDataSet1.xsc">
+      <DependentUpon>TourDuLichDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TourDuLichDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TourDuLichDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TourDuLichDataSet1.xss">
+      <DependentUpon>TourDuLichDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TourDuLichDataSet2.xsc">
+      <DependentUpon>TourDuLichDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TourDuLichDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TourDuLichDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TourDuLichDataSet2.xss">
+      <DependentUpon>TourDuLichDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
