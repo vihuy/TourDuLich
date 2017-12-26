@@ -27,6 +27,7 @@ namespace Core
         public int MaDD { get; set; }
         public string Ten { get; set; }
         public int TinhThanh { get; set; }
+        public bool TrangThai { get; set; }
     
         public virtual TinhThanh TinhThanh1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

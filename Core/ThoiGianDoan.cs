@@ -12,14 +12,14 @@ namespace Core
     using System;
     using System.Collections.Generic;
     
-    public partial class Gia
+    public partial class ThoiGianDoan
     {
-        public int MaGia { get; set; }
-        public int MaTour { get; set; }
-        public int Gia1 { get; set; }
-        public System.DateTime khoangTGBD { get; set; }
-        public System.DateTime khoangTGKT { get; set; }
+        public int MaThoiGianDoan { get; set; }
+        public int MaDoan { get; set; }
+        public Nullable<System.DateTime> NgayDi { get; set; }
+        public Nullable<System.DateTime> NgayVe { get; set; }
+        public Nullable<bool> TrangThai { get; set; }
     
-        public virtual Tour Tour { get; set; }
+        public virtual Doan Doan { get; set; }
     }
 }

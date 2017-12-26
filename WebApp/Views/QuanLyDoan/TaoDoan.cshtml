@@ -1,0 +1,123 @@
+﻿@using Core
+
+@{
+    ViewBag.Title = "TaoDoan";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+    List<KhachHang> list = ViewBag.DSKhachHang as List<KhachHang>;
+    var listKhachHang = Session["dsKhachHang"] as List<Core.KhachHang>;
+}
+<script src="~/Content/Admin/js/jquery.min.js"></script>
+
+<h2>TaoDoan</h2>
+<div class="form-group row">
+    <label>Tên đoàn</label>
+    <input id="TenDoan" type="text" class="form-control"/>
+</div>
+<div class="form-group row">
+    <label>Chọn Tour</label>
+    @Html.DropDownList("MaTour", ViewBag.TourSelectList as SelectList, "Chọn tour du lịch", new { @class = "form-control select2" })
+</div>
+<div class="form-group row">
+    <label>Thời gian</label>
+    <select id="ThoiGianTour_MaThoiGianTour" name="ThoiGianTour.MaThoiGianTour" class="form-control select2">
+        <option selected disabled>Chọn thời gian</option>
+    </select>
+</div>
+
+<div class="row" style="margin-top:30px">
+    <h4>Danh sách khách hàng</h4>
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <label>
+                    <input id="check-all" type="checkbox" /><span></span>
+                </label>
+            </td>
+            <td>Họ tên</td>
+            <td>Ngày sinh</td>
+            <td>Số điên thoại</td>
+            <td>Địa chỉ</td>
+            <td>CMND</td>
+            <td>Passport</td>
+            <td>Quốc tịch</td>
+        </tr>
+        @foreach (KhachHang kh in list)
+        {
+            <tr>
+                <td>
+                    <label>
+                        <input class="item-check" data-dk-id="@kh.MaKH" type="checkbox" /><span></span>
+                    </label>
+                </td>
+                <td>@kh.HoTen</td>
+                <td>@kh.NgaySinh</td>
+                <td>@kh.SoDT</td>
+                <td>@kh.DiaChi</td>
+                <td>@kh.CMND</td>
+                <td>@kh.Passport</td>
+                <td>@kh.QuocTich</td>
+            </tr>
+        }
+    </table>
+</div>
+<button id="tao-doan" class="btn btn-lg btn-success" style="float:right">Tạo đoàn</button>
+
+<script type="text/javascript">
+    $(function () {
+        $("#check-all").change(function () {
+            if ($(this).is(":checked"))
+                $(".item-check").prop("checked", true);
+            else
+                $(".item-check").prop("checked", false);
+        });
+        $("#tao-doan").click(function () {
+            var listId = "";
+            $(".item-check:checked").each(function () {
+                listId = listId + $(this).attr("data-dk-id") + ";";
+            });
+            if (listId === "") {
+                alert("Chưa có chọn danh sách cần tạo đoàn.");
+                return false;
+            }
+            else {
+                var time = $("#ThoiGianTour_MaThoiGianTour").val();
+                var tenDoan = $("#TenDoan").val();
+                $.ajax({
+                    url: "/QuanLyDoan/LuuDoan/",
+                    data: {
+                        tenDoan: tenDoan,
+                        listId: listId,
+                        time: time
+                    },
+                    async: false,
+                    success: function (res) {
+                        window.location.reload();
+                    }
+                });
+                return false;
+            }
+        });
+            $("#MaTour").change(function () {
+                $.ajax({
+                    url: "/Api/LayThoiGianTour",
+                    dataType: "json",
+                    data: {
+                        MaTour: $(this).val()
+                    },
+                    success: function (data) {
+                        if (jQuery.isEmptyObject(data)) {
+                            var optionHTML = "<option selected disabled>Chưa có thời gian hoạt động</option>";
+                            $("#ThoiGianTour_MaThoiGianTour").html(optionHTML);
+                        }
+                        else {
+                            var optionHTML = "<option selected disabled>Chọn thời gian</option>";
+                            $.each(data, function (i, item) {
+                                optionHTML += "<option value='" + item.MaThoiGian + "'>" + item.ThoiGian + "</option>";
+                            });
+                            $("#ThoiGianTour_MaThoiGianTour").html(optionHTML);
+                        }
+                    }
+                });
+            });
+        });
+</script>

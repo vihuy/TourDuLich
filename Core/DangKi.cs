@@ -18,8 +18,10 @@ namespace Core
         public int MaDoan { get; set; }
         public int MaKH { get; set; }
         public System.DateTime NgayDK { get; set; }
+        public Nullable<int> MaThoiGian { get; set; }
     
         public virtual Doan Doan { get; set; }
         public virtual KhachHang KhachHang { get; set; }
+        public virtual ThoiGianTour ThoiGianTour { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Core
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tour()
         {
-            this.Gias = new HashSet<Gia>();
+            this.ThoiGianTours = new HashSet<ThoiGianTour>();
             this.Tour_Gia = new HashSet<Tour_Gia>();
         }
     
@@ -32,9 +32,9 @@ namespace Core
     
         public virtual DiaDiem DiaDiem { get; set; }
         public virtual DiaDiem DiaDiem1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Gia> Gias { get; set; }
         public virtual LoaiHinhDL LoaiHinhDL1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThoiGianTour> ThoiGianTours { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tour_Gia> Tour_Gia { get; set; }
     }

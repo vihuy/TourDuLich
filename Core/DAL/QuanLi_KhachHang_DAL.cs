@@ -7,25 +7,31 @@ using System.Threading.Tasks;
 
 namespace Core.DAL
 {
-    public class QuanLi_Doan
+    public class QuanLi_KhachHang_DAL
     {
         TourDuLichEntities db = new TourDuLichEntities();
-        public List<Doan> layDSDoan()
-        {
-            return db.Doans.ToList();
-        }
 
-        public void ThemDoan(Doan doan)
+        public void ThemKhachHang(KhachHang kh)
         {
             try
             {
-                db.Doans.Add(doan);
+                db.KhachHangs.Add(kh);
                 db.SaveChanges();
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        public IEnumerable LayTatCaKhachHang()
+        {
+            return db.KhachHangs.ToList();
+        }
+
+        public KhachHang layKhachHangTheoMa(int MaKH)
+        {
+            return db.KhachHangs.FirstOrDefault(n => n.MaKH == MaKH);
         }
     }
 }

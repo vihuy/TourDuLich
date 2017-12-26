@@ -31,6 +31,11 @@
             this.btn_Them = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DataGridView_DSDiaDiemdaydu = new System.Windows.Forms.DataGridView();
+            this.MaDiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTinhThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTinhThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView_DSDiaDiem = new System.Windows.Forms.DataGridView();
             this.maDD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_TinhThanh = new System.Windows.Forms.ComboBox();
-            this.MaDiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTinhThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTinhThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_Luu = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_DSDiaDiemdaydu)).BeginInit();
@@ -75,6 +75,7 @@
             // 
             // DataGridView_DSDiaDiemdaydu
             // 
+            this.DataGridView_DSDiaDiemdaydu.AllowUserToAddRows = false;
             this.DataGridView_DSDiaDiemdaydu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridView_DSDiaDiemdaydu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView_DSDiaDiemdaydu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -88,6 +89,33 @@
             this.DataGridView_DSDiaDiemdaydu.Size = new System.Drawing.Size(336, 337);
             this.DataGridView_DSDiaDiemdaydu.TabIndex = 1;
             this.DataGridView_DSDiaDiemdaydu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_DSDiaDiemdaydu_CellContentClick);
+            // 
+            // MaDiaDiem
+            // 
+            this.MaDiaDiem.HeaderText = "Ma Dia Diem";
+            this.MaDiaDiem.Name = "MaDiaDiem";
+            this.MaDiaDiem.Visible = false;
+            // 
+            // TenDiaDiem
+            // 
+            this.TenDiaDiem.HeaderText = "Tên Địa Điểm";
+            this.TenDiaDiem.Name = "TenDiaDiem";
+            // 
+            // MaTinhThanh
+            // 
+            this.MaTinhThanh.HeaderText = "Ma Tinh Thanh";
+            this.MaTinhThanh.Name = "MaTinhThanh";
+            this.MaTinhThanh.Visible = false;
+            // 
+            // TenTinhThanh
+            // 
+            this.TenTinhThanh.HeaderText = "Tên Tỉnh Thành";
+            this.TenTinhThanh.Name = "TenTinhThanh";
+            // 
+            // Xoa
+            // 
+            this.Xoa.HeaderText = "Xóa";
+            this.Xoa.Name = "Xoa";
             // 
             // groupBox1
             // 
@@ -137,9 +165,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(87, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Tên tour";
+            this.label3.Text = "Tên đoàn";
             // 
             // label1
             // 
@@ -177,33 +205,6 @@
             this.cmb_TinhThanh.TabIndex = 32;
             this.cmb_TinhThanh.SelectedIndexChanged += new System.EventHandler(this.cmb_TinhThanh_SelectedIndexChanged);
             // 
-            // MaDiaDiem
-            // 
-            this.MaDiaDiem.HeaderText = "Ma Dia Diem";
-            this.MaDiaDiem.Name = "MaDiaDiem";
-            this.MaDiaDiem.Visible = false;
-            // 
-            // TenDiaDiem
-            // 
-            this.TenDiaDiem.HeaderText = "Tên Địa Điểm";
-            this.TenDiaDiem.Name = "TenDiaDiem";
-            // 
-            // MaTinhThanh
-            // 
-            this.MaTinhThanh.HeaderText = "Ma Tinh Thanh";
-            this.MaTinhThanh.Name = "MaTinhThanh";
-            this.MaTinhThanh.Visible = false;
-            // 
-            // TenTinhThanh
-            // 
-            this.TenTinhThanh.HeaderText = "Tên Tỉnh Thành";
-            this.TenTinhThanh.Name = "TenTinhThanh";
-            // 
-            // Xoa
-            // 
-            this.Xoa.HeaderText = "Xóa";
-            this.Xoa.Name = "Xoa";
-            // 
             // btn_Luu
             // 
             this.btn_Luu.Location = new System.Drawing.Point(717, 567);
@@ -212,6 +213,7 @@
             this.btn_Luu.TabIndex = 33;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = true;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // DiaDiemTour
             // 
@@ -230,6 +232,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "DiaDiemTour";
             this.Text = "DiaDiemTour";
+            this.Load += new System.EventHandler(this.DiaDiemTour_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_DSDiaDiemdaydu)).EndInit();
             this.groupBox1.ResumeLayout(false);

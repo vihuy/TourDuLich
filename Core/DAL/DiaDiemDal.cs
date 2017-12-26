@@ -18,11 +18,11 @@ namespace Core.DAL
             return linq.ToList();
         }
 
-        public IEnumerable <object> layDiaDiemTheoTour(int MaTour)
-        {
-            var linq = from t in db.Tours
-                       join t_diadiem in db.
+        //public IEnumerable <object> layDiaDiemTheoTour(int MaTour)
+        //{
+        //    var linq = from t in db.Tours
+        //               join t_diadiem in db.
 
-        }
+        //}
     }
 }

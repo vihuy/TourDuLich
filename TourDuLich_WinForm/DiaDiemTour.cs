@@ -1,4 +1,5 @@
-﻿using Core.BIZ;
+﻿using Core;
+using Core.BIZ;
 using Core.ViewModel;
 using System;
 using System.Collections;
@@ -17,7 +18,9 @@ namespace TourDuLich_WinForm
     {
         QuanLi_DiaDiem_Tour_BIZ bus_tour = new QuanLi_DiaDiem_Tour_BIZ();
         Quanli_TinhThanh_BIZ bus_tinhthanh = new Quanli_TinhThanh_BIZ();
-
+        QuanLi_DiaDiem_Tour_BIZ bus_diadiem = new QuanLi_DiaDiem_Tour_BIZ();
+        QuanLi_Doan_BIZ doan_BIZ = new QuanLi_Doan_BIZ();
+        QuanLi_Doan_DiaDiem_BIZ quanLi_Doan_DiaDiem_BIZ = new QuanLi_Doan_DiaDiem_BIZ();
 
         public DiaDiemTour()
         {
@@ -32,10 +35,10 @@ namespace TourDuLich_WinForm
         }
         public void dsTour()
         {
-            IEnumerable tour = bus_tour.layTenTour();
-            cmb_TenTour.DataSource = tour;
+            IEnumerable doan = doan_BIZ.layDSDoan();
+            cmb_TenTour.DataSource = doan;
             cmb_TenTour.DisplayMember = "Ten";
-            cmb_TenTour.ValueMember = "MaTour";
+            cmb_TenTour.ValueMember = "MaDoan";
         }
         
         public void dsTinhThanh()
@@ -47,17 +50,27 @@ namespace TourDuLich_WinForm
 
         }
 
+        public void layDSDiaDiem()
+        {
+
+            
+           
+        }
+
         private void cmb_TinhThanh_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                int MaTinhThanh = int.Parse(cmb_TinhThanh.SelectedValue.ToString());
-                dataGridView_DSDiaDiem.DataSource = bus_tour.layDiaDiemTheoTinhThanh(MaTinhThanh);
+                // lay du lieu tu combobox
+                int matinhthanh = Convert.ToInt32(cmb_TinhThanh.SelectedValue);
+                IEnumerable diadiem = bus_diadiem.layDiaDiemTheoTinhThanh(matinhthanh);
+                dataGridView_DSDiaDiem.DataSource = diadiem;
             }
-            catch(Exception)
+            catch (Exception)
             {
-
+                
             }
+            
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -82,23 +95,46 @@ namespace TourDuLich_WinForm
 
         private void cmb_TenTour_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    DataGridView_DSDiaDiemdaydu.Rows.Clear();
+            //    int MaTour = int.Parse(cmb_TenTour.SelectedValue.ToString());
+            //    //foreach (DiaDiemModel item in bus_tour.layDiaDiem(MaTour)) ;
+            //    //{
+
+            //    //}
+            //    //{
+
+            //    //}
+            //}
+            //catch (Exception)
+            //{
+
+            //    throw;
+            //}
+        }
+
+        private void DiaDiemTour_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DataGridView_DSDiaDiemdaydu.Rows)
             {
-                DataGridView_DSDiaDiemdaydu.Rows.Clear();
-                int MaTour = int.Parse(cmb_TenTour.SelectedValue.ToString());
-                foreach (DiaDiemModel item in bus_tour.layDiaDiem(MaTour)) ;
+                int MaDD = int.Parse(row.Cells["MaDiaDiem"].Value.ToString());
+                int MaDoan = int.Parse(cmb_TenTour.SelectedValue.ToString());
+                if (quanLi_Doan_DiaDiem_BIZ.kiemTraTonTaiDiaDiemCuaDoan(MaDD, MaDoan) == false)
                 {
-
-                }
-                {
-
+                    Doan_DiaDiem doan_dd = new Doan_DiaDiem();
+                    doan_dd.MaDD = MaDD;
+                    doan_dd.MaDoan = MaDoan;
+                    doan_dd.GhiChu = "";
+                    quanLi_Doan_DiaDiem_BIZ.ThemDoanDiaDiem(doan_dd);
                 }
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            MessageBox.Show("Đã lưu");
         }
     }
 }
