@@ -129,6 +129,7 @@
             this.btnThemGiaTour = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.label14 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label16 = new System.Windows.Forms.Label();
@@ -137,6 +138,24 @@
             this.nhanVienTableAdapter = new TourDuLich_WinForm.TourDuLichDataSetTableAdapters.NhanVienTableAdapter();
             this.doanTableAdapter = new TourDuLich_WinForm.TourDuLichDataSet1TableAdapters.DoanTableAdapter();
             this.tourTableAdapter = new TourDuLich_WinForm.TourDuLichDataSet2TableAdapters.TourTableAdapter();
+=======
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dtaGridVCTDST_DST = new System.Windows.Forms.DataGridView();
+            this.btnThongKe_DSTour = new System.Windows.Forms.Button();
+            this.dtaGridVDSTour_DST = new System.Windows.Forms.DataGridView();
+            this.btnLayDL_DSTour = new System.Windows.Forms.Button();
+            this.txtTenTour_DST = new System.Windows.Forms.TextBox();
+            this.dtNgayKT_DST = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayBD_DST = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbTongDoanhThu = new System.Windows.Forms.Label();
+            this.lbTDT = new System.Windows.Forms.Label();
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,8 +174,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tourDuLichDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+<<<<<<< HEAD
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTour_themTour)).BeginInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGridVCTDST_DST)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGridVDSTour_DST)).BeginInit();
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1322,6 +1346,174 @@
             // 
             this.tourTableAdapter.ClearBeforeFill = true;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.lbTDT);
+            this.tabPage4.Controls.Add(this.lbTongDoanhThu);
+            this.tabPage4.Controls.Add(this.dtaGridVCTDST_DST);
+            this.tabPage4.Controls.Add(this.btnThongKe_DSTour);
+            this.tabPage4.Controls.Add(this.dtaGridVDSTour_DST);
+            this.tabPage4.Controls.Add(this.btnLayDL_DSTour);
+            this.tabPage4.Controls.Add(this.txtTenTour_DST);
+            this.tabPage4.Controls.Add(this.dtNgayKT_DST);
+            this.tabPage4.Controls.Add(this.dtNgayBD_DST);
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 630);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Doanh Số Tour";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dtaGridVCTDST_DST
+            // 
+            this.dtaGridVCTDST_DST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtaGridVCTDST_DST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaGridVCTDST_DST.Location = new System.Drawing.Point(671, 200);
+            this.dtaGridVCTDST_DST.Name = "dtaGridVCTDST_DST";
+            this.dtaGridVCTDST_DST.ReadOnly = true;
+            this.dtaGridVCTDST_DST.Size = new System.Drawing.Size(502, 420);
+            this.dtaGridVCTDST_DST.TabIndex = 12;
+            // 
+            // btnThongKe_DSTour
+            // 
+            this.btnThongKe_DSTour.Location = new System.Drawing.Point(562, 393);
+            this.btnThongKe_DSTour.Name = "btnThongKe_DSTour";
+            this.btnThongKe_DSTour.Size = new System.Drawing.Size(90, 62);
+            this.btnThongKe_DSTour.TabIndex = 11;
+            this.btnThongKe_DSTour.Text = "Thống kê";
+            this.btnThongKe_DSTour.UseVisualStyleBackColor = true;
+            this.btnThongKe_DSTour.Click += new System.EventHandler(this.btnThongKe_DSTour_Click);
+            // 
+            // dtaGridVDSTour_DST
+            // 
+            this.dtaGridVDSTour_DST.AllowUserToAddRows = false;
+            this.dtaGridVDSTour_DST.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtaGridVDSTour_DST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtaGridVDSTour_DST.Location = new System.Drawing.Point(42, 204);
+            this.dtaGridVDSTour_DST.Name = "dtaGridVDSTour_DST";
+            this.dtaGridVDSTour_DST.ReadOnly = true;
+            this.dtaGridVDSTour_DST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtaGridVDSTour_DST.Size = new System.Drawing.Size(502, 420);
+            this.dtaGridVDSTour_DST.TabIndex = 10;
+            // 
+            // btnLayDL_DSTour
+            // 
+            this.btnLayDL_DSTour.Location = new System.Drawing.Point(944, 85);
+            this.btnLayDL_DSTour.Name = "btnLayDL_DSTour";
+            this.btnLayDL_DSTour.Size = new System.Drawing.Size(124, 62);
+            this.btnLayDL_DSTour.TabIndex = 9;
+            this.btnLayDL_DSTour.Text = "Lấy dữ liệu";
+            this.btnLayDL_DSTour.UseVisualStyleBackColor = true;
+            this.btnLayDL_DSTour.Click += new System.EventHandler(this.btnLayDL_DSTour_Click);
+            // 
+            // txtTenTour_DST
+            // 
+            this.txtTenTour_DST.Location = new System.Drawing.Point(208, 128);
+            this.txtTenTour_DST.Name = "txtTenTour_DST";
+            this.txtTenTour_DST.Size = new System.Drawing.Size(717, 20);
+            this.txtTenTour_DST.TabIndex = 8;
+            // 
+            // dtNgayKT_DST
+            // 
+            this.dtNgayKT_DST.Location = new System.Drawing.Point(663, 85);
+            this.dtNgayKT_DST.Name = "dtNgayKT_DST";
+            this.dtNgayKT_DST.Size = new System.Drawing.Size(262, 20);
+            this.dtNgayKT_DST.TabIndex = 7;
+            // 
+            // dtNgayBD_DST
+            // 
+            this.dtNgayBD_DST.Location = new System.Drawing.Point(290, 85);
+            this.dtNgayBD_DST.Name = "dtNgayBD_DST";
+            this.dtNgayBD_DST.Size = new System.Drawing.Size(262, 20);
+            this.dtNgayBD_DST.TabIndex = 6;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(733, 178);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(146, 19);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Bảng chi tiết doanh thu";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(221, 178);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(125, 19);
+            this.label18.TabIndex = 4;
+            this.label18.Text = "Danh sách các tour";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(119, 128);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 19);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Tìm tên tour";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(558, 85);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(99, 19);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Chọn ngày KT";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(119, 85);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 19);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Chọn ngày BĐ Thống Kê";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 20.25F);
+            this.label14.Location = new System.Drawing.Point(496, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(181, 31);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Doanh Số Tour";
+            // 
+            // lbTongDoanhThu
+            // 
+            this.lbTongDoanhThu.AutoSize = true;
+            this.lbTongDoanhThu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongDoanhThu.Location = new System.Drawing.Point(950, 178);
+            this.lbTongDoanhThu.Name = "lbTongDoanhThu";
+            this.lbTongDoanhThu.Size = new System.Drawing.Size(118, 19);
+            this.lbTongDoanhThu.TabIndex = 13;
+            this.lbTongDoanhThu.Text = "Tổng Doanh Thu: ";
+            // 
+            // lbTDT
+            // 
+            this.lbTDT.AutoSize = true;
+            this.lbTDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTDT.Location = new System.Drawing.Point(1074, 178);
+            this.lbTDT.Name = "lbTDT";
+            this.lbTDT.Size = new System.Drawing.Size(17, 19);
+            this.lbTDT.TabIndex = 14;
+            this.lbTDT.Text = "0";
+            // 
             // ThongKeTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1355,9 +1547,14 @@
             this.groupBox2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+<<<<<<< HEAD
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTour_themTour)).EndInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGridVCTDST_DST)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaGridVDSTour_DST)).EndInit();
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
             this.ResumeLayout(false);
 
         }
@@ -1433,6 +1630,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnThemGiaTour;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label13;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label14;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.Label label16;
@@ -1456,6 +1654,24 @@
         private System.Windows.Forms.DateTimePicker dtKetThuc_ThemTour;
         private System.Windows.Forms.DateTimePicker dtBatDau_ThemTour;
         private Bunifu.Framework.UI.BunifuFlatButton btnLuuTatCa_themTour;
+=======
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnLayDL_DSTour;
+        private System.Windows.Forms.TextBox txtTenTour_DST;
+        private System.Windows.Forms.DateTimePicker dtNgayKT_DST;
+        private System.Windows.Forms.DateTimePicker dtNgayBD_DST;
+        private System.Windows.Forms.Button btnThongKe_DSTour;
+        private System.Windows.Forms.DataGridView dtaGridVDSTour_DST;
+        private System.Windows.Forms.DataGridView dtaGridVCTDST_DST;
+        private System.Windows.Forms.Label lbTongDoanhThu;
+        private System.Windows.Forms.Label lbTDT;
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
     }
 }
 

@@ -10,14 +10,18 @@ using System.Windows.Forms;
 using System.Data.Entity.Core;
 using Core.BIZ;
 using Core;
+<<<<<<< HEAD
 using Core.Common;
 using System.Collections;
+=======
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
 using System.Globalization;
 
 namespace TourDuLich_WinForm
 {
     public partial class ThongKeTour : Form
     {
+<<<<<<< HEAD
         private SoLanDiTourModel dsThongKe;
         ThongKe_BIZ thongke_biz = new ThongKe_BIZ();
         QuanLi_GiaTour_BIZ gia_tour_biz = new QuanLi_GiaTour_BIZ();
@@ -29,6 +33,15 @@ namespace TourDuLich_WinForm
             layDSLoaiHinh();
             layDSDiaDiem();
 
+=======
+        QuanLi_GiaTour_BIZ bus_gia_tour = new QuanLi_GiaTour_BIZ();
+        ThongKe_DoanhSoTour_BIZ doanhso_tour = new ThongKe_DoanhSoTour_BIZ();
+        public ThongKeTour()
+        {
+            InitializeComponent();
+            layDSNhanVien();
+            LayDSTour_DST();
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
 
         }
         public void layDSDiaDiem()
@@ -306,6 +319,66 @@ namespace TourDuLich_WinForm
                 int maTour = tour_biz.ThemTourMoi(tour, listGiaTour);
                 MessageBox.Show("Thêm thành công !!!");
             }
+        }
+        
+        public void LayDSTour_DST()
+        {
+            dtaGridVDSTour_DST.DataSource = doanhso_tour.Tour_List();
+        }
+        /*public void AutoComplete_DSTour()
+        {
+            try
+            {
+                txtTenTour_DST.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtTenTour_DST.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+                int _sl = dtaGridVDSTour_DST.RowCount - 1;
+                for (int i = 0; i < _sl; i++)
+                {
+                    string _tentour;
+                    _tentour = dtaGridVDSTour_DST.Rows[0].Cells["Ten"].Value.ToString();
+                    auto.Add(_tentour);
+                }
+                txtTenTour_DST.AutoCompleteCustomSource = auto;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }*/
+
+        private void btnLayDL_DSTour_Click(object sender, EventArgs e)
+        {
+            DateTime NgayBD = dtNgayBD_DST.Value;
+            DateTime NgayKT = dtNgayKT_DST.Value;
+            string TenTour = txtTenTour_DST.Text;
+            dtaGridVDSTour_DST.DataSource = doanhso_tour.Tour_List_Condition(NgayBD, NgayKT, TenTour);
+        }
+
+        private void btnThongKe_DSTour_Click(object sender, EventArgs e)
+        {
+            List<int> MaTour = new List<int>();
+            int _sl = dtaGridVDSTour_DST.SelectedRows.Count;
+            for(int i = 0; i < _sl; i++)
+            {
+                MaTour.Add(int.Parse(dtaGridVDSTour_DST.SelectedRows[i].Cells[0].Value.ToString()));
+                Console.WriteLine(dtaGridVDSTour_DST.SelectedRows[i].Cells[0].Value.ToString());
+            }
+            DateTime NgayBD = dtNgayBD_DST.Value;
+            DateTime NgayKT = dtNgayKT_DST.Value;
+            dtaGridVCTDST_DST.DataSource = doanhso_tour.Doan_List_TourList(NgayBD, NgayKT, MaTour);
+
+
+            int _sldt = dtaGridVCTDST_DST.RowCount;
+            int gia = 0, slkhach = 0, thanhtien = 0, tong = 0;
+            for (int i = 0; i < _sldt; i++)
+            {
+                gia = int.Parse(dtaGridVCTDST_DST.Rows[i].Cells["Gia"].Value.ToString());
+                slkhach = int.Parse(dtaGridVCTDST_DST.Rows[i].Cells["SLKhach"].Value.ToString());
+                thanhtien = gia * slkhach;
+                tong += thanhtien;
+            }
+            lbTDT.Text = tong.ToString("C", CultureInfo.GetCultureInfo("vi-VN"));
         }
     }
 }

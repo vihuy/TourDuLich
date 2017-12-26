@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Core</RootNamespace>
     <AssemblyName>Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,7 +93,11 @@
     <Compile Include="BIZ\LoaiHinhDuLich_BIZ.cs" />
     <Compile Include="BIZ\NhanVien_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
+<<<<<<< HEAD
     <Compile Include="BIZ\ThongKe_BIZ.cs" />
+=======
+    <Compile Include="BIZ\ThongKe_DoanhSoTour_BIZ.cs" />
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
     <Compile Include="BIZ\TourGia_BIZ.cs" />
     <Compile Include="BIZ\Tour_BIZ.cs" />
     <Compile Include="ChucVu.cs">
@@ -109,6 +114,7 @@
     <Compile Include="DAL\NhanVien_DAL.cs" />
     <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
     <Compile Include="DAL\ThongKe_DAL.cs" />
+    <Compile Include="DAL\ThongKe_DoanhSoTour_DAL.cs" />
     <Compile Include="DAL\TourGia_DAL.cs" />
     <Compile Include="DAL\Tour_DAL.cs" />
 >>>>>>> b93e312db85028de8ee98e92e4ace50f0412de11
@@ -152,9 +158,12 @@
     <Compile Include="ThoiGianDoan.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ThoiGianTour.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
+=======
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
     <Compile Include="TinhThanh.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>

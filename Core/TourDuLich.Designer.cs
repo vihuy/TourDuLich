@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// T4 code generation is enabled for model 'C:\Users\Ly Heo\Desktop\TMDT_TDL\Core\TourDuLich.edmx'. 
+=======
+﻿// T4 code generation is enabled for model 'D:\Tourdulich\TourDuLich\Core\TourDuLich.edmx'. 
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

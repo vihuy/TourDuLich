@@ -38,6 +38,7 @@ namespace Core.DAL
                 int soLanDi = 0;
                 List<Doan> listDoanDaDi = new List<Doan>();
 
+<<<<<<< HEAD
                 dsThongKe.ListNhanVien.Add(nv);
                 if (nv.PhanCongs.Count <= 0)
                 {
@@ -62,6 +63,11 @@ namespace Core.DAL
             }
             return dsThongKe;
         }
+=======
+           
+            // Kiểm tra ngày đi phải lớn hơn ngày chọn bắt đầu và ngày về của đoàn phải nhỏ hơn ngày kết thúc.
+            //var list = db.Doans.Select(x => new {x => }).ToList();
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
 
 
         public TinhHinhHoatDongModel ThongKeTinhHinhHoatDong(DateTime bd, DateTime kt, int maTour)

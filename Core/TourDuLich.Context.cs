@@ -40,7 +40,10 @@ namespace Core
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhanCong> PhanCongs { get; set; }
         public virtual DbSet<ThoiGianDoan> ThoiGianDoans { get; set; }
+<<<<<<< HEAD
         public virtual DbSet<ThoiGianTour> ThoiGianTours { get; set; }
+=======
+>>>>>>> 40ac28184ded5cd16c479530fa6d5f537ac86221
         public virtual DbSet<TinhThanh> TinhThanhs { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
         public virtual DbSet<Tour_Gia> Tour_Gia { get; set; }

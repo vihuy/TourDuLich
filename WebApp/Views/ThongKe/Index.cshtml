@@ -1,64 +1,61 @@
-﻿@model IEnumerable<Core.Tour_Gia>
+﻿@model IEnumerable<Core.ThoiGianDoan>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Thống Kê Chi Phí</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<form action="/ThongKe">
+    <p>Ngày bắt đầu</p>
+    <input type="date" name="NgayDi" class="form-control" value="@ViewBag.NgayDi"/>
+    <p>Ngày kết thúc</p>
+    <input type="date" name="NgayVe" class="form-control" value="@ViewBag.NgayVe"/>
+    <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+</form>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MaTourGia)
+            @Html.DisplayName("Tên Đoàn")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MaTour)
+            @Html.DisplayName("Tên Tour")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TGBD)
+            @Html.DisplayName("Ngày đi")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TGKT)
+            @Html.DisplayName("Ngày về")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Gia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrangThai)
+            @Html.DisplayName("Trạng thái")
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaTourGia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaTour)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TGBD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TGKT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrangThai)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
-
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doan.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doan.Tour_Gia.Tour.Ten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayVe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrangThai)
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Details_CTDoan", new { MaDoan = item.MaDoan })
+                </td>
+            </tr>
+        }
+    }
 </table>
