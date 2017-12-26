@@ -7,18 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Core;
+using Core.BIZ;
 
 namespace WebApp.Controllers
 {
     public class KhachHangsController : Controller
     {
         private TourDuLichEntities db = new TourDuLichEntities();
-
+        KhachHang_BIZ kh_biz = new KhachHang_BIZ();
         // GET: KhachHangs
         public ActionResult Index(string TimKhachHang)
         {
-            TimKhachHang = TimKhachHang != null ? TimKhachHang : "";
-            return View(db.KhachHangs.Where(x=>x.HoTen.Contains(TimKhachHang)).ToList());
+            return View(kh_biz.TimKhachHang(TimKhachHang));
         }
 
         // GET: KhachHangs/Details/5
@@ -28,7 +28,7 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhachHang khachHang = db.KhachHangs.Find(id);
+            KhachHang khachHang = kh_biz.Lay_KhachHang(id);
             if (khachHang == null)
             {
                 return HttpNotFound();

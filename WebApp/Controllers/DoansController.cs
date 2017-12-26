@@ -7,18 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Core;
+using Core.BIZ;
 
 namespace WebApp.Controllers
 {
     public class DoansController : Controller
     {
         private TourDuLichEntities db = new TourDuLichEntities();
-
+        Doan_BIZ doan_biz = new Doan_BIZ();
         // GET: Doans
         public ActionResult Index(string TimDoan)
         {
-            TimDoan = TimDoan != null ? TimDoan : "";
-            return View(db.Doans.Where(x => x.Ten.Contains(TimDoan)).ToList());
+            return View(doan_biz.TimDoan(TimDoan));
         }
 
         // GET: Doans/Details/5
@@ -28,7 +28,7 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Doan doan = db.Doans.Find(id);
+            Doan doan = doan_biz.Lay_Doan(id);
             if (doan == null)
             {
                 return HttpNotFound();

@@ -7,18 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Core;
+using Core.BIZ;
 
 namespace WebApp.Controllers
 {
     public class ToursController : Controller
     {
         private TourDuLichEntities db = new TourDuLichEntities();
-
+        Tour_BIZ tour_biz = new Tour_BIZ();
         // GET: Tours
         public ActionResult Index(string TimTour)
         {
-            TimTour = TimTour != null ? TimTour : "";
-            return View(db.Tours.Where(x => x.Ten.Contains(TimTour)).ToList());
+            return View(tour_biz.TimTour(TimTour));
         }
 
         // GET: Tours/Details/5
@@ -28,7 +28,7 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tour tour = db.Tours.Find(id);
+            Tour tour = tour_biz.Lay_Tour(id);
             if (tour == null)
             {
                 return HttpNotFound();

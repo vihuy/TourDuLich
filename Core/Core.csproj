@@ -52,9 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIZ\Doan_BIZ.cs" />
+    <Compile Include="BIZ\KhachHang_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
     <Compile Include="BIZ\ThemChiPhi_BIZ.cs" />
     <Compile Include="BIZ\ThongKeChiPhi_BIZ.cs" />
+    <Compile Include="BIZ\Tour_BIZ.cs" />
     <Compile Include="ChucVu.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
@@ -63,9 +66,12 @@
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\Doan_DAL.cs" />
+    <Compile Include="DAL\KhachHang_DAL.cs" />
     <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
     <Compile Include="DAL\ThemChiPhi_DAL.cs" />
     <Compile Include="DAL\ThongKeChiPhi_DAL.cs" />
+    <Compile Include="DAL\Tour_DAL.cs" />
     <Compile Include="DangKi.cs">
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>

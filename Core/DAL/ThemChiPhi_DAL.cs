@@ -28,6 +28,11 @@ namespace Core.DAL
             dbdoan = new Database<Doan>();
             return dbdoan.Search(x => x.Ten.Contains(TimDoan)).ToList();
         }
+        public Doan Lay_Doan_CTDoan(CTDoan ctdoan)
+        {
+            dbdoan = new Database<Doan>();
+            return dbdoan.GetSingle(x => x.MaDoan == ctdoan.MaDoan);
+        }
         public List<DiaDiem> Lay_DD_Doan(int MaDoan)
         {
             dbdoan_dd = new Database<Doan_DiaDiem>();

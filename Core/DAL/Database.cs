@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 
 namespace Core.DAL
 {
     public class Database<T> where T : class
     {
         public TourDuLichEntities db = new TourDuLichEntities();
+        private DbSet<T> dbSet;
         public static string error_message = "";
         public List<T> GetList()
         {
@@ -50,17 +53,15 @@ namespace Core.DAL
         public bool Update(T dto)
         {
             bool ok = false;
+            db.Entry(dto).State = EntityState.Modified;
+            try
             {
-                try
-                {
-                    db.Entry(dto).State = EntityState.Modified;
-                    db.SaveChanges();
-                    ok = true;
-                }
-                catch (Exception ex)
-                {
-                    error_message = ex.Message;
-                }
+                db.SaveChanges();
+                ok = true;
+            }
+            catch (Exception ex)
+            {
+                error_message = ex.Message;
             }
             return ok;
         }
@@ -69,7 +70,6 @@ namespace Core.DAL
         {
             db.Entry(dto).State = EntityState.Detached;
         }
-
 
         public List<T> Search(Expression<Func<T, bool>> where)
         {
@@ -85,6 +85,6 @@ namespace Core.DAL
         {
             return db.Set<T>().Any(where);
         }
-
+        
     }
 }

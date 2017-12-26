@@ -17,7 +17,7 @@
                 "<td>" + $('#TenKS').val() + "</td>" +
                 "<td>" + $('#MaDD').text() + "</td>" +
                 "<td>" + $('#Gia').val() + "</td>" +
-                "<td>" + $('#Ghichu').val() + "</td>" +
+                "<td>" + $('#GhiChu').val() + "</td>" +
                 '<td><input type="hidden" class="form-control" id = "TenKS" value="' + $('#TenKS').val() + '" name="cpks[' + (dynamicId - 1) + '].TenKS"/></td>' +
                 '<td><input type="hidden" class="form-control" id = "MaDD" value="' + $('#MaDD').val() + '"name="cpks[' + (dynamicId - 1) + '].MaDD"/></td>' +
                 '<td><input type="hidden" class="form-control" id = "Gia" value="' + $('#Gia').val() + '"name="cpks[' + (dynamicId - 1) + '].Gia"/></td>' +
@@ -69,6 +69,7 @@
         <input type="hidden" value="@ViewBag.MaDoan" name="cpks.MaDoan" id="MaDoan" />
         <input type="hidden" value="@ViewBag.MaDoan" name="MaDoan" />
         <input type="button" class="btn btn-default" value="Thêm" id="btnThem" />
+        <input type="text" value="@ViewBag.Tong" class="form-control" />
     </div>
 
     <table class="table" id="chitiet">
