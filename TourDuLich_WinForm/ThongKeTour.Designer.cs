@@ -41,6 +41,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKeTour));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -104,20 +107,36 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dtNgayKT_NV = new System.Windows.Forms.DateTimePicker();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLuuTatCa_themTour = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.dtKetThuc_ThemTour = new System.Windows.Forms.DateTimePicker();
+            this.dtBatDau_ThemTour = new System.Windows.Forms.DateTimePicker();
+            this.cboDiemKT_themTour = new System.Windows.Forms.ComboBox();
+            this.cboDiemBD_themTour = new System.Windows.Forms.ComboBox();
+            this.cboLoaiHinh_themTour = new System.Windows.Forms.ComboBox();
+            this.dgvGiaTour_themTour = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dateFrom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtGiaTour_themTour = new Bunifu.Framework.UI.BunifuTextbox();
+            this.txtSoNgay_themTour = new Bunifu.Framework.UI.BunifuTextbox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btnThemGiaTour = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtTenTour_themTour = new Bunifu.Framework.UI.BunifuTextbox();
             this.nhanVienTableAdapter = new TourDuLich_WinForm.TourDuLichDataSetTableAdapters.NhanVienTableAdapter();
             this.doanTableAdapter = new TourDuLich_WinForm.TourDuLichDataSet1TableAdapters.DoanTableAdapter();
             this.tourTableAdapter = new TourDuLich_WinForm.TourDuLichDataSet2TableAdapters.TourTableAdapter();
-            this.label11 = new System.Windows.Forms.Label();
-            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.btnThemGiaTour = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -137,6 +156,7 @@
             this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTour_themTour)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -447,7 +467,7 @@
             // btnThongKe_TKTH
             // 
             this.btnThongKe_TKTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe_TKTH.Location = new System.Drawing.Point(420, 379);
+            this.btnThongKe_TKTH.Location = new System.Drawing.Point(430, 382);
             this.btnThongKe_TKTH.Name = "btnThongKe_TKTH";
             this.btnThongKe_TKTH.Size = new System.Drawing.Size(140, 51);
             this.btnThongKe_TKTH.TabIndex = 10;
@@ -874,7 +894,10 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.bunifuCustomLabel6);
+            this.tabPage4.Controls.Add(this.bunifuCustomLabel7);
             this.tabPage4.Controls.Add(this.panel2);
+            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -882,74 +905,356 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Thêm Tour mới";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
-            // nhanVienTableAdapter
+            // bunifuCustomLabel6
             // 
-            this.nhanVienTableAdapter.ClearBeforeFill = true;
+            this.bunifuCustomLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(40, 57);
+            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(209, 22);
+            this.bunifuCustomLabel6.TabIndex = 24;
+            this.bunifuCustomLabel6.Text = "Thông tin tour du lịch";
+            this.bunifuCustomLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // doanTableAdapter
+            // bunifuCustomLabel7
             // 
-            this.doanTableAdapter.ClearBeforeFill = true;
+            this.bunifuCustomLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Maroon;
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(41, 17);
+            this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(286, 32);
+            this.bunifuCustomLabel7.TabIndex = 23;
+            this.bunifuCustomLabel7.Text = "Tạo tour du lịch mới";
+            this.bunifuCustomLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel7.Click += new System.EventHandler(this.bunifuCustomLabel7_Click);
             // 
-            // tourTableAdapter
+            // panel2
             // 
-            this.tourTableAdapter.ClearBeforeFill = true;
+            this.panel2.Controls.Add(this.btnLuuTatCa_themTour);
+            this.panel2.Controls.Add(this.dtKetThuc_ThemTour);
+            this.panel2.Controls.Add(this.dtBatDau_ThemTour);
+            this.panel2.Controls.Add(this.cboDiemKT_themTour);
+            this.panel2.Controls.Add(this.cboDiemBD_themTour);
+            this.panel2.Controls.Add(this.cboLoaiHinh_themTour);
+            this.panel2.Controls.Add(this.dgvGiaTour_themTour);
+            this.panel2.Controls.Add(this.txtGiaTour_themTour);
+            this.panel2.Controls.Add(this.txtSoNgay_themTour);
+            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.btnThemGiaTour);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.bunifuCustomLabel5);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.txtTenTour_themTour);
+            this.panel2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(24, 89);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1161, 580);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label11
+            // btnLuuTatCa_themTour
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 107);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 19);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Số ngày :";
+            this.btnLuuTatCa_themTour.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnLuuTatCa_themTour.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLuuTatCa_themTour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLuuTatCa_themTour.BorderRadius = 0;
+            this.btnLuuTatCa_themTour.ButtonText = "Lưu Tất Cả ";
+            this.btnLuuTatCa_themTour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuuTatCa_themTour.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLuuTatCa_themTour.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLuuTatCa_themTour.Iconimage = null;
+            this.btnLuuTatCa_themTour.Iconimage_right = null;
+            this.btnLuuTatCa_themTour.Iconimage_right_Selected = null;
+            this.btnLuuTatCa_themTour.Iconimage_Selected = null;
+            this.btnLuuTatCa_themTour.IconMarginLeft = 0;
+            this.btnLuuTatCa_themTour.IconMarginRight = 0;
+            this.btnLuuTatCa_themTour.IconRightVisible = true;
+            this.btnLuuTatCa_themTour.IconRightZoom = 0D;
+            this.btnLuuTatCa_themTour.IconVisible = true;
+            this.btnLuuTatCa_themTour.IconZoom = 90D;
+            this.btnLuuTatCa_themTour.IsTab = false;
+            this.btnLuuTatCa_themTour.Location = new System.Drawing.Point(875, 480);
+            this.btnLuuTatCa_themTour.Margin = new System.Windows.Forms.Padding(27, 0, 27, 26);
+            this.btnLuuTatCa_themTour.Name = "btnLuuTatCa_themTour";
+            this.btnLuuTatCa_themTour.Normalcolor = System.Drawing.Color.CornflowerBlue;
+            this.btnLuuTatCa_themTour.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.btnLuuTatCa_themTour.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLuuTatCa_themTour.selected = false;
+            this.btnLuuTatCa_themTour.Size = new System.Drawing.Size(203, 58);
+            this.btnLuuTatCa_themTour.TabIndex = 57;
+            this.btnLuuTatCa_themTour.Text = "Lưu Tất Cả ";
+            this.btnLuuTatCa_themTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuuTatCa_themTour.Textcolor = System.Drawing.Color.White;
+            this.btnLuuTatCa_themTour.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuTatCa_themTour.Click += new System.EventHandler(this.btnLuuTatCa_themTour_Click);
             // 
-            // bunifuTextbox1
+            // dtKetThuc_ThemTour
             // 
-            this.bunifuTextbox1.BackColor = System.Drawing.Color.White;
-            this.bunifuTextbox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.BackgroundImage")));
-            this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuTextbox1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.Icon")));
-            this.bunifuTextbox1.Location = new System.Drawing.Point(127, 28);
-            this.bunifuTextbox1.Name = "bunifuTextbox1";
-            this.bunifuTextbox1.Size = new System.Drawing.Size(250, 42);
-            this.bunifuTextbox1.TabIndex = 14;
-            this.bunifuTextbox1.text = "Đặt tên cho Tour ";
+            this.dtKetThuc_ThemTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtKetThuc_ThemTour.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtKetThuc_ThemTour.Location = new System.Drawing.Point(216, 253);
+            this.dtKetThuc_ThemTour.Name = "dtKetThuc_ThemTour";
+            this.dtKetThuc_ThemTour.Size = new System.Drawing.Size(270, 32);
+            this.dtKetThuc_ThemTour.TabIndex = 56;
             // 
-            // label17
+            // dtBatDau_ThemTour
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(18, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(83, 19);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "Tên tour :";
+            this.dtBatDau_ThemTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtBatDau_ThemTour.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtBatDau_ThemTour.Location = new System.Drawing.Point(216, 205);
+            this.dtBatDau_ThemTour.Name = "dtBatDau_ThemTour";
+            this.dtBatDau_ThemTour.Size = new System.Drawing.Size(270, 32);
+            this.dtBatDau_ThemTour.TabIndex = 55;
             // 
-            // label16
+            // cboDiemKT_themTour
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(18, 60);
-            this.label16.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 19);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "Số ngày :";
+            this.cboDiemKT_themTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDiemKT_themTour.FormattingEnabled = true;
+            this.cboDiemKT_themTour.Location = new System.Drawing.Point(733, 121);
+            this.cboDiemKT_themTour.Name = "cboDiemKT_themTour";
+            this.cboDiemKT_themTour.Size = new System.Drawing.Size(259, 31);
+            this.cboDiemKT_themTour.TabIndex = 54;
             // 
-            // label15
+            // cboDiemBD_themTour
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(18, 104);
-            this.label15.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 19);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Số đêm :";
+            this.cboDiemBD_themTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDiemBD_themTour.FormattingEnabled = true;
+            this.cboDiemBD_themTour.Location = new System.Drawing.Point(733, 74);
+            this.cboDiemBD_themTour.Name = "cboDiemBD_themTour";
+            this.cboDiemBD_themTour.Size = new System.Drawing.Size(259, 31);
+            this.cboDiemBD_themTour.TabIndex = 53;
+            // 
+            // cboLoaiHinh_themTour
+            // 
+            this.cboLoaiHinh_themTour.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiHinh_themTour.FormattingEnabled = true;
+            this.cboLoaiHinh_themTour.Location = new System.Drawing.Point(733, 22);
+            this.cboLoaiHinh_themTour.Name = "cboLoaiHinh_themTour";
+            this.cboLoaiHinh_themTour.Size = new System.Drawing.Size(259, 31);
+            this.cboLoaiHinh_themTour.TabIndex = 52;
+            // 
+            // dgvGiaTour_themTour
+            // 
+            this.dgvGiaTour_themTour.AllowUserToAddRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvGiaTour_themTour.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvGiaTour_themTour.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGiaTour_themTour.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGiaTour_themTour.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvGiaTour_themTour.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvGiaTour_themTour.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGiaTour_themTour.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvGiaTour_themTour.ColumnHeadersHeight = 25;
+            this.dgvGiaTour_themTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvGiaTour_themTour.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateFrom,
+            this.dateTo,
+            this.dataGridViewTextBoxColumn1,
+            this.Xoa});
+            this.dgvGiaTour_themTour.DoubleBuffered = true;
+            this.dgvGiaTour_themTour.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dgvGiaTour_themTour.EnableHeadersVisualStyles = false;
+            this.dgvGiaTour_themTour.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgvGiaTour_themTour.HeaderBgColor = System.Drawing.Color.SteelBlue;
+            this.dgvGiaTour_themTour.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvGiaTour_themTour.Location = new System.Drawing.Point(604, 182);
+            this.dgvGiaTour_themTour.Margin = new System.Windows.Forms.Padding(0, 10, 20, 20);
+            this.dgvGiaTour_themTour.MultiSelect = false;
+            this.dgvGiaTour_themTour.Name = "dgvGiaTour_themTour";
+            this.dgvGiaTour_themTour.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvGiaTour_themTour.RowHeadersWidth = 20;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvGiaTour_themTour.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvGiaTour_themTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGiaTour_themTour.Size = new System.Drawing.Size(474, 278);
+            this.dgvGiaTour_themTour.TabIndex = 51;
+            this.dgvGiaTour_themTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGiaTour_CellContentClick);
+            // 
+            // dateFrom
+            // 
+            this.dateFrom.FillWeight = 120F;
+            this.dateFrom.HeaderText = "TG bắt đầu";
+            this.dateFrom.Name = "dateFrom";
+            // 
+            // dateTo
+            // 
+            this.dateTo.FillWeight = 120F;
+            this.dateTo.HeaderText = "TG kết thúc";
+            this.dateTo.Name = "dateTo";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Giá tour";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Xoa
+            // 
+            this.Xoa.FillWeight = 80F;
+            this.Xoa.HeaderText = "Thao tác";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // txtGiaTour_themTour
+            // 
+            this.txtGiaTour_themTour.BackColor = System.Drawing.Color.White;
+            this.txtGiaTour_themTour.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtGiaTour_themTour.BackgroundImage")));
+            this.txtGiaTour_themTour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtGiaTour_themTour.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtGiaTour_themTour.Icon = ((System.Drawing.Image)(resources.GetObject("txtGiaTour_themTour.Icon")));
+            this.txtGiaTour_themTour.Location = new System.Drawing.Point(215, 295);
+            this.txtGiaTour_themTour.Name = "txtGiaTour_themTour";
+            this.txtGiaTour_themTour.Size = new System.Drawing.Size(271, 39);
+            this.txtGiaTour_themTour.TabIndex = 45;
+            this.txtGiaTour_themTour.text = "Giá tour";
+            // 
+            // txtSoNgay_themTour
+            // 
+            this.txtSoNgay_themTour.BackColor = System.Drawing.Color.White;
+            this.txtSoNgay_themTour.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSoNgay_themTour.BackgroundImage")));
+            this.txtSoNgay_themTour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtSoNgay_themTour.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtSoNgay_themTour.Icon = ((System.Drawing.Image)(resources.GetObject("txtSoNgay_themTour.Icon")));
+            this.txtSoNgay_themTour.Location = new System.Drawing.Point(217, 89);
+            this.txtSoNgay_themTour.Name = "txtSoNgay_themTour";
+            this.txtSoNgay_themTour.Size = new System.Drawing.Size(270, 43);
+            this.txtSoNgay_themTour.TabIndex = 43;
+            this.txtSoNgay_themTour.text = "Số ngày đi";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(538, 124);
+            this.label18.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(123, 19);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "Điểm kết thúc :";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(538, 25);
+            this.label19.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(145, 19);
+            this.label19.TabIndex = 41;
+            this.label19.Text = "Loại hình du lịch :";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(538, 77);
+            this.label21.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(119, 19);
+            this.label21.TabIndex = 40;
+            this.label21.Text = "Điểm bắt đầu :";
+            // 
+            // btnThemGiaTour
+            // 
+            this.btnThemGiaTour.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnThemGiaTour.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnThemGiaTour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnThemGiaTour.BorderRadius = 0;
+            this.btnThemGiaTour.ButtonText = "Lưu giá tour";
+            this.btnThemGiaTour.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemGiaTour.DisabledColor = System.Drawing.Color.Gray;
+            this.btnThemGiaTour.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemGiaTour.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnThemGiaTour.Iconimage = null;
+            this.btnThemGiaTour.Iconimage_right = null;
+            this.btnThemGiaTour.Iconimage_right_Selected = null;
+            this.btnThemGiaTour.Iconimage_Selected = null;
+            this.btnThemGiaTour.IconMarginLeft = 0;
+            this.btnThemGiaTour.IconMarginRight = 0;
+            this.btnThemGiaTour.IconRightVisible = true;
+            this.btnThemGiaTour.IconRightZoom = 0D;
+            this.btnThemGiaTour.IconVisible = true;
+            this.btnThemGiaTour.IconZoom = 90D;
+            this.btnThemGiaTour.IsTab = false;
+            this.btnThemGiaTour.Location = new System.Drawing.Point(321, 374);
+            this.btnThemGiaTour.Margin = new System.Windows.Forms.Padding(20);
+            this.btnThemGiaTour.Name = "btnThemGiaTour";
+            this.btnThemGiaTour.Normalcolor = System.Drawing.Color.SteelBlue;
+            this.btnThemGiaTour.OnHovercolor = System.Drawing.Color.LightSteelBlue;
+            this.btnThemGiaTour.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnThemGiaTour.selected = false;
+            this.btnThemGiaTour.Size = new System.Drawing.Size(165, 56);
+            this.btnThemGiaTour.TabIndex = 39;
+            this.btnThemGiaTour.Text = "Lưu giá tour";
+            this.btnThemGiaTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThemGiaTour.Textcolor = System.Drawing.Color.White;
+            this.btnThemGiaTour.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemGiaTour.Click += new System.EventHandler(this.btnThemGiaTour_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(21, 315);
+            this.label20.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 19);
+            this.label20.TabIndex = 36;
+            this.label20.Text = "Giá tour :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(18, 263);
+            this.label13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(156, 19);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Thời gian kết thúc :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(16, 215);
+            this.label14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(152, 19);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Thời gian bắt đầu :";
             // 
             // bunifuCustomLabel5
             // 
@@ -969,96 +1274,59 @@
             this.bunifuCustomLabel5.Text = "Cập nhật giá tour";
             this.bunifuCustomLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // label16
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(16, 215);
-            this.label14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(152, 19);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Thời gian bắt đầu :";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(19, 102);
+            this.label16.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 19);
+            this.label16.TabIndex = 30;
+            this.label16.Text = "Số ngày :";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
-            // label13
+            // label17
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(18, 263);
-            this.label13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(156, 19);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "Thời gian kết thúc :";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(16, 34);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 19);
+            this.label17.TabIndex = 29;
+            this.label17.Text = "Tên tour :";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
-            // label20
+            // txtTenTour_themTour
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(21, 315);
-            this.label20.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(79, 19);
-            this.label20.TabIndex = 36;
-            this.label20.Text = "Giá tour :";
+            this.txtTenTour_themTour.BackColor = System.Drawing.Color.White;
+            this.txtTenTour_themTour.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtTenTour_themTour.BackgroundImage")));
+            this.txtTenTour_themTour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtTenTour_themTour.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtTenTour_themTour.Icon = ((System.Drawing.Image)(resources.GetObject("txtTenTour_themTour.Icon")));
+            this.txtTenTour_themTour.Location = new System.Drawing.Point(217, 19);
+            this.txtTenTour_themTour.Name = "txtTenTour_themTour";
+            this.txtTenTour_themTour.Size = new System.Drawing.Size(270, 45);
+            this.txtTenTour_themTour.TabIndex = 14;
+            this.txtTenTour_themTour.text = "Đặt tên cho Tour ";
             // 
-            // btnThemGiaTour
+            // nhanVienTableAdapter
             // 
-            this.btnThemGiaTour.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnThemGiaTour.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnThemGiaTour.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThemGiaTour.BorderRadius = 0;
-            this.btnThemGiaTour.ButtonText = "Lưu giá tour";
-            this.btnThemGiaTour.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemGiaTour.DisabledColor = System.Drawing.Color.Gray;
-            this.btnThemGiaTour.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnThemGiaTour.Iconimage = null;
-            this.btnThemGiaTour.Iconimage_right = null;
-            this.btnThemGiaTour.Iconimage_right_Selected = null;
-            this.btnThemGiaTour.Iconimage_Selected = null;
-            this.btnThemGiaTour.IconMarginLeft = 0;
-            this.btnThemGiaTour.IconMarginRight = 0;
-            this.btnThemGiaTour.IconRightVisible = true;
-            this.btnThemGiaTour.IconRightZoom = 0D;
-            this.btnThemGiaTour.IconVisible = true;
-            this.btnThemGiaTour.IconZoom = 90D;
-            this.btnThemGiaTour.IsTab = false;
-            this.btnThemGiaTour.Location = new System.Drawing.Point(259, 383);
-            this.btnThemGiaTour.Margin = new System.Windows.Forms.Padding(20);
-            this.btnThemGiaTour.Name = "btnThemGiaTour";
-            this.btnThemGiaTour.Normalcolor = System.Drawing.Color.SteelBlue;
-            this.btnThemGiaTour.OnHovercolor = System.Drawing.Color.LightSteelBlue;
-            this.btnThemGiaTour.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnThemGiaTour.selected = false;
-            this.btnThemGiaTour.Size = new System.Drawing.Size(118, 35);
-            this.btnThemGiaTour.TabIndex = 39;
-            this.btnThemGiaTour.Text = "Lưu giá tour";
-            this.btnThemGiaTour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnThemGiaTour.Textcolor = System.Drawing.Color.White;
-            this.btnThemGiaTour.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhanVienTableAdapter.ClearBeforeFill = true;
             // 
-            // panel2
+            // doanTableAdapter
             // 
-            this.panel2.Controls.Add(this.btnThemGiaTour);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.bunifuCustomLabel5);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.bunifuTextbox1);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Location = new System.Drawing.Point(27, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1161, 515);
-            this.panel2.TabIndex = 0;
+            this.doanTableAdapter.ClearBeforeFill = true;
+            // 
+            // tourTableAdapter
+            // 
+            this.tourTableAdapter.ClearBeforeFill = true;
             // 
             // ThongKeTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 739);
+            this.ClientSize = new System.Drawing.Size(1224, 733);
             this.Controls.Add(this.tabControl1);
             this.Name = "ThongKeTour";
             this.Text = "Form1";
@@ -1086,8 +1354,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGiaTour_themTour)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1165,11 +1435,27 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
-        private System.Windows.Forms.Label label11;
+        private Bunifu.Framework.UI.BunifuTextbox txtTenTour_themTour;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label21;
+        private Bunifu.Framework.UI.BunifuTextbox txtGiaTour_themTour;
+        private Bunifu.Framework.UI.BunifuTextbox txtSoNgay_themTour;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvGiaTour_themTour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateFrom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
+        private System.Windows.Forms.ComboBox cboDiemKT_themTour;
+        private System.Windows.Forms.ComboBox cboDiemBD_themTour;
+        private System.Windows.Forms.ComboBox cboLoaiHinh_themTour;
+        private System.Windows.Forms.DateTimePicker dtKetThuc_ThemTour;
+        private System.Windows.Forms.DateTimePicker dtBatDau_ThemTour;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLuuTatCa_themTour;
     }
 }
 

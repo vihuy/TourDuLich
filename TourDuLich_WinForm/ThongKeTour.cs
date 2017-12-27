@@ -11,6 +11,8 @@ using System.Data.Entity.Core;
 using Core.BIZ;
 using Core;
 using Core.Common;
+using System.Collections;
+using System.Globalization;
 
 namespace TourDuLich_WinForm
 {
@@ -18,20 +20,51 @@ namespace TourDuLich_WinForm
     {
         private SoLanDiTourModel dsThongKe;
         ThongKe_BIZ thongke_biz = new ThongKe_BIZ();
-        QuanLi_GiaTour_BIZ bus_gia_tour = new QuanLi_GiaTour_BIZ();
+        QuanLi_GiaTour_BIZ gia_tour_biz = new QuanLi_GiaTour_BIZ();
+        Tour_BIZ tour_biz = new Tour_BIZ();
         public ThongKeTour()
         {
             InitializeComponent();
             layDSTour();
+            layDSLoaiHinh();
+            layDSDiaDiem();
 
 
         }
+        public void layDSDiaDiem()
+        {
+            DiaDiem_BIZ diadiem_biz = new DiaDiem_BIZ();
+
+            IEnumerable diadiem = diadiem_biz.GetList();
+            cboDiemBD_themTour.DataSource = diadiem;
+            cboDiemBD_themTour.DisplayMember = "Ten";
+            cboDiemBD_themTour.ValueMember = "MaDD";
+            cboDiemKT_themTour.DataSource = diadiem;
+            cboDiemKT_themTour.DisplayMember = "Ten";
+            cboDiemKT_themTour.ValueMember = "MaDD";
+
+
+
+        }
+
 
         public void layDSTour()
         {
             Tour_BIZ tour_biz = new Tour_BIZ();
 
             dgvTour_TKTH.DataSource = tour_biz.GetList();
+
+
+        }
+        public void layDSLoaiHinh()
+        {
+            LoaiHinhDuLich_BIZ loaihinhdulich_biz = new LoaiHinhDuLich_BIZ();
+
+            IEnumerable tour = loaihinhdulich_biz.GetList();
+            cboLoaiHinh_themTour.DataSource = tour;
+            cboLoaiHinh_themTour.DisplayMember = "Ten";
+            cboLoaiHinh_themTour.ValueMember = "MaLHDL";
+
 
 
         }
@@ -194,7 +227,85 @@ namespace TourDuLich_WinForm
 
         }
 
+        private void bunifuCustomLabel7_Click(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemGiaTour_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(txtGiaTour_themTour.text);
+            if (txtGiaTour_themTour.text == "")
+            {
+                MessageBox.Show("Chưa thêm giá tour !!!", "Thông báo");
+
+            }
+            else
+            {
+               
+                dgvGiaTour_themTour.Rows.Add(new object[] { dtBatDau_ThemTour.Value.ToString("dd / MM / yyyy"), dtKetThuc_ThemTour.Value.ToString("dd / MM / yyyy"), txtGiaTour_themTour.text, "Xóa" });
+                dtBatDau_ThemTour.Value = dtBatDau_ThemTour.Value.Date.AddDays(1);
+                dtKetThuc_ThemTour.Value = dtBatDau_ThemTour.Value.Date.AddDays(1);
+            }
+        }
+
+        private void tblGiaTour_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuuTatCa_themTour_Click(object sender, EventArgs e)
+        {
+            if (txtGiaTour_themTour.text == "" || txtSoNgay_themTour.text == "" || txtTenTour_themTour.text == "")
+            {
+                MessageBox.Show("Vui lòng khai báo đầy đủ Thông tin tour !!!!", "Thông báo");
+            }
+            else if (dgvGiaTour_themTour.RowCount <= 0)
+            {
+                MessageBox.Show("Vui lòng nhập giá cho tour hiện tại...", "Thông báo");
+            }
+            else
+            {
+                Tour tour = new Tour();
+                tour.Ten = txtTenTour_themTour.Text;
+                tour.SLNgay = int.Parse(txtSoNgay_themTour.Text);
+                tour.LoaiHinhDL = Convert.ToInt32(cboLoaiHinh_themTour.SelectedValue);
+                tour.DiemKhoiHanh = Convert.ToInt32(cboDiemBD_themTour.SelectedValue);
+                tour.DiemKetThuc = Convert.ToInt32(cboDiemKT_themTour.SelectedValue);
+                tour.TrangThai = true;
+                List<Tour_Gia> listGiaTour = new List<Tour_Gia>();
+                for (int i = 0; i < dgvGiaTour_themTour.Rows.Count; i++)
+                {
+                    Tour_Gia giaTour = new Tour_Gia();
+                    giaTour.TGBD = DateTime.ParseExact(dgvGiaTour_themTour.Rows[i].Cells[0].Value.ToString(), "dd / MM / yyyy", CultureInfo.CurrentCulture);
+                    giaTour.TGKT = DateTime.ParseExact(dgvGiaTour_themTour.Rows[i].Cells[1].Value.ToString(), "dd / MM / yyyy", CultureInfo.CurrentCulture);
+                    giaTour.Gia = int.Parse(dgvGiaTour_themTour.Rows[i].Cells[2].Value.ToString());
+                    giaTour.TrangThai = true;
+                    listGiaTour.Add(giaTour);
+                }
+                int maTour = tour_biz.ThemTourMoi(tour, listGiaTour);
+                MessageBox.Show("Thêm thành công !!!");
+            }
+        }
     }
 }

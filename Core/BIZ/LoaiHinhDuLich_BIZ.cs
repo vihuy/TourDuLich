@@ -8,17 +8,12 @@ using System.Threading.Tasks;
 
 namespace Core.BIZ
 {
-    public class Tour_BIZ
+    public class LoaiHinhDuLich_BIZ
     {
-       Tour_DAL tour_dal = new Tour_DAL();
+        LoaiHinhDuLich_DAL loaihinh_dal = new LoaiHinhDuLich_DAL();
         public IEnumerable GetList()
         {
-            return tour_dal.getList();
-        }
-
-        public int ThemTourMoi(Tour tour,List<Tour_Gia> tour_gia)
-        {
-            return tour_dal.ThemTourMoi(tour,tour_gia);
+            return loaihinh_dal.getList();
         }
     }
 }

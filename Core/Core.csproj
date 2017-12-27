@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIZ\DiaDiem_BIZ.cs" />
+    <Compile Include="BIZ\LoaiHinhDuLich_BIZ.cs" />
     <Compile Include="BIZ\NhanVien_BIZ.cs" />
     <Compile Include="BIZ\QuanLi_GiaTour_BIZ.cs" />
     <Compile Include="BIZ\ThongKe_BIZ.cs" />
@@ -73,6 +75,8 @@
       <DependentUpon>TourDuLich.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Database.cs" />
+    <Compile Include="DAL\DiaDiem_DAL.cs" />
+    <Compile Include="DAL\LoaiHinhDuLich_DAL.cs" />
     <Compile Include="DAL\NhanVien_DAL.cs" />
     <Compile Include="DAL\QuanLi_GiaTour_DAL.cs" />
     <Compile Include="DAL\ThongKe_DAL.cs" />
@@ -132,7 +136,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TourDuLich.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TourDuLich.cs" />
     <Compile Include="TourDuLich.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

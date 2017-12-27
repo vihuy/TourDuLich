@@ -111,5 +111,10 @@ namespace Core.DAL
             return db.Set<T>().Where<T>(predicate).AsEnumerable<T>();
         }
 
+        public void Commit()
+        {
+            db.SaveChanges();
+        }
+
     }
 }
