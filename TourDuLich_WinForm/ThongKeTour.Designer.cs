@@ -1087,7 +1087,7 @@
             this.dgvGiaTour_themTour.GridColor = System.Drawing.Color.Gainsboro;
             this.dgvGiaTour_themTour.HeaderBgColor = System.Drawing.Color.SteelBlue;
             this.dgvGiaTour_themTour.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvGiaTour_themTour.Location = new System.Drawing.Point(604, 182);
+            this.dgvGiaTour_themTour.Location = new System.Drawing.Point(569, 182);
             this.dgvGiaTour_themTour.Margin = new System.Windows.Forms.Padding(0, 10, 20, 20);
             this.dgvGiaTour_themTour.MultiSelect = false;
             this.dgvGiaTour_themTour.Name = "dgvGiaTour_themTour";
@@ -1098,7 +1098,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
             this.dgvGiaTour_themTour.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvGiaTour_themTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGiaTour_themTour.Size = new System.Drawing.Size(474, 278);
+            this.dgvGiaTour_themTour.Size = new System.Drawing.Size(509, 278);
             this.dgvGiaTour_themTour.TabIndex = 51;
             this.dgvGiaTour_themTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGiaTour_CellContentClick);
             // 
